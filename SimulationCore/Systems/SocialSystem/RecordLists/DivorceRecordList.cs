@@ -9,10 +9,30 @@ namespace SimulationCore.Systems.SocialSystem.RecordLists
 {
     public class DivorceRecordList : SystemRecordList<DivorceRecord>
     {
+        #region Private Members
+        private SocialSystem _socialSystem;
+        #endregion
+
         #region Constructors
-        public DivorceRecordList()
+        public DivorceRecordList(SocialSystem socialSystem)
             : base()
         {
+            SocialSystem = socialSystem;
+        }
+        #endregion
+
+        #region Public Properties
+        public SocialSystem SocialSystem
+        {
+            get
+            {
+                return _socialSystem;
+            }
+
+            set
+            {
+                _socialSystem = value;
+            }
         }
         #endregion
 

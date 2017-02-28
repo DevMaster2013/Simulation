@@ -9,7 +9,7 @@ namespace SimulationCore.Core
     {
         #region Private Members
         private T _data;
-        private List<MultiTreeNode<T>> _cildren;        
+        private List<MultiTreeNode<T>> _cildren;
         #endregion
 
         #region Constructors

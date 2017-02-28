@@ -19,10 +19,10 @@ namespace SimulationCore.Systems.SocialSystem
         #region Constructors
         public SocialSystem()
         {
-            MarriageRecords = new MarriageRecordList();
-            DivorceRecords = new DivorceRecordList();
-            HumanRecords = new HumanRecordList();
-            DieRecords = new DieRecordList();
+            MarriageRecords = new MarriageRecordList(this);
+            DivorceRecords = new DivorceRecordList(this);
+            HumanRecords = new HumanRecordList(this);
+            DieRecords = new DieRecordList(this);
         }
         #endregion
 
@@ -78,8 +78,23 @@ namespace SimulationCore.Systems.SocialSystem
         }
         public List<Woman> GetSuitableWomenForMarriage(Man man)
         {
-            // TODO : Implement GetSuitableWomenForMarriage
-            throw new NotImplementedException("GetSuitableWomenForMarriage not Implemented");
+            List<Woman> suitableWomen = new List<Woman>();
+
+            var unMarriedWomen = HumanRecords.GetUnmarriedWomenRecords();
+            var manRecord = HumanRecords.GetRecord(man);
+            var manFamilyTree = new FamilyTree(this, manRecord);
+            manFamilyTree.BuildFamilyTree();
+            foreach (var woman in unMarriedWomen)
+            {
+                int level;
+                var foundNode = manFamilyTree.FindHuman(woman.Human, out level);
+                if (foundNode != null && level == 1)
+                    suitableWomen.Add((Woman)foundNode.Data.Human);
+                else if (foundNode == null)
+                    suitableWomen.Add((Woman)woman.Human);
+            }
+
+            return suitableWomen;
         }
         #endregion
     }

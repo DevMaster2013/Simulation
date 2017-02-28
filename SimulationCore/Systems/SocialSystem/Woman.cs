@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SimulationCore.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,8 @@ namespace SimulationCore.Systems.SocialSystem
     public class Woman : Human
     {
         #region Constructors
-        public Woman(string name)
-            : base(name, HumanSex.Female)
+        public Woman(SocialSystem socialSystem, string name)
+            : base(socialSystem, name, HumanSex.Female)
         {
         }
         #endregion
@@ -17,8 +18,7 @@ namespace SimulationCore.Systems.SocialSystem
         #region Public Methods
         public bool ResponseForMarriageProposal(Man man)
         {
-            // TODO : Implement ResponseForMarriageProposal
-            throw new NotImplementedException("ResponseForMarriageProposal not Implemented");
+            return RandomSelector.SelectRandomCondition();
         }
         public void ProduceBaby()
         {

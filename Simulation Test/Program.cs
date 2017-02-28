@@ -12,18 +12,18 @@ namespace Simulation_Test
     {
         static void Main(string[] args)
         {
-            Man ahmed = new Man("Ahmed");
-            Woman sara = new Woman("Sara");
-            
             SocialSystem social = new SocialSystem();
-            social.HumanRecords.AddRecord(new HumanRecord(ahmed, null));
-            social.HumanRecords.AddRecord(new HumanRecord(sara, null));
+            var ahmedRecord = social.HumanRecords.CreateRecord(null, "Ahmed", HumanSex.Male);
+            var saraRecord = social.HumanRecords.CreateRecord(null, "Sara", HumanSex.Female);
 
-            ahmed.Marry();
-            sara.ProduceBaby();
-            ahmed.Divorce();
-            ahmed.Die();
-            sara.Die();
+            ((Man)(ahmedRecord.Human)).Marry();
+            /*
+            ((Woman)(ahmedRecord.Human)).ProduceBaby();
+            ((Man)(ahmedRecord.Human)).Divorce();
+
+            ahmedRecord.Human.Die();
+            saraRecord.Human.Die();
+            */
         }
     }
 }

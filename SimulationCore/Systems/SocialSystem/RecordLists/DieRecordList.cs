@@ -9,10 +9,30 @@ namespace SimulationCore.Systems.SocialSystem.RecordLists
 {
     public class DieRecordList : SystemRecordList<DieRecord>
     {
+        #region Private Members
+        private SocialSystem _socialSystem;
+        #endregion
+
         #region Constructors
-        public DieRecordList()
+        public DieRecordList(SocialSystem socialSystem)
             : base()
         {
+            SocialSystem = socialSystem;
+        }
+        #endregion
+
+        #region Public Properties
+        public SocialSystem SocialSystem
+        {
+            get
+            {
+                return _socialSystem;
+            }
+
+            set
+            {
+                _socialSystem = value;
+            }
         }
         #endregion
 

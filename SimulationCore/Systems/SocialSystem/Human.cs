@@ -17,33 +17,53 @@ namespace SimulationCore.Systems.SocialSystem
         #region Protected Member Variables
         protected string _name;
         protected HumanSex sex;
+        private SocialSystem socialSystem;
         #endregion
 
         #region Constructors
-        public Human(string name, HumanSex sex)
+        public Human(SocialSystem socialSystem, string name, HumanSex sex)
         {
             Name = name;
             Sex = sex;
+            SocialSystem = socialSystem;
         }
         #endregion
 
         #region Public Properties
-        public string Name {
-            get {
+        public string Name
+        {
+            get
+            {
                 return _name;
             }
 
-            set {
+            set
+            {
                 _name = value;
             }
         }
-        public HumanSex Sex {
-            get {
+        public HumanSex Sex
+        {
+            get
+            {
                 return sex;
             }
 
-            set {
+            set
+            {
                 sex = value;
+            }
+        }
+        protected SocialSystem SocialSystem
+        {
+            get
+            {
+                return socialSystem;
+            }
+
+            set
+            {
+                socialSystem = value;
             }
         }
         #endregion
