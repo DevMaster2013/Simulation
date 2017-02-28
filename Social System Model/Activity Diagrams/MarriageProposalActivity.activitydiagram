@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="de5dfeed-9207-482c-b04c-1911c3c8e3c0" name="MarriageProposalActivity" linkedPackageId="2cfbe006-9ad6-43df-85ee-73e7e03647cf" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="3e06c302-1a85-465c-bc70-f152368e32d7" name="MarriageProposalActivity" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="bf458532-fb46-46d1-a941-db221a23add8" />
+        <nodes>
+          <initialNode Id="b3642866-afce-409f-8608-3d1c3728a33f" name="Init Marriage Proposal" isLeaf="false">
+            <elementDefinition Id="2e07c8ab-ac0c-4d4b-8b7d-8aae3ca3d3ef" />
+            <flowNodeTargets>
+              <controlFlow Id="78f7cb21-e4e6-4c6a-b600-cf3c61a56e6e" isLeaf="false">
+                <opaqueActionMoniker Id="52bfaf48-f1db-4fed-b994-72d8629bd16c" LastKnownName="Is Man is Married?" />
+                <elementDefinition Id="11835a85-5169-4eec-bdef-c3ba296b2e07" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="52bfaf48-f1db-4fed-b994-72d8629bd16c" name="Is Man is Married?" isLeaf="false">
+            <elementDefinition Id="ce28b221-98ac-4023-96de-f38a9ea79361" />
+            <flowNodeTargets>
+              <controlFlow Id="3dc21728-5ee5-4b54-9d1c-aee71760467b" isLeaf="false">
+                <decisionNodeMoniker Id="ece7ef11-a4ef-42ae-b89d-4dc68073d4f7" LastKnownName="Married Man Decesion" />
+                <elementDefinition Id="353acae1-2075-425c-bf0d-2a394167409e" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="ece7ef11-a4ef-42ae-b89d-4dc68073d4f7" name="Married Man Decesion" isLeaf="false">
+            <elementDefinition Id="b1cc33f8-a76d-4b34-9536-4cc5bec95fa2" />
+            <flowNodeTargets>
+              <controlFlow Id="0da9a36d-596b-4792-9e74-3f23571a8ff8" guard="Yes" isLeaf="false">
+                <activityFinalNodeMoniker Id="e5a13357-0705-4a17-bff3-073490fc4c06" LastKnownName="Marriage Proposal Final" />
+                <elementDefinition Id="32288efa-fa55-461f-9b62-6659fa7b131b" />
+              </controlFlow>
+              <controlFlow Id="36502c21-de35-4431-a00b-62a04821e197" guard="No" isLeaf="false">
+                <opaqueActionMoniker Id="cfece1e2-752c-4d43-9279-5e71b987ff82" LastKnownName="List Women" />
+                <elementDefinition Id="1df45c57-bedf-4585-a604-9ca8e9e55d9c" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <activityFinalNode Id="e5a13357-0705-4a17-bff3-073490fc4c06" name="Marriage Proposal Final" isLeaf="false">
+            <elementDefinition Id="8f93cd0d-d50f-43db-b5a2-6f78e940575b" />
+          </activityFinalNode>
+          <opaqueAction Id="cfece1e2-752c-4d43-9279-5e71b987ff82" name="List Women" isLeaf="false">
+            <elementDefinition Id="efd74f90-0c6f-4ace-a22a-02ae58441869" />
+            <flowNodeTargets>
+              <controlFlow Id="47623bb3-d1b8-4e21-8c2f-2914c2b730b3" isLeaf="false">
+                <decisionNodeMoniker Id="2f97e38e-8f7d-4370-b31f-2895746a6e9e" LastKnownName="Women List Decision" />
+                <elementDefinition Id="f0aa9395-67e2-4350-bbb3-6f22b1525dfd" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="2f97e38e-8f7d-4370-b31f-2895746a6e9e" name="Women List Decision" isLeaf="false">
+            <elementDefinition Id="83e30b35-d73f-4328-9609-ab67cbbf8490" />
+            <flowNodeTargets>
+              <controlFlow Id="3636994f-ba45-465c-a7cc-4b6274586816" guard="List Is Empty" isLeaf="false">
+                <activityFinalNodeMoniker Id="e5a13357-0705-4a17-bff3-073490fc4c06" LastKnownName="Marriage Proposal Final" />
+                <elementDefinition Id="3142fce7-37d9-4446-8eed-526e6a3da697" />
+              </controlFlow>
+              <controlFlow Id="77541115-a352-4d5b-9f2f-7269c8279c1b" guard="List Is Not Empty" isLeaf="false">
+                <opaqueActionMoniker Id="2b2d4ea9-6328-4615-9d2f-07b092f3dbea" LastKnownName="Choose a Woman" />
+                <elementDefinition Id="1d65c196-b3f1-45c8-8277-a34cbadf2db5" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="2b2d4ea9-6328-4615-9d2f-07b092f3dbea" name="Choose a Woman" isLeaf="false">
+            <elementDefinition Id="805a1a36-558c-4875-9f25-35daea0e0370" />
+            <flowNodeTargets>
+              <controlFlow Id="b0fcc3db-2d29-46c9-9340-5149ea06b4ff" isLeaf="false">
+                <opaqueActionMoniker Id="aa808be1-a8de-4913-9d13-40646bf51b84" LastKnownName="Propose Marriage" />
+                <elementDefinition Id="b44005aa-1396-44c8-a6de-f8c6f2b9216f" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="aa808be1-a8de-4913-9d13-40646bf51b84" name="Propose Marriage" isLeaf="false">
+            <elementDefinition Id="15979899-e55b-439f-abf2-60e2cd0ae73f" />
+            <flowNodeTargets>
+              <controlFlow Id="12fb89ae-8864-4def-b0a3-b6f209f15371" isLeaf="false">
+                <decisionNodeMoniker Id="447c5ec7-d02e-4255-a9d3-9ca496e15809" LastKnownName="Woman Openion Decision" />
+                <elementDefinition Id="f47e138d-92b5-4288-a33d-9739d6f3dd29" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="447c5ec7-d02e-4255-a9d3-9ca496e15809" name="Woman Openion Decision" isLeaf="false">
+            <elementDefinition Id="fd8c7c69-a74f-4463-bcfe-d14c939c22f8" />
+            <flowNodeTargets>
+              <controlFlow Id="0eee9c38-a4b8-464d-8569-16fb29e4ea76" isLeaf="false">
+                <opaqueActionMoniker Id="e26449fa-1b8e-452d-bb2a-e8fbea9e6eb5" LastKnownName="Woman Refuse Propsal" />
+                <elementDefinition Id="3de92200-4372-4fdd-bbeb-791ce08fd327" />
+              </controlFlow>
+              <controlFlow Id="53178f19-426a-4dab-8c44-e8f53b7520f1" isLeaf="false">
+                <opaqueActionMoniker Id="ef2624b4-b318-4ccb-8277-aec7a2179c76" LastKnownName="Woman Accept Proposal" />
+                <elementDefinition Id="a867e2f4-f0db-407f-972b-13e53f191005" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="e26449fa-1b8e-452d-bb2a-e8fbea9e6eb5" name="Woman Refuse Propsal" isLeaf="false">
+            <elementDefinition Id="542859c5-213a-42d3-a98f-6b8d592d88cb" />
+            <flowNodeTargets>
+              <controlFlow Id="39760fad-361b-428d-a537-c2b6a63eb954" isLeaf="false">
+                <opaqueActionMoniker Id="cfece1e2-752c-4d43-9279-5e71b987ff82" LastKnownName="List Women" />
+                <elementDefinition Id="ed3000a6-8a8b-4a46-b8a1-1c4e5d5b2bd6" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="ef2624b4-b318-4ccb-8277-aec7a2179c76" name="Woman Accept Proposal" isLeaf="false">
+            <elementDefinition Id="34b7f02c-19ec-40e5-bdf1-e8c852f7b661" />
+            <flowNodeTargets>
+              <controlFlow Id="cadb23a5-f934-4e87-9f65-d0c0f3e5d118" isLeaf="false">
+                <opaqueActionMoniker Id="bbfc74d4-41a4-48ef-be7b-dd331bc96cdf" LastKnownName="Register Marriage" />
+                <elementDefinition Id="fd33e6e3-2f62-439b-80b6-44a6e3535691" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="bbfc74d4-41a4-48ef-be7b-dd331bc96cdf" name="Register Marriage" isLeaf="false">
+            <elementDefinition Id="7237e874-7dc4-4793-abf2-db2dee5947e3" />
+            <flowNodeTargets>
+              <controlFlow Id="6370c4f8-179e-47f5-b7c2-f8e94fd48857" isLeaf="false">
+                <activityFinalNodeMoniker Id="e5a13357-0705-4a17-bff3-073490fc4c06" LastKnownName="Marriage Proposal Final" />
+                <elementDefinition Id="ba13d0d5-3260-4417-8034-b460b5dad19d" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="2cfbe006-9ad6-43df-85ee-73e7e03647cf" name="Social System Model">
+    <elementDefinition Id="b9e6d820-cef7-4ea9-adcf-7f741d02be4e" />
+    <profileInstances>
+      <packageHasProfileInstances Id="b9a5b5e6-f967-4af6-9dec-681600501a46">
+        <profileInstance Id="b33ee867-b515-4b05-bfcd-a453bcccd278" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="131ff2ad-8bba-4762-be29-032db81e82d6">
+        <profileInstance Id="3f585a86-1ca4-478b-9423-60790f8191bb" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</activityRootModel>

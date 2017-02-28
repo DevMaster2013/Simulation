@@ -1,0 +1,470 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="1622a78e-b6b4-43e4-9ee2-15fa1f16349e" name="SocialSystemClass" linkedPackageId="ea33eb8b-94e1-406b-9056-49efeb24af38" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="28c8f17c-a7f7-4ae9-a157-e8dd428c6dfe">
+      <profileInstance Id="37d31543-69f0-4d72-8bef-1187799cdd41" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="779bf8b6-bc55-459e-9e34-b04420338b76">
+      <profileInstance Id="fbef8413-4a42-4e0d-9095-5fe63f271bdb" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="b91e3cd9-10a0-487b-b06e-b2861547c9a3" name="Human" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="59b6a283-311f-424a-a226-ca1ba41e8775" />
+        <ownedAttributesInternal>
+          <property Id="63880ff1-5bc2-4e34-a63c-de69651bea73" name="Name" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f861b8e0-f865-4f0a-ab84-7b264a95f1f2" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="36399ff7-72a2-4ee1-88d8-f09cb5c1de8a" name="Die" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="beceb45e-78f4-4b04-92b1-244a6e99774e" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="57e72374-a273-4f77-bf28-aebd42b975c1" name="Man" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="cf42f69f-d9c8-46d5-b6d0-30a92292fea7" />
+        <generalsInternal>
+          <generalization Id="c1b4cdb5-d518-4c48-b4ce-017b6ec1b28e" isSubstitutable="false">
+            <classMoniker Id="b91e3cd9-10a0-487b-b06e-b2861547c9a3" LastKnownName="Human" />
+            <elementDefinition Id="50c24961-64d5-41ba-ba2f-999396b3f0b7" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="b40b4aac-d7c7-4bb3-b884-818f4e6261d5" isDerived="false" sourceEndRoleName="Man" targetEndRoleName="Marriage Proposal" isLeaf="false" isAbstract="false">
+            <classMoniker Id="56f6620a-6ad0-4947-9e4f-2c541a9c4ba9" LastKnownName="Marriage Proposal" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d5d976ee-048a-4c5f-95e7-b8f0a9b2afd2" name="Man" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="60c80527-3db8-40c6-a8fa-d0491b17c6a3" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="dbf9a919-16d9-4dfa-9ff9-ceae98ef1567" name="Marriage Proposal" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="699f6045-4ccf-4cf5-92aa-faf670f42ec0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="7d70fe24-5bf0-4ecf-a7ce-38385cc4fb6c" />
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation Id="3b31fd7b-3442-48cc-a9de-644a8878011d" name="Marry" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="07ef7e97-04b6-426b-9283-00f9f5da449a" />
+          </operation>
+          <operation Id="3f19d63f-80f0-44e7-9864-3dbaa175c81a" name="Divorce" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="27628802-d027-4413-b52f-1888606a2f78" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="e15590c4-f1ca-49e2-ab7f-7e14fbef9663" name="Woman" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="af1d0a67-1297-4c35-9f0d-4ce015dc93b5" />
+        <generalsInternal>
+          <generalization Id="af3ec394-897e-4bda-9d1d-bc0a40dc509b" isSubstitutable="false">
+            <classMoniker Id="b91e3cd9-10a0-487b-b06e-b2861547c9a3" LastKnownName="Human" />
+            <elementDefinition Id="4d25b5df-caf1-4539-bebe-927ba1bb2c96" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="5ec129a3-22a6-4bb4-82f8-0806e08598e5" isDerived="false" sourceEndRoleName="Woman" targetEndRoleName="Marriage Proposal" isLeaf="false" isAbstract="false">
+            <classMoniker Id="56f6620a-6ad0-4947-9e4f-2c541a9c4ba9" LastKnownName="Marriage Proposal" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="54703a9c-732d-4fc7-b87b-8d8562ba5e9d" name="Woman" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="7b00df1a-4d03-459d-ba74-f27a37d14422" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e4d8d6b6-29bc-4e8d-9307-19fbc7c62bba" name="Marriage Proposal" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="31f596a7-efd1-4b0b-b4d8-e8737b3aa84b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c5024732-4b3f-4a3b-97d4-4243b3cf0b23" />
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation Id="a331251c-8124-4df5-b629-0132839c6edb" name="Accept Marriage Proposal" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="399c0aa9-47f1-43f2-8d40-cd78bdfa93f7" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b0a5e47a-cf48-42cc-930f-89868f7a8cdd" name="porpsal" direction="In">
+                  <elementDefinition Id="ace158a9-8de7-4e51-8b06-e5ff22d108d7" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="621bc980-e345-4040-b3cc-9112be8cb85d" LastKnownName="Marriage Proposal" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="8a64d04c-2da5-49ef-ae45-4b2538163311" direction="Return">
+                  <elementDefinition Id="352c7c01-9d13-4a73-aed3-1bedb980c931" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0f21a538-b8b4-4b26-b035-6e195fb6770e" LastKnownName="Boolean" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="c7c70484-b042-4bed-b693-e84f7ed3e286" name="Refuse Marriage Propsal" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="538ab16d-305f-4d0f-8e7b-4d54797ece9b" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b30c36ba-039a-46e6-ada6-38fa4300f993" direction="Return">
+                  <elementDefinition Id="b6abe410-1c25-44b0-86ff-a18e9648353b" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="14fae608-bfdb-4a2e-a9aa-6c9cc816c1ba" LastKnownName="Boolean" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="4c837559-3804-4667-ae8d-4e2802804d68" name="proposal" direction="In">
+                  <elementDefinition Id="f80848e3-1905-4e06-a64c-af12c592d061" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="621bc980-e345-4040-b3cc-9112be8cb85d" LastKnownName="Marriage Proposal" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="374a22ca-2b5e-4e63-8aa8-e89121d3cc74" name="Produce Baby" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="96a1fc83-8e4b-49fc-b065-f105b1c761d9" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="56f6620a-6ad0-4947-9e4f-2c541a9c4ba9" name="Marriage Proposal" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="7491b6f6-955c-4a05-a08f-0c4283c58fec" />
+        <ownedAttributesInternal>
+          <property Id="5fffe4df-957e-42cb-9e5f-1c99d7767557" name="Husband" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="aeb35259-8afc-4ddd-a2d5-642a23882a61" />
+          </property>
+          <property Id="869feb49-7da4-4314-8aeb-05e929375836" name="Wife" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="93c06aba-c023-4cda-bf10-94df70f7fa70" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a199f502-f41e-4409-affc-f6041791704c" name="SocialSystem" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="8bc0ee28-1b2b-4582-9fb8-d05b24e6b2c5" />
+        <targetEnds>
+          <association Id="70adf8bd-c3d0-444d-80d5-d2888844e74b" isDerived="false" sourceEndRoleName="SocialSystem" targetEndRoleName="Record" isLeaf="false" isAbstract="false">
+            <classMoniker Id="ea68cc8a-2fb1-4a00-840b-8895af46b775" LastKnownName="Record" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7eb5d513-4bd8-4025-bae6-9f61a417e7b5" name="SocialSystem" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="1064c705-1e75-442a-8f33-1cf9ae142d63" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="831a74f9-37b0-49a6-aa3e-07fa7d03c0dc" name="Record" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="11a2739b-0055-47fe-9c37-29ae152d1382" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="e2af0d0a-fbf4-431a-92ea-1207dcf896b8" />
+          </association>
+          <association Id="9691248f-a1a7-47a4-8ea0-6b6a8479158b" isDerived="false" sourceEndRoleName="SocialSystem" targetEndRoleName="Marriage Record" isLeaf="false" isAbstract="false">
+            <classMoniker Id="1c0615fc-3889-4b8b-ac27-46356962a540" LastKnownName="Marriage Record" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="15f01b70-920b-4726-b4f2-6be8768a8bdc" name="SocialSystem" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="c50f1333-b3e6-4336-896c-acafae3eb4e1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="fb5270e2-7c6c-4bf9-a3cf-8aca2d56e80b" name="Marriage Record" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="c380ffa2-4efe-4909-a683-a73fa61c2b4c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="9e9e7c84-db25-4042-93aa-77ff301dfe25" />
+          </association>
+          <association Id="68200f5e-fc29-47ae-94c1-7f0103f48cd6" isDerived="false" sourceEndRoleName="SocialSystem" targetEndRoleName="Divorce Record" isLeaf="false" isAbstract="false">
+            <classMoniker Id="6b024031-acf4-4f26-8283-6b62fd1c08ca" LastKnownName="Divorce Record" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="923b545d-a9dd-4ed6-a3f3-7305513d505d" name="SocialSystem" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="d79e349c-0a65-4959-9989-cb840eb88cab" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3e7bacc6-b115-42ad-80d3-2b6581432091" name="Divorce Record" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="86c5bd0a-7a6b-47d3-9123-24bac4c076aa" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="66294beb-f46b-4d8b-b59f-1d0e14a6c0fc" />
+          </association>
+          <association Id="95a032d8-0323-404c-b98a-a8235db5d9ff" isDerived="false" sourceEndRoleName="SocialSystem" targetEndRoleName="Human Record" isLeaf="false" isAbstract="false">
+            <classMoniker Id="bc42234e-e037-424b-874c-d982e6efc836" LastKnownName="Human Record" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="246aa41d-cb08-45d7-8dd5-91c79d780a3c" name="SocialSystem" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="2229ca92-ba77-4a6d-b34c-a6e7375ebade" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e03d4785-50db-44e3-b1a8-7f25509b1d89" name="Human Record" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="bac8ac98-755a-4294-a954-ac378cadb5d6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="225087dc-548d-4695-a6a4-3263dc528bf6" />
+          </association>
+          <association Id="11c39dad-067d-4dfe-b0f1-57546bc3e5d8" isDerived="false" sourceEndRoleName="SocialSystem" targetEndRoleName="Die Record" isLeaf="false" isAbstract="false">
+            <classMoniker Id="bf972e47-317d-44be-8b8f-0600bd6f3341" LastKnownName="Die Record" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="da549d3d-73fd-4fb4-a490-670474f1b484" name="SocialSystem" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="7059c6b2-e64f-43f9-b680-4bb154331493" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e52b804c-b22f-4bb9-948d-4e8f4eb19328" name="Die Record" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a9557020-2659-4ddd-bec9-3f5063823473" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="ee6a0b90-0135-4775-ab52-26a5f84dfef9" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="f708a189-5593-49eb-8c07-dfb51627f36e" name="Marriage Record List" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3d47fc11-6faa-421f-b12c-83739f786d03" />
+          </property>
+          <property Id="7cce1eb7-0ecd-4185-b29b-8d942e1c8022" name="Divorce Record List" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3660d5d2-7879-42ea-843d-10b74bf0d950" />
+          </property>
+          <property Id="f6afe769-4b1d-4b55-bd2c-2ccaee8a389a" name="Human Record List" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="2dc875ae-64ee-4764-a749-532b8da802da" />
+          </property>
+          <property Id="14b47766-ce62-4ca1-a9c9-47fcd8ced3be" name="Die Record List" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="93336549-7d30-4b40-8e1c-7df7a2b2c456" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="d782cee9-6963-4a0d-ba64-f28ffc044bcc" name="Add Marriage Record" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f6c57927-bb40-41bf-a6b7-60d9a7f7b48e" />
+          </operation>
+          <operation Id="267f3cda-1116-45bd-aa58-1231fce9abf9" name="Add Divorce Record" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="cd563b68-1c90-4019-8814-5830da9534cf" />
+          </operation>
+          <operation Id="e6848154-dad2-4058-8b05-e4aece67803c" name="Add Human Record" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="41d34ee2-da1c-42af-8f26-64e932eb2557" />
+          </operation>
+          <operation Id="ca75a772-8ddb-4f96-a17b-fc6990e91e30" name="Add Die Record" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="78329e06-acc9-4508-b6f2-4122f2d6d7ac" />
+          </operation>
+          <operation Id="50d77813-7128-44f6-8487-4360dc2dd913" name="Get Unmarried Men" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="8a7b9c30-0968-48cd-8cae-5308028bd1dc" />
+          </operation>
+          <operation Id="93ff307d-dc0b-4913-b7cf-cf4e2c7147da" name="Get Unmarried Women" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="cd2367e5-64d5-40d7-a32d-f4e4d3563c63" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="1c0615fc-3889-4b8b-ac27-46356962a540" name="Marriage Record" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="5bac701e-0219-4e70-be89-b0042e0d1a99" />
+        <generalsInternal>
+          <generalization Id="b034e075-e81d-46b8-8861-c9f396479b4a" isSubstitutable="false">
+            <classMoniker Id="ea68cc8a-2fb1-4a00-840b-8895af46b775" LastKnownName="Record" />
+            <elementDefinition Id="06ea26d9-50c0-4214-a839-90fbaf9cf017" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="16015060-c963-4486-b595-76f495aaa489" isDerived="false" sourceEndRoleName="Marriage Record" targetEndRoleName="Marriage Proposal" isLeaf="false" isAbstract="false">
+            <classMoniker Id="56f6620a-6ad0-4947-9e4f-2c541a9c4ba9" LastKnownName="Marriage Proposal" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6e2f10c5-2912-4ec7-9343-2f738a2b411e" name="Marriage Record" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="1b13a1be-0ff9-40d9-be6b-986048172482" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="62925bcd-c5ff-4459-be27-88cc67c6055e" name="Marriage Proposal" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="f1af3ab5-5895-42a2-a514-466b3051d2f2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="5402c2c5-a447-4835-8e75-a7011d359052" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="36dd66f1-b9c4-48f0-aa8b-1bb49b32454d" name="Marriage Proposal" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="5cecfdb0-7832-4e48-9379-d9aa96191bff" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="6b024031-acf4-4f26-8283-6b62fd1c08ca" name="Divorce Record" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e5caa4f9-b98f-49c9-aa0d-9838e2706872" />
+        <generalsInternal>
+          <generalization Id="456dfcde-9639-4ed7-a1fd-82315672ece7" isSubstitutable="false">
+            <classMoniker Id="ea68cc8a-2fb1-4a00-840b-8895af46b775" LastKnownName="Record" />
+            <elementDefinition Id="fb5a582c-c8d7-4aba-b1af-dfbc52dbb338" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="4d7b10c5-bad7-4151-aaef-b89b72d9f653" isDerived="false" sourceEndRoleName="Divorce Record" targetEndRoleName="Marriage Record" isLeaf="false" isAbstract="false">
+            <classMoniker Id="1c0615fc-3889-4b8b-ac27-46356962a540" LastKnownName="Marriage Record" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9b42c04e-eded-47ce-9832-37aea16819ea" name="Divorce Record" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="19f8496b-449b-4d0d-91dc-9450eb6c7b7f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="00bbde3b-2177-4840-babb-8affdec7085d" name="Marriage Record" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="bd4536da-288e-4352-b0ba-de395a2217a8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="ebb5579e-e9a1-468d-b823-a51160acb7c0" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="5b6db2d7-3b8c-4dfb-94d7-a4568e204c30" name="Marriage Record" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="428ecad1-de3c-4134-ab17-459302788786" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="bc42234e-e037-424b-874c-d982e6efc836" name="Human Record" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="bfcd6727-b307-40c3-a5f4-d2f4b54aa7a0" />
+        <generalsInternal>
+          <generalization Id="283a18ee-f00c-44d0-8b06-c8c5bb69a19b" isSubstitutable="false">
+            <classMoniker Id="ea68cc8a-2fb1-4a00-840b-8895af46b775" LastKnownName="Record" />
+            <elementDefinition Id="d98b084e-5e7b-4348-8c8b-67b4a1c27525" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="e5f47fac-58fa-4b88-9b87-f898805c7ba3" isDerived="false" sourceEndRoleName="Human Record" targetEndRoleName="Marriage Record" isLeaf="false" isAbstract="false">
+            <classMoniker Id="1c0615fc-3889-4b8b-ac27-46356962a540" LastKnownName="Marriage Record" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5b1d4e2a-f6e4-46e5-b696-d5b7d98df30c" name="Human Record" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="f2f12eac-af14-4828-8680-bbef3240bc6a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="00b53474-d24d-4d83-8cbb-4ad4ce8c88aa" name="Marriage Record" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d73ecf13-33fd-40f7-bac4-ccb480014808" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="28ec4229-f20a-4f17-9a7e-292e89a38600" />
+          </association>
+          <association Id="3a6ae031-1e4a-4702-9a96-2c758dbfe54a" isDerived="false" sourceEndRoleName="Human Record" targetEndRoleName="Human" isLeaf="false" isAbstract="false">
+            <classMoniker Id="b91e3cd9-10a0-487b-b06e-b2861547c9a3" LastKnownName="Human" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="dbf36a7e-cd03-4106-9b51-a715c6169750" name="Human Record" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="6b72059e-18cc-483e-bd15-648f23e4cc1d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="471bd188-58c4-44ed-8024-c503e62ded41" name="Human" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="3f967e18-ddf4-4deb-8f14-56bc6d2caa08" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="a73562bf-ad74-4c2d-b87d-5361e87f95ed" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="84542a42-fcbb-4855-97a4-50287137efd4" name="Marriage Record" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="76b3f0b6-1449-4d5d-834b-a87e8fd368be" />
+          </property>
+          <property Id="4e5a4fb1-b757-40a9-ba5a-940249636b15" name="Human" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="5cddabc9-3afe-4b17-a3d3-aa328e802d5d" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="bf972e47-317d-44be-8b8f-0600bd6f3341" name="Die Record" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="6f2072a2-da0e-4a7b-bd0d-076bc6cc78ff" />
+        <generalsInternal>
+          <generalization Id="e9dfadba-ecb4-4a93-82a8-fd83b1e97b8a" isSubstitutable="false">
+            <classMoniker Id="ea68cc8a-2fb1-4a00-840b-8895af46b775" LastKnownName="Record" />
+            <elementDefinition Id="55096ef6-0da5-4a26-a5ea-ae3b3295bef6" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="b97e1724-68f3-48e1-806e-de6fad8066c1" isDerived="false" sourceEndRoleName="Die Record" targetEndRoleName="Human" isLeaf="false" isAbstract="false">
+            <classMoniker Id="b91e3cd9-10a0-487b-b06e-b2861547c9a3" LastKnownName="Human" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="25ec664f-5c82-4029-a947-407d2bee3306" name="Die Record" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="5597dad8-ad50-44e2-997e-c28c9529a48f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ce20ec51-6eda-46f8-b8ed-9dfadf5454ae" name="Human" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="32e2ed32-c157-4745-8a48-b8f632a260f7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c798c815-1fc7-49ff-bb1c-d65cc169bb4e" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="2a5da9c0-f466-4f90-b6d1-72573ffd524b" name="Human" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="7659a1e0-39b9-466a-a507-c99e230fd09b" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="ea68cc8a-2fb1-4a00-840b-8895af46b775" name="Record" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="04f08b88-11af-4206-b5c0-74593e90bad2" />
+        <ownedAttributesInternal>
+          <property Id="d9c84198-e6c4-495d-8ba4-3ecf151f3f3a" name="Record Date" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4e78cc9c-94f2-43e0-b74e-42014e72c025" />
+          </property>
+          <property Id="cfcab35d-6d9b-420c-81bc-8010290f69b3" name="Record State" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="55f2cab7-5801-45cc-a037-23930be1bb58" />
+          </property>
+          <property Id="7ebe8a04-831d-4070-b56c-41643d955c0d" name="Record ID" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="90d0204f-188c-46e9-8f4b-f87135a3ee26" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="0f21a538-b8b4-4b26-b035-6e195fb6770e" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
+        <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="14fae608-bfdb-4a2e-a9aa-6c9cc816c1ba" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
+        <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="621bc980-e345-4040-b3cc-9112be8cb85d" name="Marriage Proposal" isAbstract="false" isLeaf="false" cachedFullName="Social System Model::Marriage Proposal">
+        <elementDefinition Id="7491b6f6-955c-4a05-a08f-0c4283c58fec" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="ea33eb8b-94e1-406b-9056-49efeb24af38" name="Social System Model">
+    <elementDefinition Id="b9e6d820-cef7-4ea9-adcf-7f741d02be4e" />
+  </package>
+</logicalClassDesignerModel>

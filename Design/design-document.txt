@@ -1,0 +1,168 @@
+- The Simulation game is a real-time strategy game and tactical game, also includes a heavy civilization building and resource management gaming.
+- Starting game :
+	- The player starts the game by choosing a map from a pre-defined maps in the game, or the player can create his own map using the map editor come with game.
+	- The player choose the civilization name and set some settings for the game like
+		- The difficulty of the simulation (easy - normal - hard)
+		- The starting population of the civilization.
+		- The number of players to play with
+		- The starting technology of the civilizations.
+		- The amount of resources in the map.
+	- The players assigned a random locations on the map assuming they have simi-equal resource reach.
+- Game Time :
+	- The game starts from the date 01 / 01 / 0001
+	- The game progressed by one day
+	- The game comes with 3 different speeds :
+		1 - Normal : which is very slow (one game day = one real hour)
+		2 - Playable : which is valid for real play (one game day = 5 real minutes)
+		3 - Hurry : which progresses the game fast (one game day = 1 real minute)
+		4 - Rocket : which progresses the game very fast (one game day = 10 real second)
+- Game Maps
+	- There are 3 types of game maps:
+		- Small Map : supports up to 2 players.
+		- Medium Map : supports up to 4 players.
+		- Large Map : supports up to 8 players.
+	- The map contain some pre-determined resources dispatched in the map.
+	- There are some spots that the player can start with, to prevent starting in invalid location (see, high mountain, ...)
+- Game Players
+	- The other players can be any combination of the following
+		- AI Player : which the computer play against you.
+		- LAN Player : which the player play through a LAN network.
+		- Internet Player : which the player play through the internet.
+- Game Playing:
+	- The game starts with initial populaiton to the civilization, and initial resources that make the people life for 6 months at most.
+	- The player should manage the civilization to survive and become the strongest civil in the map.
+	- The civilization is progressed in the time through the research center that the player can have to research new technology
+	  which unlocks imporvements.
+	- There are plenty of buildings and actions that the player can take to improve the civilization.
+	- If all civilians of civilization is vanished, the player lose.
+	- The player handle the civilizatoin through multi-systems that compose the civilization.
+	- Each citizin in the game is act by himself with an intelligent AI guided by the player actoins in different system.
+- Civilization power score:
+	- The game playing score is determined by the power score which contain a ratio of the score of each system.
+- The game systems.
+	- The game contain the following systems:
+		01 - Social System : which maintain the population.
+		02 - Financial System : which maintain the money.
+		03 - Resources System : which maintain the raw resources in the civilization.
+		04 - Supply System : which maintain the goods providing to the people.
+		05 - Politics System : which maintain the type of government in the civilization.
+		06 - Diplomacy System : which maintain the relations with others.
+		07 - Trade System : which maintain the trading through the civilization or with others.
+		08 - Defence System : which maintain the army.
+		09 - Security System : which maintain the security and police in the civilization.
+		10 - Manufacturing System : which maintain the factories and production.
+		11 - Health System : which maintain the helth of the people.
+		12 - Agriculture System : which maintain the farms and plants and animals in the civilization.
+		13 - Education System : which maintain the learning process of people.
+		14 - Housing System : which maintain the housing providing in the game.
+		15 - Religion System : which maintain the religion in the civilization.
+		16 - Facilities System : which maintain providing water, electricity, garbage, ...
+		17 - Transport System : which maintain the transportaiton and roads.
+		18 - Employment System : which maintain providing jobs for people.
+		19 - Sports System : which maintain the sports in the civilization.
+		20 - Entertainment System : which maintain all resources of entertainment in the civilization.
+		21 - Environment System : which maintain providing good appeal in the land.
+		22 - Research System : which maintain researching new technologies in the game.
+	- Each system has its (score, buildings, jobs, .....).
+	- Each System can query some information of the other systems to help it decide what to do.
+	- The player can put any system under the AI control to let the computer decide what to do.
+- The Social System :
+	- The main resources of the system is :
+		- The Human (Man, Women)
+		- The Family (consists of Humans)
+	- It resposibe for the following :
+		- It keeps information about each human in the game :
+			- name
+			- sex
+			- date of birth
+			- social ID
+		- It maintain information about each family
+			- Father
+			- Mother
+			- Childs
+		- Set some properties about how the system work like :
+			- minimum/maximum man marriage age.
+			- minimum/maximum woman marriage age.
+	- The buildings associated :
+	- The technologies associated :
+	- The Jobs associated :
+	- The score computations :
+		- Population Size.
+		- Ratio of youth / old.
+		- Rate of marriages / Rate of divorcing.
+- The Financial System :
+	- The main resources of the system is :
+		- Money
+	- It resposibe for the following :
+		- Paying wages for workers.
+		- Providing information about the amount of money the civilization has.
+		- Providing information about the income and outcome of all systems.
+		- Providing a budget for every system in the game.
+	- The buildings associated :
+	- The technologies associated :
+	- The Jobs associated :
+	- The score computations :
+		- The amount of money.
+		- Income / Outcome.
+- The Resources System :
+	- The main resources of the system is :
+		- Logs
+		- Stone
+		- Iron
+	- It resposinble for the following :
+		- Providing information about the current stock of raw resources
+		- Providing information about the known locations of raw resources
+		- Providing jobs for collecting raw resources
+		- Manage budget of the system.
+		- Providing building the required resource collecting buildings.
+	- The buildings associated :
+		- Lumber camp : to cut Trees and collect Logs
+		- Stone Quarry : to collect stones
+		- Iron Mine : to collect iron.
+	- The technologies associated :
+		- Stone Age : unlocks
+			- Stone raw resources
+			- Stone Quarry building
+			- Stoneman Job
+		- Iron Age : unlocks the iron raw resource
+			- Iron raw resources
+			- Iron mine building
+			- Iron Miner Job
+	- The Jobs associated :
+		- Lumberjack : who cuts the trees
+		- Stoneman : who collect stones from stone quarry
+		- Iron Miner : who mines Iron from the Iron Mine
+	- The score computations :
+		- Resources Exists.
+		- Reserve Resources to be collected.
+- The Game AI:
+	- Human AI :
+		- General Life Time-line
+			- As the human be a new born, he feeds from his mother and attached to her, until he reach 2 years.
+			- when 2 years : he start moving behind his family but do nothing
+			- when 6 years : 
+				- if a primary school exist : the child enter it under these condition
+					- his family can pay the education fees.
+					- his family is likely an educated people with some ratio, which mean great probability for educated people.
+					- the distance between his home and school
+					- a random probability.
+				- when no primary school, or not enter school, he help his father in his work.
+			- when the human is educated, he will in schools until he reach 20 year.
+			- when not educated, and reach 16 year, he starts his true life.
+			- if he reach the marriage age, he starts search about his wife.
+			- for educated people :
+				- he will in schools until he reach 20 year.
+				- when he graduated, he start search a suiatable job by asking the employment system.
+			- for non educated people :
+				- he help his father in his job if he can, also with random probability, until 16 year.
+				- when 16 year : he start search about a job by asking the employment system to find him suitable job.			
+			- when he reach the age of retired, he stay at his home until he dies.	
+			- The dying age is choosen randomly.
+		- Finding Job AI :
+		- Finding Wife AI :
+		- Family AI :
+		- Suppling AI : 
+
+
+
+	

@@ -1,0 +1,2099 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
+  dslVersion="1.0.0.0"
+  Id="b9e6d820-cef7-4ea9-adcf-7f741d02be4e"
+  name="Social System Model" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <actor
+        Id="37919392-b7d2-474a-8d67-afa048d2d860"
+        name="Man"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="64f2d8f1-65fd-48c8-8a88-f0d3caee95e0"
+            isSubstitutable="false">
+            <actorMoniker
+              Id="93482550-8177-40ce-bc23-1dec4dc726b6"
+              LastKnownName="Human"
+              LastKnownLocation="Social System Model.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="2b53231e-50de-4947-bbbf-929805b0a4b4"
+            isDerived="false"
+            sourceEndRoleName="Man"
+            targetEndRoleName="As a Man, I can search about a suitable Wife"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="c094a1da-c221-4475-9110-4453b24e93f5"
+              LastKnownName="As a Man, I can search about a suitable Wife"
+              LastKnownLocation="Social System Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="cdc08bd1-0712-4ad8-9748-caff6327c85d"
+                  name="Man"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="92481ec0-642f-4c14-b1aa-809f58d6fa26"
+                  name="As a Man, I can search about a suitable Wife"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="e97d8a8d-1db8-4d6a-b934-27facc2a3617"
+            isDerived="false"
+            sourceEndRoleName="Man"
+            targetEndRoleName="As an Unmarried Man, I can Propse a Marriage to Woman"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="087b190f-827b-492b-a8f6-fbb356d4cd24"
+              LastKnownName="As an Unmarried Man, I can Propse a Marriage to Woman"
+              LastKnownLocation="Social System Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="430d837d-f6a7-41c7-ab56-fe50234096bf"
+                  name="Man"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ea16f417-90f8-465a-b99c-bea80cbfe0a4"
+                  name="As an Unmarried Man, I can Propse a Marriage to Woman"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="7b71e068-4916-4ea2-8a44-7854f177351b"
+            isDerived="false"
+            sourceEndRoleName="Man"
+            targetEndRoleName="As a Married Man, I can divorce my wife"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="df939407-2b70-490d-9ca3-cb089dda044c"
+              LastKnownName="As a Married Man, I can divorce my wife"
+              LastKnownLocation="Social System Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="357f005f-565c-4c78-bcf5-0258505fbb83"
+                  name="Man"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="bdeea7a6-7ee4-4569-8e16-35407cf714e6"
+                  name="As a Married Man, I can divorce my wife"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="eaa62583-36c4-4f8e-b198-383eea6daf3b"
+            isDerived="false"
+            sourceEndRoleName="Man"
+            targetEndRoleName="As a Man, I Can Marry a suitable another Woman"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="ccd59daa-e1b0-46f6-8555-cf5fc0aea27c"
+              LastKnownName="As a Man, I Can Marry a suitable another Woman"
+              LastKnownLocation="Social System Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1a4c5dab-b279-4e73-9b2a-3796383bfd25"
+                  name="Man"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="400c82ab-8859-43db-a62d-62038b4bff29"
+                  name="As a Man, I Can Marry a suitable another Woman"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="7bd8ad70-c4e7-4f99-ad45-34541459e3cf"
+        name="Woman"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="4d2fe558-3768-4d2b-bdef-b390d060beba"
+            isSubstitutable="false">
+            <actorMoniker
+              Id="93482550-8177-40ce-bc23-1dec4dc726b6"
+              LastKnownName="Human"
+              LastKnownLocation="Social System Model.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="cce4767b-2e9d-454d-8c0f-44f13b9676e8"
+            isDerived="false"
+            sourceEndRoleName="Woman"
+            targetEndRoleName="As an Unmarried Woman, I can Accept Marriage proposal"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="7d88322e-dfea-4820-acd6-f254c9ae06bd"
+              LastKnownName="As an Unmarried Woman, I can Accept Marriage proposal"
+              LastKnownLocation="Social System Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a89f8dba-4c3f-4a23-a9a2-573c83bbae59"
+                  name="Woman"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ed7033d8-c6aa-40bf-bf94-11670aa3783c"
+                  name="As an Unmarried Woman, I can Accept Marriage proposal"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="389fd382-07c1-4be1-8f87-8a12c3e6500e"
+            isDerived="false"
+            sourceEndRoleName="Woman"
+            targetEndRoleName="As an Unmarried Woman, I can Refuse Marriage Proposal"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="edbe9f29-0908-4fb5-9722-41ccd7f8cedd"
+              LastKnownName="As an Unmarried Woman, I can Refuse Marriage Proposal"
+              LastKnownLocation="Social System Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5820ea00-2ae6-4188-8a16-ab99da1b1077"
+                  name="Woman"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5ed1482e-6963-4b34-b882-ed86acf24e79"
+                  name="As an Unmarried Woman, I can Refuse Marriage Proposal"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="f6cd48b0-98ea-480a-bb0f-f6b738a0948e"
+            isDerived="false"
+            sourceEndRoleName="Woman"
+            targetEndRoleName="As a Married Human, I can try to Produce a baby"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="ceca7063-2886-4d3e-bce3-0f737cb4b8eb"
+              LastKnownName="As a Married Woman, I can try to Produce a baby"
+              LastKnownLocation="Social System Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="61a3a235-ff22-414a-a445-8238f4dffb0f"
+                  name="Woman"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="29c1b4f1-1c99-425a-881d-abe06bd0cacf"
+                  name="As a Married Human, I can try to Produce a baby"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="93482550-8177-40ce-bc23-1dec4dc726b6"
+        name="Human"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="bd3aed88-da4a-4320-8dae-05fdcd719687"
+            isDerived="false"
+            sourceEndRoleName="Human"
+            targetEndRoleName="As a Human, I will Die if I reach my fate"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="602e3821-3e07-40d8-adf6-2d655fb013ad"
+              LastKnownName="As a Human, I will Die if I reach my fate"
+              LastKnownLocation="Social System Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f26ee908-6cba-448b-8840-572bfe0e2cf9"
+                  name="Human"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8feba494-4167-484d-ab45-4a8879307567"
+                  name="As a Human, I will Die if I reach my fate"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="ccd59daa-e1b0-46f6-8555-cf5fc0aea27c"
+        name="As a Man, I Can Marry a suitable another Woman"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="c246a3df-6162-407c-96b7-0972a908f0d8">
+            <useCaseMoniker
+              Id="c094a1da-c221-4475-9110-4453b24e93f5"
+              LastKnownName="As a Man, I can search about a suitable Wife"
+              LastKnownLocation="Social System Model.uml" />
+          </extend>
+        </extendedCases>
+        <subjects>
+          <subsystemMoniker
+            Id="5c4d83db-622a-4221-b3f6-965907ad3f91"
+            LastKnownName="Marriage Relationship"
+            LastKnownLocation="Social System Model.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="ceca7063-2886-4d3e-bce3-0f737cb4b8eb"
+        name="As a Married Woman, I can try to Produce a baby"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="6ca2f6a1-04bb-464d-84c6-3811617a0ee1">
+            <useCaseMoniker
+              Id="9904477b-6dd2-42b5-9f88-c1ebe1d0a251"
+              LastKnownName="As a Social System, I can Register a new Marriage"
+              LastKnownLocation="Social System Model.uml" />
+          </dependency>
+        </suppliersInternal>
+        <extendedCases>
+          <extend
+            Id="6b7c37c1-1bdb-471c-8241-f5785ffd6c48">
+            <useCaseMoniker
+              Id="3d1a3e77-170e-4205-9096-7e2ef093cc96"
+              LastKnownName="As a Social System, I can Register a New Child in a Family"
+              LastKnownLocation="Social System Model.uml" />
+          </extend>
+        </extendedCases>
+        <subjects>
+          <subsystemMoniker
+            Id="5c4d83db-622a-4221-b3f6-965907ad3f91"
+            LastKnownName="Marriage Relationship"
+            LastKnownLocation="Social System Model.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="602e3821-3e07-40d8-adf6-2d655fb013ad"
+        name="As a Human, I will Die if I reach my fate"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="ed2c1c7e-5488-4b94-b046-b4ba3913e1b1">
+            <useCaseMoniker
+              Id="3e9bba2e-bd70-4f8f-9619-10fa0584bb20"
+              LastKnownName="As a Social System, I can register a Died Human"
+              LastKnownLocation="Social System Model.uml" />
+          </extend>
+        </extendedCases>
+        <subjects>
+          <subsystemMoniker
+            Id="5c4d83db-622a-4221-b3f6-965907ad3f91"
+            LastKnownName="Marriage Relationship"
+            LastKnownLocation="Social System Model.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="c094a1da-c221-4475-9110-4453b24e93f5"
+        name="As a Man, I can search about a suitable Wife"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="61268e7d-bc12-42c0-b641-1e619067641c">
+            <useCaseMoniker
+              Id="fcb157d6-07db-42be-82b3-d6c62d1932e3"
+              LastKnownName="As a Social System, I can get a list with all unmarried womans that are suitable for certain man"
+              LastKnownLocation="Social System Model.uml" />
+          </extend>
+          <extend
+            Id="5c8c7fe5-e342-4a8a-b290-89afcc836667">
+            <useCaseMoniker
+              Id="087b190f-827b-492b-a8f6-fbb356d4cd24"
+              LastKnownName="As an Unmarried Man, I can Propse a Marriage to Woman"
+              LastKnownLocation="Social System Model.uml" />
+          </extend>
+        </extendedCases>
+        <subjects>
+          <subsystemMoniker
+            Id="5c4d83db-622a-4221-b3f6-965907ad3f91"
+            LastKnownName="Marriage Relationship"
+            LastKnownLocation="Social System Model.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="512f8973-83a6-4c1c-b959-d2fb5fcb95d8"
+        name="Social System"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="a75bd1a8-0ebe-4bad-bfed-091bdb281c66"
+            isDerived="false"
+            sourceEndRoleName="Social System"
+            targetEndRoleName="As a Social System, I can get a list with all unmarried womans that are suitable for certain man"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="fcb157d6-07db-42be-82b3-d6c62d1932e3"
+              LastKnownName="As a Social System, I can get a list with all unmarried womans that are suitable for certain man"
+              LastKnownLocation="Social System Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2fad548e-8c4f-45b1-bdd2-0579e6963570"
+                  name="Social System"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="20b43f2e-158a-45b4-b381-7f2e83412e93"
+                  name="As a Social System, I can get a list with all unmarried womans that are suitable for certain man"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="f3660d76-9cd9-462e-b378-68059082cce1"
+            isDerived="false"
+            sourceEndRoleName="Social System"
+            targetEndRoleName="As a Social System, I can Register a new Marriage"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="9904477b-6dd2-42b5-9f88-c1ebe1d0a251"
+              LastKnownName="As a Social System, I can Register a new Marriage"
+              LastKnownLocation="Social System Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="30c383f3-a7dc-4f6f-9559-a80f949d2e02"
+                  name="Social System"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="82657a3d-9506-49fa-8ba3-385d87922de4"
+                  name="As a Social System, I can Register a new Marriage"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="a0c9c6e4-c645-4884-9fa5-ccc1b4763569"
+            isDerived="false"
+            sourceEndRoleName="Social System"
+            targetEndRoleName="As a Social System, I can Register a New Child in a Family"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="3d1a3e77-170e-4205-9096-7e2ef093cc96"
+              LastKnownName="As a Social System, I can Register a New Child in a Family"
+              LastKnownLocation="Social System Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="04e30bdb-f4a4-45cb-b7ec-2d7e862ff5e7"
+                  name="Social System"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ae9b76b3-c540-484f-89c0-8c762842c543"
+                  name="As a Social System, I can Register a New Child in a Family"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="c4e6ae8d-d950-45ef-ae6b-0880497602a1"
+            isDerived="false"
+            sourceEndRoleName="Social System"
+            targetEndRoleName="As a Social System, I can register a Divorced Wife"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="030704f2-bb1a-4d47-a3f8-bdebf5974d58"
+              LastKnownName="As a Social System, I can register a Divorced Wife"
+              LastKnownLocation="Social System Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="40c07611-3105-4889-b8e6-392d9fa43b77"
+                  name="Social System"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1f73564a-9e3f-469e-a9f6-9446d5bbc099"
+                  name="As a Social System, I can register a Divorced Wife"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="3bd662c2-afe5-423a-8f19-f7aa1719132a"
+            isDerived="false"
+            sourceEndRoleName="Social System"
+            targetEndRoleName="As a Social System, I can register a Died Human"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="3e9bba2e-bd70-4f8f-9619-10fa0584bb20"
+              LastKnownName="As a Social System, I can register a Died Human"
+              LastKnownLocation="Social System Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7081d99c-8b56-45ca-a35a-aa17aed1c94b"
+                  name="Social System"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d733164e-82a8-4ff7-a5c3-74188834776b"
+                  name="As a Social System, I can register a Died Human"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="fcb157d6-07db-42be-82b3-d6c62d1932e3"
+        name="As a Social System, I can get a list with all unmarried womans that are suitable for certain man"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="8a0ed5b9-f5ad-4023-a70c-d751d8d1c48f"
+            LastKnownName="Social System"
+            LastKnownLocation="Social System Model.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="7d88322e-dfea-4820-acd6-f254c9ae06bd"
+        name="As an Unmarried Woman, I can Accept Marriage proposal"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="93a0ac12-13c0-49b4-88c3-0c7b5f92535c">
+            <useCaseMoniker
+              Id="9904477b-6dd2-42b5-9f88-c1ebe1d0a251"
+              LastKnownName="As a Social System, I can Register a new Marriage"
+              LastKnownLocation="Social System Model.uml" />
+          </extend>
+        </extendedCases>
+        <subjects>
+          <subsystemMoniker
+            Id="5c4d83db-622a-4221-b3f6-965907ad3f91"
+            LastKnownName="Marriage Relationship"
+            LastKnownLocation="Social System Model.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="edbe9f29-0908-4fb5-9722-41ccd7f8cedd"
+        name="As an Unmarried Woman, I can Refuse Marriage Proposal"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="5c4d83db-622a-4221-b3f6-965907ad3f91"
+            LastKnownName="Marriage Relationship"
+            LastKnownLocation="Social System Model.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="087b190f-827b-492b-a8f6-fbb356d4cd24"
+        name="As an Unmarried Man, I can Propse a Marriage to Woman"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="748c7ab1-64e0-45bd-b2bc-63c184e3c1d5">
+            <useCaseMoniker
+              Id="7d88322e-dfea-4820-acd6-f254c9ae06bd"
+              LastKnownName="As an Unmarried Woman, I can Accept Marriage proposal"
+              LastKnownLocation="Social System Model.uml" />
+          </extend>
+          <extend
+            Id="93ad842f-e139-406d-a5ae-7350a27dfbfe">
+            <useCaseMoniker
+              Id="edbe9f29-0908-4fb5-9722-41ccd7f8cedd"
+              LastKnownName="As an Unmarried Woman, I can Refuse Marriage Proposal"
+              LastKnownLocation="Social System Model.uml" />
+          </extend>
+        </extendedCases>
+        <subjects>
+          <subsystemMoniker
+            Id="5c4d83db-622a-4221-b3f6-965907ad3f91"
+            LastKnownName="Marriage Relationship"
+            LastKnownLocation="Social System Model.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="9904477b-6dd2-42b5-9f88-c1ebe1d0a251"
+        name="As a Social System, I can Register a new Marriage"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="8a0ed5b9-f5ad-4023-a70c-d751d8d1c48f"
+            LastKnownName="Social System"
+            LastKnownLocation="Social System Model.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="3d1a3e77-170e-4205-9096-7e2ef093cc96"
+        name="As a Social System, I can Register a New Child in a Family"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="8a0ed5b9-f5ad-4023-a70c-d751d8d1c48f"
+            LastKnownName="Social System"
+            LastKnownLocation="Social System Model.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="df939407-2b70-490d-9ca3-cb089dda044c"
+        name="As a Married Man, I can divorce my wife"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="0087d63e-6e11-48a9-8ece-ae8cfe9f80b5">
+            <useCaseMoniker
+              Id="9904477b-6dd2-42b5-9f88-c1ebe1d0a251"
+              LastKnownName="As a Social System, I can Register a new Marriage"
+              LastKnownLocation="Social System Model.uml" />
+          </dependency>
+        </suppliersInternal>
+        <extendedCases>
+          <extend
+            Id="d97c173a-f2c3-4804-bdc3-c973b3228cc9">
+            <useCaseMoniker
+              Id="030704f2-bb1a-4d47-a3f8-bdebf5974d58"
+              LastKnownName="As a Social System, I can register a Divorced Wife"
+              LastKnownLocation="Social System Model.uml" />
+          </extend>
+        </extendedCases>
+        <subjects>
+          <subsystemMoniker
+            Id="5c4d83db-622a-4221-b3f6-965907ad3f91"
+            LastKnownName="Marriage Relationship"
+            LastKnownLocation="Social System Model.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="030704f2-bb1a-4d47-a3f8-bdebf5974d58"
+        name="As a Social System, I can register a Divorced Wife"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="8a0ed5b9-f5ad-4023-a70c-d751d8d1c48f"
+            LastKnownName="Social System"
+            LastKnownLocation="Social System Model.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <subsystem
+        Id="5c4d83db-622a-4221-b3f6-965907ad3f91"
+        name="Marriage Relationship"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <subsystem
+        Id="8a0ed5b9-f5ad-4023-a70c-d751d8d1c48f"
+        name="Social System"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="3e9bba2e-bd70-4f8f-9619-10fa0584bb20"
+        name="As a Social System, I can register a Died Human"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="8a0ed5b9-f5ad-4023-a70c-d751d8d1c48f"
+            LastKnownName="Social System"
+            LastKnownLocation="Social System Model.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="bf458532-fb46-46d1-a941-db221a23add8"
+        name="MarriageProposalActivity"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="2e07c8ab-ac0c-4d4b-8b7d-8aae3ca3d3ef"
+            name="Init Marriage Proposal"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="11835a85-5169-4eec-bdef-c3ba296b2e07"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="ce28b221-98ac-4023-96de-f38a9ea79361"
+                  LastKnownName="Is Man is Married?"
+                  LastKnownLocation="Social System Model.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="ce28b221-98ac-4023-96de-f38a9ea79361"
+            name="Is Man is Married?"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="353acae1-2075-425c-bf0d-2a394167409e"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="b1cc33f8-a76d-4b34-9536-4cc5bec95fa2"
+                  LastKnownName="Married Man Decesion"
+                  LastKnownLocation="Social System Model.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="b1cc33f8-a76d-4b34-9536-4cc5bec95fa2"
+            name="Married Man Decesion"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="32288efa-fa55-461f-9b62-6659fa7b131b"
+                guard="Yes"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="8f93cd0d-d50f-43db-b5a2-6f78e940575b"
+                  LastKnownName="Marriage Proposal Final"
+                  LastKnownLocation="Social System Model.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="1df45c57-bedf-4585-a604-9ca8e9e55d9c"
+                guard="No"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="efd74f90-0c6f-4ace-a22a-02ae58441869"
+                  LastKnownName="List Women"
+                  LastKnownLocation="Social System Model.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <activityFinalNode
+            Id="8f93cd0d-d50f-43db-b5a2-6f78e940575b"
+            name="Marriage Proposal Final"
+            isLeaf="false" />
+          <opaqueAction
+            Id="efd74f90-0c6f-4ace-a22a-02ae58441869"
+            name="List Women"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="f0aa9395-67e2-4350-bbb3-6f22b1525dfd"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="83e30b35-d73f-4328-9609-ab67cbbf8490"
+                  LastKnownName="Women List Decision"
+                  LastKnownLocation="Social System Model.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="83e30b35-d73f-4328-9609-ab67cbbf8490"
+            name="Women List Decision"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="3142fce7-37d9-4446-8eed-526e6a3da697"
+                guard="List Is Empty"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="8f93cd0d-d50f-43db-b5a2-6f78e940575b"
+                  LastKnownName="Marriage Proposal Final"
+                  LastKnownLocation="Social System Model.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="1d65c196-b3f1-45c8-8277-a34cbadf2db5"
+                guard="List Is Not Empty"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="805a1a36-558c-4875-9f25-35daea0e0370"
+                  LastKnownName="Choose a Woman"
+                  LastKnownLocation="Social System Model.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="805a1a36-558c-4875-9f25-35daea0e0370"
+            name="Choose a Woman"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="b44005aa-1396-44c8-a6de-f8c6f2b9216f"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="15979899-e55b-439f-abf2-60e2cd0ae73f"
+                  LastKnownName="Propose Marriage"
+                  LastKnownLocation="Social System Model.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="15979899-e55b-439f-abf2-60e2cd0ae73f"
+            name="Propose Marriage"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="f47e138d-92b5-4288-a33d-9739d6f3dd29"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="fd8c7c69-a74f-4463-bcfe-d14c939c22f8"
+                  LastKnownName="Woman Openion Decision"
+                  LastKnownLocation="Social System Model.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="fd8c7c69-a74f-4463-bcfe-d14c939c22f8"
+            name="Woman Openion Decision"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="3de92200-4372-4fdd-bbeb-791ce08fd327"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="542859c5-213a-42d3-a98f-6b8d592d88cb"
+                  LastKnownName="Woman Refuse Propsal"
+                  LastKnownLocation="Social System Model.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="a867e2f4-f0db-407f-972b-13e53f191005"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="34b7f02c-19ec-40e5-bdf1-e8c852f7b661"
+                  LastKnownName="Woman Accept Proposal"
+                  LastKnownLocation="Social System Model.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="542859c5-213a-42d3-a98f-6b8d592d88cb"
+            name="Woman Refuse Propsal"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ed3000a6-8a8b-4a46-b8a1-1c4e5d5b2bd6"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="efd74f90-0c6f-4ace-a22a-02ae58441869"
+                  LastKnownName="List Women"
+                  LastKnownLocation="Social System Model.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="34b7f02c-19ec-40e5-bdf1-e8c852f7b661"
+            name="Woman Accept Proposal"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="fd33e6e3-2f62-439b-80b6-44a6e3535691"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="7237e874-7dc4-4793-abf2-db2dee5947e3"
+                  LastKnownName="Register Marriage"
+                  LastKnownLocation="Social System Model.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="7237e874-7dc4-4793-abf2-db2dee5947e3"
+            name="Register Marriage"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ba13d0d5-3260-4417-8034-b460b5dad19d"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="8f93cd0d-d50f-43db-b5a2-6f78e940575b"
+                  LastKnownName="Marriage Proposal Final"
+                  LastKnownLocation="Social System Model.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="59b6a283-311f-424a-a226-ca1ba41e8775"
+        name="Human"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="f861b8e0-f865-4f0a-ab84-7b264a95f1f2"
+            name="Name"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="beceb45e-78f4-4b04-92b1-244a6e99774e"
+            name="Die"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="cf42f69f-d9c8-46d5-b6d0-30a92292fea7"
+        name="Man"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="50c24961-64d5-41ba-ba2f-999396b3f0b7"
+            isSubstitutable="false">
+            <classMoniker
+              Id="59b6a283-311f-424a-a226-ca1ba41e8775"
+              LastKnownName="Human"
+              LastKnownLocation="Social System Model.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="7d70fe24-5bf0-4ecf-a7ce-38385cc4fb6c"
+            isDerived="false"
+            sourceEndRoleName="Man"
+            targetEndRoleName="Marriage Proposal"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="7491b6f6-955c-4a05-a08f-0c4283c58fec"
+              LastKnownName="Marriage Proposal"
+              LastKnownLocation="Social System Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="60c80527-3db8-40c6-a8fa-d0491b17c6a3"
+                  name="Man"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="699f6045-4ccf-4cf5-92aa-faf670f42ec0"
+                  name="Marriage Proposal"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation
+            Id="07ef7e97-04b6-426b-9283-00f9f5da449a"
+            name="Marry"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="27628802-d027-4413-b52f-1888606a2f78"
+            name="Divorce"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="af1d0a67-1297-4c35-9f0d-4ce015dc93b5"
+        name="Woman"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="4d25b5df-caf1-4539-bebe-927ba1bb2c96"
+            isSubstitutable="false">
+            <classMoniker
+              Id="59b6a283-311f-424a-a226-ca1ba41e8775"
+              LastKnownName="Human"
+              LastKnownLocation="Social System Model.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="c5024732-4b3f-4a3b-97d4-4243b3cf0b23"
+            isDerived="false"
+            sourceEndRoleName="Woman"
+            targetEndRoleName="Marriage Proposal"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="7491b6f6-955c-4a05-a08f-0c4283c58fec"
+              LastKnownName="Marriage Proposal"
+              LastKnownLocation="Social System Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7b00df1a-4d03-459d-ba74-f27a37d14422"
+                  name="Woman"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="31f596a7-efd1-4b0b-b4d8-e8737b3aa84b"
+                  name="Marriage Proposal"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation
+            Id="399c0aa9-47f1-43f2-8d40-cd78bdfa93f7"
+            name="Accept Marriage Proposal"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ace158a9-8de7-4e51-8b06-e5ff22d108d7"
+                  name="porpsal"
+                  direction="In">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="7491b6f6-955c-4a05-a08f-0c4283c58fec"
+                      LastKnownName="Marriage Proposal"
+                      LastKnownLocation="Social System Model.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="352c7c01-9d13-4a73-aed3-1bedb980c931"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="Social System Model.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="538ab16d-305f-4d0f-8e7b-4d54797ece9b"
+            name="Refuse Marriage Propsal"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b6abe410-1c25-44b0-86ff-a18e9648353b"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="Social System Model.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f80848e3-1905-4e06-a64c-af12c592d061"
+                  name="proposal"
+                  direction="In">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="7491b6f6-955c-4a05-a08f-0c4283c58fec"
+                      LastKnownName="Marriage Proposal"
+                      LastKnownLocation="Social System Model.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="96a1fc83-8e4b-49fc-b065-f105b1c761d9"
+            name="Produce Baby"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="af73134b-1611-4e91-8e88-8baf60f47577"
+        name="Marriage"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="7491b6f6-955c-4a05-a08f-0c4283c58fec"
+        name="Marriage Proposal"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="aeb35259-8afc-4ddd-a2d5-642a23882a61"
+            name="Husband"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="93c06aba-c023-4cda-bf10-94df70f7fa70"
+            name="Wife"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="8bc0ee28-1b2b-4582-9fb8-d05b24e6b2c5"
+        name="SocialSystem"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="e2af0d0a-fbf4-431a-92ea-1207dcf896b8"
+            isDerived="false"
+            sourceEndRoleName="SocialSystem"
+            targetEndRoleName="Record"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="04f08b88-11af-4206-b5c0-74593e90bad2"
+              LastKnownName="Record"
+              LastKnownLocation="Social System Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1064c705-1e75-442a-8f33-1cf9ae142d63"
+                  name="SocialSystem"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="11a2739b-0055-47fe-9c37-29ae152d1382"
+                  name="Record"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="9e9e7c84-db25-4042-93aa-77ff301dfe25"
+            isDerived="false"
+            sourceEndRoleName="SocialSystem"
+            targetEndRoleName="Marriage Record"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="5bac701e-0219-4e70-be89-b0042e0d1a99"
+              LastKnownName="Marriage Record"
+              LastKnownLocation="Social System Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c50f1333-b3e6-4336-896c-acafae3eb4e1"
+                  name="SocialSystem"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c380ffa2-4efe-4909-a683-a73fa61c2b4c"
+                  name="Marriage Record"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="66294beb-f46b-4d8b-b59f-1d0e14a6c0fc"
+            isDerived="false"
+            sourceEndRoleName="SocialSystem"
+            targetEndRoleName="Divorce Record"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="e5caa4f9-b98f-49c9-aa0d-9838e2706872"
+              LastKnownName="Divorce Record"
+              LastKnownLocation="Social System Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d79e349c-0a65-4959-9989-cb840eb88cab"
+                  name="SocialSystem"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="86c5bd0a-7a6b-47d3-9123-24bac4c076aa"
+                  name="Divorce Record"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="225087dc-548d-4695-a6a4-3263dc528bf6"
+            isDerived="false"
+            sourceEndRoleName="SocialSystem"
+            targetEndRoleName="Human Record"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="bfcd6727-b307-40c3-a5f4-d2f4b54aa7a0"
+              LastKnownName="Human Record"
+              LastKnownLocation="Social System Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2229ca92-ba77-4a6d-b34c-a6e7375ebade"
+                  name="SocialSystem"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="bac8ac98-755a-4294-a954-ac378cadb5d6"
+                  name="Human Record"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="ee6a0b90-0135-4775-ab52-26a5f84dfef9"
+            isDerived="false"
+            sourceEndRoleName="SocialSystem"
+            targetEndRoleName="Die Record"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="6f2072a2-da0e-4a7b-bd0d-076bc6cc78ff"
+              LastKnownName="Die Record"
+              LastKnownLocation="Social System Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7059c6b2-e64f-43f9-b680-4bb154331493"
+                  name="SocialSystem"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a9557020-2659-4ddd-bec9-3f5063823473"
+                  name="Die Record"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="3d47fc11-6faa-421f-b12c-83739f786d03"
+            name="Marriage Record List"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="3660d5d2-7879-42ea-843d-10b74bf0d950"
+            name="Divorce Record List"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="2dc875ae-64ee-4764-a749-532b8da802da"
+            name="Human Record List"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="93336549-7d30-4b40-8e1c-7df7a2b2c456"
+            name="Die Record List"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="f6c57927-bb40-41bf-a6b7-60d9a7f7b48e"
+            name="Add Marriage Record"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="cd563b68-1c90-4019-8814-5830da9534cf"
+            name="Add Divorce Record"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="41d34ee2-da1c-42af-8f26-64e932eb2557"
+            name="Add Human Record"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="78329e06-acc9-4508-b6f2-4122f2d6d7ac"
+            name="Add Die Record"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="8a7b9c30-0968-48cd-8cae-5308028bd1dc"
+            name="Get Unmarried Men"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="cd2367e5-64d5-40d7-a32d-f4e4d3563c63"
+            name="Get Unmarried Women"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="5bac701e-0219-4e70-be89-b0042e0d1a99"
+        name="Marriage Record"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="06ea26d9-50c0-4214-a839-90fbaf9cf017"
+            isSubstitutable="false">
+            <classMoniker
+              Id="04f08b88-11af-4206-b5c0-74593e90bad2"
+              LastKnownName="Record"
+              LastKnownLocation="Social System Model.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="5402c2c5-a447-4835-8e75-a7011d359052"
+            isDerived="false"
+            sourceEndRoleName="Marriage Record"
+            targetEndRoleName="Marriage Proposal"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="7491b6f6-955c-4a05-a08f-0c4283c58fec"
+              LastKnownName="Marriage Proposal"
+              LastKnownLocation="Social System Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1b13a1be-0ff9-40d9-be6b-986048172482"
+                  name="Marriage Record"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f1af3ab5-5895-42a2-a514-466b3051d2f2"
+                  name="Marriage Proposal"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="5cecfdb0-7832-4e48-9379-d9aa96191bff"
+            name="Marriage Proposal"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="e5caa4f9-b98f-49c9-aa0d-9838e2706872"
+        name="Divorce Record"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="fb5a582c-c8d7-4aba-b1af-dfbc52dbb338"
+            isSubstitutable="false">
+            <classMoniker
+              Id="04f08b88-11af-4206-b5c0-74593e90bad2"
+              LastKnownName="Record"
+              LastKnownLocation="Social System Model.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="ebb5579e-e9a1-468d-b823-a51160acb7c0"
+            isDerived="false"
+            sourceEndRoleName="Divorce Record"
+            targetEndRoleName="Marriage Record"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="5bac701e-0219-4e70-be89-b0042e0d1a99"
+              LastKnownName="Marriage Record"
+              LastKnownLocation="Social System Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="19f8496b-449b-4d0d-91dc-9450eb6c7b7f"
+                  name="Divorce Record"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="bd4536da-288e-4352-b0ba-de395a2217a8"
+                  name="Marriage Record"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="428ecad1-de3c-4134-ab17-459302788786"
+            name="Marriage Record"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="bfcd6727-b307-40c3-a5f4-d2f4b54aa7a0"
+        name="Human Record"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="d98b084e-5e7b-4348-8c8b-67b4a1c27525"
+            isSubstitutable="false">
+            <classMoniker
+              Id="04f08b88-11af-4206-b5c0-74593e90bad2"
+              LastKnownName="Record"
+              LastKnownLocation="Social System Model.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="28ec4229-f20a-4f17-9a7e-292e89a38600"
+            isDerived="false"
+            sourceEndRoleName="Human Record"
+            targetEndRoleName="Marriage Record"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="5bac701e-0219-4e70-be89-b0042e0d1a99"
+              LastKnownName="Marriage Record"
+              LastKnownLocation="Social System Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f2f12eac-af14-4828-8680-bbef3240bc6a"
+                  name="Human Record"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d73ecf13-33fd-40f7-bac4-ccb480014808"
+                  name="Marriage Record"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="a73562bf-ad74-4c2d-b87d-5361e87f95ed"
+            isDerived="false"
+            sourceEndRoleName="Human Record"
+            targetEndRoleName="Human"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="59b6a283-311f-424a-a226-ca1ba41e8775"
+              LastKnownName="Human"
+              LastKnownLocation="Social System Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6b72059e-18cc-483e-bd15-648f23e4cc1d"
+                  name="Human Record"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3f967e18-ddf4-4deb-8f14-56bc6d2caa08"
+                  name="Human"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="76b3f0b6-1449-4d5d-834b-a87e8fd368be"
+            name="Marriage Record"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="5cddabc9-3afe-4b17-a3d3-aa328e802d5d"
+            name="Human"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="6f2072a2-da0e-4a7b-bd0d-076bc6cc78ff"
+        name="Die Record"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="55096ef6-0da5-4a26-a5ea-ae3b3295bef6"
+            isSubstitutable="false">
+            <classMoniker
+              Id="04f08b88-11af-4206-b5c0-74593e90bad2"
+              LastKnownName="Record"
+              LastKnownLocation="Social System Model.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="c798c815-1fc7-49ff-bb1c-d65cc169bb4e"
+            isDerived="false"
+            sourceEndRoleName="Die Record"
+            targetEndRoleName="Human"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="59b6a283-311f-424a-a226-ca1ba41e8775"
+              LastKnownName="Human"
+              LastKnownLocation="Social System Model.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5597dad8-ad50-44e2-997e-c28c9529a48f"
+                  name="Die Record"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="32e2ed32-c157-4745-8a48-b8f632a260f7"
+                  name="Human"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="7659a1e0-39b9-466a-a507-c99e230fd09b"
+            name="Human"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="04f08b88-11af-4206-b5c0-74593e90bad2"
+        name="Record"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="4e78cc9c-94f2-43e0-b74e-42014e72c025"
+            name="Record Date"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="55f2cab7-5801-45cc-a037-23930be1bb58"
+            name="Record State"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="90d0204f-188c-46e9-8f4b-f87135a3ee26"
+            name="Record ID"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="ccba21ae-4231-47f7-b25a-08663f351e8c"
+        name="Marriage Propsal" />
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

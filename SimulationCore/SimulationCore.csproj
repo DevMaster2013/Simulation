@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1B7A700A-329D-4F6E-9AE9-92A68AA3E6AC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SimulationCore</RootNamespace>
+    <AssemblyName>SimulationCore</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\GameTimeSettings.cs" />
+    <Compile Include="Core\SystemRecord.cs" />
+    <Compile Include="Core\SystemRecordList.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Systems\SocialSystem\FamilyTree.cs" />
+    <Compile Include="Systems\SocialSystem\Human.cs" />
+    <Compile Include="Systems\SocialSystem\Man.cs" />
+    <Compile Include="Systems\SocialSystem\RecordLists\DieRecordList.cs" />
+    <Compile Include="Systems\SocialSystem\RecordLists\DivorceRecordList.cs" />
+    <Compile Include="Systems\SocialSystem\RecordLists\HumanRecordList.cs" />
+    <Compile Include="Systems\SocialSystem\RecordLists\MarriageRecordList.cs" />
+    <Compile Include="Systems\SocialSystem\Records\DieRecord.cs" />
+    <Compile Include="Systems\SocialSystem\Records\DivorceRecord.cs" />
+    <Compile Include="Systems\SocialSystem\Records\HumanRecord.cs" />
+    <Compile Include="Systems\SocialSystem\Records\MarriageRecord.cs" />
+    <Compile Include="Systems\SocialSystem\SocialSystem.cs" />
+    <Compile Include="Systems\SocialSystem\Woman.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
