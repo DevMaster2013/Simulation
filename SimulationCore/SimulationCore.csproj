@@ -36,6 +36,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\GameTimeSettings.cs" />
+    <Compile Include="Core\MultiTree.cs" />
     <Compile Include="Core\SystemRecord.cs" />
     <Compile Include="Core\SystemRecordList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

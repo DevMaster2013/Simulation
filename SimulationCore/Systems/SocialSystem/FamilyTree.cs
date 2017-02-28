@@ -1,4 +1,5 @@
-﻿using SimulationCore.Systems.SocialSystem.Records;
+﻿using SimulationCore.Core;
+using SimulationCore.Systems.SocialSystem.Records;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace SimulationCore.Systems.SocialSystem
         #region Private Member Variables
         private HumanRecord _humanRecord;
         private uint _maxDepth;
+        private MultiTree<HumanRecord> _tree;
         #endregion
 
         #region Constructors
@@ -20,6 +22,7 @@ namespace SimulationCore.Systems.SocialSystem
         }
         public FamilyTree(HumanRecord record, uint maxDepth)
         {
+            _tree = new MultiTree<HumanRecord>();
             HumanRecord = record;
             MaxDepth = maxDepth;
         }
