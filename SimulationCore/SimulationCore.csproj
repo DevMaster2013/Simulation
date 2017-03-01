@@ -35,6 +35,9 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Civilization\Civilization.cs" />
+    <Compile Include="Civilization\CivilizationManager.cs" />
+    <Compile Include="Core\GameManager.cs" />
     <Compile Include="Core\GameTimeSettings.cs" />
     <Compile Include="Core\MultiTreeNode.cs" />
     <Compile Include="Core\RandomSelector.cs" />
@@ -44,6 +47,7 @@
     <Compile Include="Resources\NamesFileResource.cs" />
     <Compile Include="Resources\Resource.cs" />
     <Compile Include="Resources\ResourceManager.cs" />
+    <Compile Include="Systems\CivilizationSystem.cs" />
     <Compile Include="Systems\SocialSystem\FamilyTree.cs" />
     <Compile Include="Systems\SocialSystem\Human.cs" />
     <Compile Include="Systems\SocialSystem\Man.cs" />

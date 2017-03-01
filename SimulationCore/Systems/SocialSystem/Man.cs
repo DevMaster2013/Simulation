@@ -44,6 +44,10 @@ namespace SimulationCore.Systems.SocialSystem
                 // TODO : the man is not married or spouse is died
             }
         }
+        public override void Update(double elapsedSeconds)
+        {
+            base.Update(elapsedSeconds);
+        }
         #endregion
     }
 }

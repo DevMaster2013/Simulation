@@ -34,6 +34,10 @@ namespace SimulationCore.Systems.SocialSystem
             string childName = RandomSelector.GetRandomName(childSex);
             SocialSystem.HumanRecords.CreateRecord(marriageRecord, childName, childSex);
         }
+        public override void Update(double elapsedSeconds)
+        {
+            base.Update(elapsedSeconds);
+        }
         #endregion
     }
 }

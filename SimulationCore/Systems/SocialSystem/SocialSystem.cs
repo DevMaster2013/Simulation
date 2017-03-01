@@ -1,4 +1,5 @@
-﻿using SimulationCore.Systems.SocialSystem.RecordLists;
+﻿using SimulationCore.Core;
+using SimulationCore.Systems.SocialSystem.RecordLists;
 using SimulationCore.Systems.SocialSystem.Records;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Text;
 
 namespace SimulationCore.Systems.SocialSystem
 {
-    public class SocialSystem
+    public class SocialSystem : CivilizationSystem
     {
         #region Private Variables
         private MarriageRecordList _marriageRecords;
@@ -20,6 +21,7 @@ namespace SimulationCore.Systems.SocialSystem
 
         #region Constructors
         public SocialSystem()
+            : base()
         {
             MarriageRecords = new MarriageRecordList(this);
             DivorceRecords = new DivorceRecordList(this);
@@ -81,14 +83,39 @@ namespace SimulationCore.Systems.SocialSystem
         }
         #endregion
 
-        #region Public Methods
-        public void CleanSystem()
+        #region Public Overrided Methods
+        public override bool InitializeSystem()
+        {
+            HumanSex sex = RandomSelector.GetRandomEnumValue<HumanSex>();
+            var family1Husband = HumanRecords.CreateRecord(null, RandomSelector.GetRandomName(HumanSex.Male), HumanSex.Male);
+            var family1Wife = HumanRecords.CreateRecord(null, RandomSelector.GetRandomName(HumanSex.Female), HumanSex.Female);
+
+            var family2Husband = HumanRecords.CreateRecord(null, RandomSelector.GetRandomName(HumanSex.Male), HumanSex.Male);
+            var family2Wife = HumanRecords.CreateRecord(null, RandomSelector.GetRandomName(HumanSex.Female), HumanSex.Female);
+
+            MarriageRecords.CreateRecord(family1Husband.Human as Man, family1Wife.Human as Woman);
+            MarriageRecords.CreateRecord(family2Husband.Human as Man, family2Wife.Human as Woman);
+
+            return base.InitializeSystem();
+        }
+        public override bool FininalizeSystem()
         {
             MarriageRecords.RemoveObseleteRecords();
             DivorceRecords.RemoveObseleteRecords();
             HumanRecords.RemoveObseleteRecords();
             DieRecords.RemoveObseleteRecords();
+
+            return base.FininalizeSystem();
         }
+        public override void UpdateSystem(double elapsedSeconds)
+        {           
+            base.UpdateSystem(elapsedSeconds);
+
+            updateHumanRecords(elapsedSeconds);
+        }
+        #endregion
+
+        #region Public Methods
         public List<Woman> GetSuitableWomenForMarriage(Man man)
         {
             List<Woman> suitableWomen = new List<Woman>();
@@ -107,6 +134,15 @@ namespace SimulationCore.Systems.SocialSystem
             }
 
             return suitableWomen;
+        }
+        #endregion
+
+        #region Private Methods
+        private void updateHumanRecords(double elapsedSeconds)
+        {
+            var validRecords = HumanRecords.GetValidRecords();
+            foreach (var record in validRecords)
+                record.Human.Update(elapsedSeconds);
         }
         #endregion
     }
