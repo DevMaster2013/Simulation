@@ -16,8 +16,9 @@ namespace SimulationCore.Systems.SocialSystem
     {
         #region Protected Member Variables
         protected string _name;
-        protected HumanSex sex;
-        private SocialSystem socialSystem;
+        protected HumanSex _sex;
+        protected SocialSystem _socialSystem;
+        protected double _dieAge;
         #endregion
 
         #region Constructors
@@ -26,6 +27,7 @@ namespace SimulationCore.Systems.SocialSystem
             Name = name;
             Sex = sex;
             SocialSystem = socialSystem;
+            _dieAge = RandomSelector.GetRandomDouble(SocialSystem.Config.MaximumAge);
         }
         #endregion
 
@@ -46,34 +48,54 @@ namespace SimulationCore.Systems.SocialSystem
         {
             get
             {
-                return sex;
+                return _sex;
             }
 
             set
             {
-                sex = value;
+                _sex = value;
             }
         }
-        protected SocialSystem SocialSystem
+        public SocialSystem SocialSystem
         {
             get
             {
-                return socialSystem;
+                return _socialSystem;
             }
 
             set
             {
-                socialSystem = value;
+                _socialSystem = value;
+            }
+        }
+
+        public TimeSpan Age {
+            get {
+                var record = SocialSystem.HumanRecords.GetRecord(this);
+                return GameTimeSettings.CurrentGameTime - record.RecordDate;
             }
         }
         #endregion
 
         #region Public Methods
-        public void Die()
+        public virtual void Update(double elapsedSeconds)
         {
-            // TODO : Implement Die
-            throw new NotImplementedException("Die not Implemented");
+            checkDead();
+        }
+        public void Die()
+        {            
+            if (SocialSystem.DieRecords.CreateRecord(this) == null)
+            {
+                // TODO : The human is already died
+            }
+        }
+        #endregion
 
+        #region Protected Methods
+        protected void checkDead()
+        {
+            if (Age.TotalDays >= _dieAge)
+                Die();
         }
         #endregion
     }

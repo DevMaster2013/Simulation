@@ -22,21 +22,17 @@ namespace SimulationCore.Systems.SocialSystem
         }
         public void ProduceBaby()
         {
-            // TODO : Implement ProduceBaby
-            throw new NotImplementedException("ProduceBaby not Implemented");
-        }
-        #endregion
+            var marriageRecord = SocialSystem.MarriageRecords.GetRecord(this);
+            var dieRecord = SocialSystem.DieRecords.GetRecord(this);
+            if (marriageRecord == null || marriageRecord.RecordState == RecordState.Obselete ||
+                dieRecord != null)
+            {
+                return;
+            }
 
-        #region Private Methods
-        private void acceptProposal(Man man)
-        {
-            // TODO : Implement acceptProposal
-            throw new NotImplementedException("acceptProposal not Implemented");
-        }
-        private void refuseProposal(Man man)
-        {
-            // TODO : Implement refuseProposal
-            throw new NotImplementedException("refuseProposal not Implemented");
+            HumanSex childSex = RandomSelector.GetRandomEnumValue<HumanSex>();
+            string childName = RandomSelector.GetRandomName(childSex);
+            SocialSystem.HumanRecords.CreateRecord(marriageRecord, childName, childSex);
         }
         #endregion
     }

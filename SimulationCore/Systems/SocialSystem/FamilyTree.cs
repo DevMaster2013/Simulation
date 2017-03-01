@@ -26,6 +26,7 @@ namespace SimulationCore.Systems.SocialSystem
             MaxDepth = maxDepth;
             HumanRecord = record;
             SocialSystem = socialSystem;
+            BuildFamilyTree();
         }
         #endregion
 
@@ -74,19 +75,30 @@ namespace SimulationCore.Systems.SocialSystem
         {
             _tree = new MultiTreeNode<HumanRecord>(null);
 
-            var grandFathers = _socialSystem.HumanRecords.GetGrandFathers(HumanRecord, MaxDepth);
-            for (int i = grandFathers.Count - 1; i >= 0; i--)
+            if (HumanRecord.MarriageRecord != null)
             {
-                var grandNode = new MultiTreeNode<HumanRecord>(grandFathers[i]);
-                _tree.Cildren.Add(grandNode);
-
-                var siblings = _socialSystem.HumanRecords.GetSiblings(grandFathers[i]);
-                foreach(var sibling in siblings)
+                var grandFathers = _socialSystem.HumanRecords.GetGrandFathers(HumanRecord, MaxDepth);
+                for (int i = grandFathers.Count - 1; i >= 0; i--)
                 {
-                    var siblingNode = new MultiTreeNode<HumanRecord>(sibling);
-                    grandNode.Cildren.Add(siblingNode);
-                    addHumanChilds(siblingNode, MaxDepth);
-                }                
+                    var grandNode = new MultiTreeNode<HumanRecord>(grandFathers[i]);
+                    _tree.Cildren.Add(grandNode);
+
+                    var siblings = _socialSystem.HumanRecords.GetSiblings(grandFathers[i]);
+                    foreach (var sibling in siblings)
+                    {
+                        var siblingNode = new MultiTreeNode<HumanRecord>(sibling);
+                        _tree.Cildren.Add(siblingNode);
+                        addHumanChilds(siblingNode, MaxDepth);
+                    }
+
+                    addHumanChilds(grandNode, MaxDepth);
+                }
+            }
+            else
+            {
+                var selfNode = new MultiTreeNode<HumanRecord>(HumanRecord);
+                _tree.Cildren.Add(selfNode);
+                addHumanChilds(selfNode, MaxDepth);
             }
         }
         public MultiTreeNode<HumanRecord> FindHuman(Human human, out int level)

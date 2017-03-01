@@ -47,7 +47,7 @@ namespace SimulationCore.Systems.SocialSystem.RecordLists
         }
         public MarriageRecord GetRecord(Human human)
         {
-            return _records.Find(x => (x.HusbandRecord.Human == human || x.WifeRecord.Human == human));
+            return _records.Find(x => (x.HusbandRecord.Human == human || x.WifeRecord.Human == human) && (x.RecordState != RecordState.Obselete));
         }
         #endregion
     }

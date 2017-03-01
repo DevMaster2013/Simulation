@@ -37,6 +37,21 @@ namespace SimulationCore.Systems.SocialSystem.RecordLists
         #endregion
 
         #region Public Methods
+        public DivorceRecord CreateRecord(MarriageRecord marriageRecord)
+        {
+            if (marriageRecord.RecordState == RecordState.Obselete)
+                return null;
+
+            DieRecord husbandDieRecord = SocialSystem.DieRecords.GetRecord(marriageRecord.HusbandRecord.Human);
+            DieRecord wifeDieRecord = SocialSystem.DieRecords.GetRecord(marriageRecord.WifeRecord.Human);
+
+            if (husbandDieRecord != null || wifeDieRecord != null)
+                return null;
+
+            DivorceRecord record = new DivorceRecord(marriageRecord);
+            AddRecord(record);
+            return record;
+        }
         public DivorceRecord GetRecord(Human human)
         {
             return _records.Find(x => (x.MarriageRecord.HusbandRecord.Human == human || x.MarriageRecord.WifeRecord.Human == human));

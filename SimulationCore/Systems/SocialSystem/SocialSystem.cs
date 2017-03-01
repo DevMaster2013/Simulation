@@ -13,7 +13,9 @@ namespace SimulationCore.Systems.SocialSystem
         private MarriageRecordList _marriageRecords;
         private DivorceRecordList _divorceRecords;
         private HumanRecordList _humanRecords;
-        private DieRecordList _dieRecords;        
+        private DieRecordList _dieRecords;
+
+        private SocialSystemConfig _config;
         #endregion
 
         #region Constructors
@@ -23,6 +25,7 @@ namespace SimulationCore.Systems.SocialSystem
             DivorceRecords = new DivorceRecordList(this);
             HumanRecords = new HumanRecordList(this);
             DieRecords = new DieRecordList(this);
+            _config = new SocialSystemConfig();
         }
         #endregion
 
@@ -66,6 +69,16 @@ namespace SimulationCore.Systems.SocialSystem
                 _dieRecords = value;
             }
         }
+
+        public SocialSystemConfig Config {
+            get {
+                return _config;
+            }
+
+            set {
+                _config = value;
+            }
+        }
         #endregion
 
         #region Public Methods
@@ -83,7 +96,6 @@ namespace SimulationCore.Systems.SocialSystem
             var unMarriedWomen = HumanRecords.GetUnmarriedWomenRecords();
             var manRecord = HumanRecords.GetRecord(man);
             var manFamilyTree = new FamilyTree(this, manRecord);
-            manFamilyTree.BuildFamilyTree();
             foreach (var woman in unMarriedWomen)
             {
                 int level;

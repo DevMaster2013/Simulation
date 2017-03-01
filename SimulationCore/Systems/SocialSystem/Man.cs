@@ -20,15 +20,29 @@ namespace SimulationCore.Systems.SocialSystem
         public void Marry()
         {            
             var suitableWomen = SocialSystem.GetSuitableWomenForMarriage(this);
-            var selectedWife = RandomSelector.SelectRandomSample(suitableWomen);
-            var accepted = selectedWife.ResponseForMarriageProposal(this);
+            bool accepted = false;
+            Woman selectedWife = null;
+            while (!accepted && suitableWomen.Count > 0)
+            {
+                selectedWife = RandomSelector.SelectRandomSample(suitableWomen);
+                suitableWomen.Remove(selectedWife);
+                accepted = selectedWife.ResponseForMarriageProposal(this);
+            }
+
             if (accepted)
                 SocialSystem.MarriageRecords.CreateRecord(this, selectedWife);
         }
         public void Divorce()
         {
-            // TODO : Implement Divorce
-            throw new NotImplementedException("Divorce not Implemented");
+            var marriageRecord = SocialSystem.MarriageRecords.GetRecord(this);
+            if (marriageRecord != null)
+            {
+                SocialSystem.DivorceRecords.CreateRecord(marriageRecord);
+            }
+            else
+            {
+                // TODO : the man is not married or spouse is died
+            }
         }
         #endregion
     }

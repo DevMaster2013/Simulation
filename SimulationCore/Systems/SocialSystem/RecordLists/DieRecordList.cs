@@ -37,6 +37,16 @@ namespace SimulationCore.Systems.SocialSystem.RecordLists
         #endregion
 
         #region Public Methods
+        public DieRecord CreateRecord(Human human)
+        {            
+            var humanRecord = SocialSystem.HumanRecords.GetRecord(human);
+            if (humanRecord.RecordState == RecordState.Obselete)
+                return null;
+
+            DieRecord record = new DieRecord(humanRecord);
+            AddRecord(record);
+            return record;
+        }
         public DieRecord GetRecord(Human human)
         {
             return _records.Find(x => (x.HumanRecord.Human == human || x.HumanRecord.Human == human));

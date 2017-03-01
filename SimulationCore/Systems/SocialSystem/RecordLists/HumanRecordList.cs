@@ -22,15 +22,12 @@ namespace SimulationCore.Systems.SocialSystem.RecordLists
         #endregion
 
         #region Public Properties
-        public SocialSystem SocialSystem
-        {
-            get
-            {
+        public SocialSystem SocialSystem {
+            get {
                 return _socialSystem;
             }
 
-            set
-            {
+            set {
                 _socialSystem = value;
             }
         }
@@ -55,11 +52,23 @@ namespace SimulationCore.Systems.SocialSystem.RecordLists
         }
         public List<HumanRecord> GetUnmarriedMenRecords()
         {
-            return _records.FindAll(x => x.Human.Sex == HumanSex.Male);
+            return _records.FindAll(x =>
+            {
+                return (x.Human.Sex == HumanSex.Male) &&
+                (x.Human.Age.TotalDays > SocialSystem.Config.MinimumManMarriageAge) &&
+                (x.RecordState == RecordState.Valid);
+            }
+            );
         }
         public List<HumanRecord> GetUnmarriedWomenRecords()
         {
-            return _records.FindAll(x => x.Human.Sex == HumanSex.Female);            
+            return _records.FindAll(x =>
+            {
+                return (x.Human.Sex == HumanSex.Female) &&
+                (x.Human.Age.TotalDays > SocialSystem.Config.MinimumWomanMarriageAge) &&
+                (x.RecordState == RecordState.Valid);
+            }
+           );
         }
         public List<HumanRecord> GetGrandFathers(HumanRecord human, uint level)
         {
@@ -78,11 +87,11 @@ namespace SimulationCore.Systems.SocialSystem.RecordLists
         }
         public List<HumanRecord> GetSiblings(HumanRecord human)
         {
-            return _records.FindAll(x => human.MarriageRecord == x.MarriageRecord);
+            return _records.FindAll(x => (human.MarriageRecord == x.MarriageRecord) && (x != human));
         }
         public List<HumanRecord> GetChildren(HumanRecord human)
         {
-            return _records.FindAll(x => (x.MarriageRecord.HusbandRecord == human || x.MarriageRecord.WifeRecord == human));
+            return _records.FindAll(x => (x != human) && (x.MarriageRecord != null) && (x.MarriageRecord.HusbandRecord == human || x.MarriageRecord.WifeRecord == human));
         }
         #endregion
     }
