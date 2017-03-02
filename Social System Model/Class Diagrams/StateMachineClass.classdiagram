@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="d93071e8-41dd-4a77-a59a-2fe596df3c48" name="StateMachineClass" linkedPackageId="443d6acd-17af-433d-8b20-7b80acd72b3e" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="f5704c9d-137c-4672-be52-3cf1cde28cf7">
+      <profileInstance Id="a4f4f519-df5e-4874-a194-33a3c51f29b4" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="c763fb93-053c-4a08-aced-ec20f3d1e9ec">
+      <profileInstance Id="73470084-92bc-4e5f-9f40-7f108033d447" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="9a044788-1411-4b72-bf70-a69548042861" name="StateMachine" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="93d67ed5-d787-4cf2-98ae-8ccb2902a859" />
+        <ownedAttributesInternal>
+          <property Id="c94c24ae-c1a4-4185-99a6-e49dffd2af14" name="CurrentState" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="2982f169-0373-4b8d-81df-04b20c9380ba" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="cdea26bb-3a33-42b7-9a0f-b94eb2c370a4" name="Event OnStateTransition" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f9abab71-d675-4746-96e8-fe8920ee74b9" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="83e01306-f84d-47ba-b86c-9dead1642ad1" name="From" direction="In" isUnique="false">
+                  <elementDefinition Id="1a40eb85-d2f4-4c81-8e13-06af47a16d9a" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="778551c2-13ca-4431-abd3-f346069c456a" name="To" direction="In" isUnique="false">
+                  <elementDefinition Id="a7b8b231-2de6-456f-ad94-b06b64484602" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="b81615ff-756a-423c-b9ef-8e62ff05bfe7" name="State" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b3c1cf83-d604-453c-9247-db72f781384e" />
+        <ownedOperationsInternal>
+          <operation Id="0cfb9b4e-aba8-4c0c-84c5-62b09da3a303" name="Enter" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3e97e52b-a028-46e3-8121-8865a1bb2b24" />
+          </operation>
+          <operation Id="3da270b0-a76e-4d18-88ea-f262cf42ae80" name="Exit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="656d7e58-0f6e-464a-b969-0dddb4989d35" />
+          </operation>
+          <operation Id="93ee5d76-6170-4a62-aa44-335e5fd6cf8e" name="Execute" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2a257387-71bb-41d7-9888-fe2084342757" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="443d6acd-17af-433d-8b20-7b80acd72b3e" name="Social System Model">
+    <elementDefinition Id="b9e6d820-cef7-4ea9-adcf-7f741d02be4e" />
+  </package>
+</logicalClassDesignerModel>

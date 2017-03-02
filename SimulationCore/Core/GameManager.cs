@@ -1,4 +1,5 @@
 ﻿using SimulationCore.Civilization;
+using SimulationCore.Resources;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,9 @@ namespace SimulationCore.Core
         #region Public Methods
         public static bool StartManager()
         {
+            GameTimeSettings.InitializeGameTime();
+            ResourceManager.LoadAllResources();
+
             _civilizations = new Dictionary<string, CivilizationManager>();
 
             _civilizations.Add("Egypt", new CivilizationManager(new Civilization.Civilization("Egypt")));

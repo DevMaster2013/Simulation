@@ -41,6 +41,8 @@
     <Compile Include="Core\GameTimeSettings.cs" />
     <Compile Include="Core\MultiTreeNode.cs" />
     <Compile Include="Core\RandomSelector.cs" />
+    <Compile Include="Core\States\State.cs" />
+    <Compile Include="Core\States\StateMachine.cs" />
     <Compile Include="Core\SystemRecord.cs" />
     <Compile Include="Core\SystemRecordList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

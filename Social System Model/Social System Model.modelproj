@@ -36,6 +36,13 @@
       <SubType>Content</SubType>
       <DependentUpon>Class Diagrams\SocialSystemClass.classdiagram</DependentUpon>
     </Content>
+    <Content Include="Class Diagrams\StateMachineClass.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Class Diagrams\StateMachineClass.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Class Diagrams\StateMachineClass.classdiagram</DependentUpon>
+    </Content>
     <Content Include="Use Cases\SocialSystemUseCase.usecasediagram">
       <SubType>Content</SubType>
     </Content>

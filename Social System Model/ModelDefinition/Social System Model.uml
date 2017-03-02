@@ -2075,6 +2075,112 @@
         Id="ccba21ae-4231-47f7-b25a-08663f351e8c"
         name="Marriage Propsal" />
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="051f610c-2854-4cb7-9b63-edf1aad94ef5"
+        name="StateMachineActivity"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="5df767ef-f976-416f-ba36-bdb57f68e86d"
+            name="Initial1"
+            isLeaf="false" />
+          <opaqueAction
+            Id="f6d1ab50-6aef-4805-8a56-3c03674d47e5"
+            name="Set Starting State"
+            isLeaf="false" />
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="93d67ed5-d787-4cf2-98ae-8ccb2902a859"
+        name="StateMachine"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="2982f169-0373-4b8d-81df-04b20c9380ba"
+            name="CurrentState"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="f9abab71-d675-4746-96e8-fe8920ee74b9"
+            name="Event OnStateTransition"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1a40eb85-d2f4-4c81-8e13-06af47a16d9a"
+                  name="From"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a7b8b231-2de6-456f-ad94-b06b64484602"
+                  name="To"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="b3c1cf83-d604-453c-9247-db72f781384e"
+        name="State"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="3e97e52b-a028-46e3-8121-8865a1bb2b24"
+            name="Enter"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="656d7e58-0f6e-464a-b969-0dddb4989d35"
+            name="Exit"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="2a257387-71bb-41d7-9888-fe2084342757"
+            name="Execute"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
   </packagedElements>
   <primitiveType
     Id="220a3521-e091-4221-bae9-3ef9018e845c"

@@ -17,11 +17,11 @@ namespace SimulationCore.Systems
         #region Public Virtual Functions
         public virtual bool InitializeSystem()
         {
-            return false;
+            return true;
         }
         public virtual bool FininalizeSystem()
         {
-            return false;
+            return true;
         }
         public virtual void UpdateSystem(double elapsedSeconds)
         {
