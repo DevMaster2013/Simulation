@@ -23,29 +23,44 @@ namespace SimulationCore.Core.States
         #region Public Methods
         public void UpdateStateMachine(double elapsedSeconds)
         {
-            if (_currentState != null)
-                _currentState.Execute(elapsedSeconds);
+            if (CurrentState != null)
+                CurrentState.Execute(elapsedSeconds);
         }
         #endregion
 
         #region Public Properties
-        public T Controlled {
-            get {
+        public T Controlled
+        {
+            get
+            {
                 return _controlledObject;
             }
-            set {
+            set
+            {
                 _controlledObject = value;
+            }
+        }
+        public State<T> CurrentState
+        {
+            get
+            {
+                return _currentState;
+            }
+
+            set
+            {
+                _currentState = value;
             }
         }
         #endregion
 
-            #region Private Methods
+        #region Private Methods
         private void switchStates(State<T> to)
         {
-            if (_currentState != null)
+            if (CurrentState != null)
             {
-                _currentState.OnStateTransition -= _currentState_OnStateTransition;
-                _currentState.Exit();
+                CurrentState.OnStateTransition -= _currentState_OnStateTransition;
+                CurrentState.Exit();
             }
 
             if (to != null)
@@ -54,14 +69,14 @@ namespace SimulationCore.Core.States
                 to.OnStateTransition += _currentState_OnStateTransition;
             }
 
-            _currentState = to;
+            CurrentState = to;
         }
         #endregion
 
         #region Event Handlers
         private void _currentState_OnStateTransition(State<T> from, State<T> to)
         {
-            if (from == _currentState)
+            if (from == CurrentState)
                 switchStates(to);
         }
         #endregion
