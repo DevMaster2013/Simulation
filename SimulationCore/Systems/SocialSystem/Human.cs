@@ -18,7 +18,7 @@ namespace SimulationCore.Systems.SocialSystem
         protected string _name;
         protected HumanSex _sex;
         protected SocialSystem _socialSystem;
-        protected double _dieAge;
+        private double dieAge;
         #endregion
 
         #region Constructors
@@ -27,7 +27,7 @@ namespace SimulationCore.Systems.SocialSystem
             Name = name;
             Sex = sex;
             SocialSystem = socialSystem;
-            _dieAge = RandomSelector.GetRandomDouble(SocialSystem.Config.MaximumAge);
+            DieAge = RandomSelector.GetRandomDouble(SocialSystem.Config.MaximumAge);
         }
         #endregion
 
@@ -68,11 +68,22 @@ namespace SimulationCore.Systems.SocialSystem
                 _socialSystem = value;
             }
         }
-
         public TimeSpan Age {
             get {
                 var record = SocialSystem.HumanRecords.GetRecord(this);
                 return GameTimeSettings.CurrentGameTime - record.RecordDate;
+            }
+        }
+        public double DieAge
+        {
+            get
+            {
+                return dieAge;
+            }
+
+            set
+            {
+                dieAge = value;
             }
         }
         #endregion
@@ -80,22 +91,6 @@ namespace SimulationCore.Systems.SocialSystem
         #region Public Methods
         public virtual void Update(double elapsedSeconds)
         {
-            checkDead();
-        }
-        public void Die()
-        {            
-            if (SocialSystem.DieRecords.CreateRecord(this) == null)
-            {
-                // TODO : The human is already died
-            }
-        }
-        #endregion
-
-        #region Protected Methods
-        protected void checkDead()
-        {
-            if (Age.TotalDays >= _dieAge)
-                Die();
         }
         #endregion
     }

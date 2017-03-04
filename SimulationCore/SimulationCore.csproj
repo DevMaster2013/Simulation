@@ -52,6 +52,11 @@
     <Compile Include="Systems\CivilizationSystem.cs" />
     <Compile Include="Systems\SocialSystem\FamilyTree.cs" />
     <Compile Include="Systems\SocialSystem\Human.cs" />
+    <Compile Include="Systems\SocialSystem\HumanStates\HumanBaseState.cs" />
+    <Compile Include="Systems\SocialSystem\HumanStates\HumanDiedState.cs" />
+    <Compile Include="Systems\SocialSystem\HumanStates\HumanIdleState.cs" />
+    <Compile Include="Systems\SocialSystem\HumanStates\HumanMarriedState.cs" />
+    <Compile Include="Systems\SocialSystem\HumanStates\SeekingWifeState.cs" />
     <Compile Include="Systems\SocialSystem\Man.cs" />
     <Compile Include="Systems\SocialSystem\RecordLists\DieRecordList.cs" />
     <Compile Include="Systems\SocialSystem\RecordLists\DivorceRecordList.cs" />

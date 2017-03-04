@@ -17,21 +17,6 @@ namespace SimulationCore.Systems.SocialSystem
         #endregion
 
         #region Public Methods
-        public void Marry()
-        {            
-            var suitableWomen = SocialSystem.GetSuitableWomenForMarriage(this);
-            bool accepted = false;
-            Woman selectedWife = null;
-            while (!accepted && suitableWomen.Count > 0)
-            {
-                selectedWife = RandomSelector.SelectRandomSample(suitableWomen);
-                suitableWomen.Remove(selectedWife);
-                accepted = selectedWife.ResponseForMarriageProposal(this);
-            }
-
-            if (accepted)
-                SocialSystem.MarriageRecords.CreateRecord(this, selectedWife);
-        }
         public void Divorce()
         {
             var marriageRecord = SocialSystem.MarriageRecords.GetRecord(this);
@@ -43,10 +28,6 @@ namespace SimulationCore.Systems.SocialSystem
             {
                 // TODO : the man is not married or spouse is died
             }
-        }
-        public override void Update(double elapsedSeconds)
-        {
-            base.Update(elapsedSeconds);
         }
         #endregion
     }
