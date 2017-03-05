@@ -1,11 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - Design", "01 - Design", "{B5CD830C-BA8F-4398-8CB0-B866D058D02C}"
 	ProjectSection(SolutionItems) = preProject
 		Design\design-document.txt = Design\design-document.txt
+		Design\Simulation.eap = Design\Simulation.eap
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 - CS Projects", "02 - CS Projects", "{EB057821-21D7-45AB-980D-006211C3BD2D}"

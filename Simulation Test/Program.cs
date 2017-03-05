@@ -9,435 +9,309 @@ using System.Threading;
 
 namespace Simulation_Test
 {
-    #region Testing New State Machine
+    //#region Testing New State Machine
 
-    #region Framework
-    public class StateTransition<T> where T : class
-    {
-        private State<T> _from;
-        private State<T> _to;
+    //#region State Machine
+    //public class FileStreamStateMachine : StateMachine<String>
+    //{
+    //    public FileStreamStateMachine(String obj) : base(obj)
+    //    {
+    //    }
 
-        public State<T> From
-        {
-            get
-            {
-                return _from;
-            }
+    //    public Dictionary<State<String>, List<StateTransition<String>>> StatesMap
+    //    {
+    //        get
+    //        {
+    //            return _stateMap;
+    //        }
+    //    }
 
-            set
-            {
-                _from = value;
-            }
-        }
+    //    protected override void buildStateMachine()
+    //    {
+    //        base.buildStateMachine();
 
-        public State<T> To
-        {
-            get
-            {
-                return _to;
-            }
+    //        var idleState = new MyIdleState(_controlledObject);
+    //        var walkState = new MyWalkState(_controlledObject);
+    //        var runState = new MyRunState(_controlledObject);
+    //        var lookState = new MyLookState(_controlledObject);
 
-            set
-            {
-                _to = value;
-            }
-        }
+    //        _stateMap[idleState] = new List<StateTransition<String>>();
+    //        _stateMap[walkState] = new List<StateTransition<String>>();
+    //        _stateMap[runState] = new List<StateTransition<String>>();
+    //        _stateMap[lookState] = new List<StateTransition<String>>();
 
-        public StateTransition(State<T> from, State<T> to)
-        {
-            From = from;
-            To = to;
-        }
+    //        _stateMap[idleState].Add(new Idle2LookTransition(idleState, lookState));
+    //        _stateMap[idleState].Add(new Idle2RunTransition(idleState, runState));
+    //        _stateMap[idleState].Add(new Idle2WalkTransition(idleState, walkState));
 
-        public virtual bool CheckTransition()
-        {
-            return true;
-        }
-    }
+    //        _stateMap[walkState].Add(new Walk2LookTransition(walkState, lookState));
+    //        _stateMap[walkState].Add(new Walk2RunTransition(walkState, runState));
+    //        _stateMap[walkState].Add(new Walk2IdleTransition(walkState, idleState));
 
-    public class StateMachine<T> where T : class
-    {
-        protected T _object;
-        protected State<T> _currentState;
-        protected Dictionary<State<T>, List<StateTransition<T>>> _stateMap;
+    //        _stateMap[runState].Add(new Run2LookTransition(runState, lookState));
+    //        _stateMap[runState].Add(new Run2WalkTransition(runState, walkState));
+    //        _stateMap[runState].Add(new Run2IdleTransition(runState, idleState));
 
-        public StateMachine(T obj)
-        {
-            _object = obj;
-            _currentState = null;
-        }
+    //        _stateMap[lookState].Add(new Look2RunTransition(lookState, runState));
+    //        _stateMap[lookState].Add(new Look2WalkTransition(lookState, walkState));
+    //        _stateMap[lookState].Add(new Look2IdleTransition(lookState, idleState));
 
-        public void Start()
-        {
-            buildStateMachine();
-            if (_currentState != null)
-                _currentState.Enter();
-        }
+    //        _currentState = idleState;
+    //    }
+    //}
 
-        public void Update()
-        {
-            if (_currentState != null)
-                _currentState.Execute();
+    //#endregion
 
-            checkTransformations();
-        }
+    //#region States
+    //public class MyIdleState : State<String>
+    //{
+    //    public MyIdleState(String obj) : base(obj)
+    //    {
+    //    }
 
-        private void checkTransformations()
-        {
-            if (_stateMap.ContainsKey(_currentState))
-            {
-                foreach (var trans in _stateMap[_currentState])
-                {
-                    if (trans.CheckTransition())
-                    {
-                        var transition = trans as StateTransition<T>;
-                        _currentState.Exit();
-                        _currentState = transition.To;
-                        _currentState.Enter();
-                        return;
-                    }
-                }
-            }
-        }
+    //    public override void Enter()
+    //    {
+    //        Console.WriteLine("Enter Idle State");
+    //        base.Enter();
+    //    }
 
-        protected virtual void buildStateMachine()
-        {
-            _stateMap = new Dictionary<State<T>, List<StateTransition<T>>>();
-        }
-    }
+    //    public override void Execute(double elapsedSeconds)
+    //    {
+    //        Console.Write("I am in Idle State");
+    //        base.Execute(elapsedSeconds);
+    //    }
 
-    public class State<T> where T : class
-    {
-        protected double _lifeTime;
-        protected DateTime _lastTime;
+    //    public override void Exit()
+    //    {
+    //        Console.WriteLine("Exit Idle State");
+    //        base.Exit();
+    //    }
+    //}
 
-        private T _object;
-        public State(T obj)
-        {
-            _object = obj;
+    //public class MyWalkState : State<String>
+    //{
+    //    public MyWalkState(String obj) : base(obj)
+    //    {
+    //    }
 
-            _lifeTime = 0;
-            _lastTime = DateTime.Now;
-        }
+    //    public override void Enter()
+    //    {
+    //        Console.WriteLine("Enter Walk State");
+    //        base.Enter();
+    //    }
 
-        public virtual void Enter()
-        {
-            
-        }
-        public virtual void Execute()
-        {
-            _lifeTime += (DateTime.Now - _lastTime).TotalSeconds;
-            Console.WriteLine(" - Life Time = " + _lifeTime);
-            _lastTime = DateTime.Now;
-        }
-        public virtual void Exit()
-        {
+    //    public override void Execute(double elapsedSeconds)
+    //    {
+    //        Console.Write("I am in Walk State");
+    //        base.Execute(elapsedSeconds);
+    //    }
 
-        }
-    }
-    #endregion
+    //    public override void Exit()
+    //    {
+    //        Console.WriteLine("Exit Walk State");
+    //        base.Exit();
+    //    }
+    //}
 
-    #region State Machine
-    public class FileStreamStateMachine : StateMachine<String>
-    {
-        public FileStreamStateMachine(String obj) : base(obj)
-        {
-        }
+    //public class MyRunState : State<String>
+    //{
+    //    public MyRunState(String obj) : base(obj)
+    //    {
+    //    }
 
-        public Dictionary<State<String>, List<StateTransition<String>>> StatesMap
-        {
-            get
-            {
-                return _stateMap;
-            }
-        }
+    //    public override void Enter()
+    //    {
+    //        Console.WriteLine("Enter Run State");
+    //        base.Enter();
+    //    }
 
-        protected override void buildStateMachine()
-        {
-            base.buildStateMachine();
+    //    public override void Execute(double elapsedSeconds)
+    //    {
+    //        Console.Write("I am in Run State");
+    //        base.Execute(elapsedSeconds);
+    //    }
 
-            var idleState = new MyIdleState(_object);
-            var walkState = new MyWalkState(_object);
-            var runState = new MyRunState(_object);
-            var lookState = new MyLookState(_object);
+    //    public override void Exit()
+    //    {
+    //        Console.WriteLine("Exit Run State");
+    //        base.Exit();
+    //    }
+    //}
 
-            _stateMap[idleState] = new List<StateTransition<String>>();
-            _stateMap[walkState] = new List<StateTransition<String>>();
-            _stateMap[runState] = new List<StateTransition<String>>();
-            _stateMap[lookState] = new List<StateTransition<String>>();
+    //public class MyLookState : State<String>
+    //{
+    //    public MyLookState(String obj) : base(obj)
+    //    {
+    //    }
 
-            _stateMap[idleState].Add(new Idle2LookTransition(idleState, lookState));
-            _stateMap[idleState].Add(new Idle2RunTransition(idleState, runState));
-            _stateMap[idleState].Add(new Idle2WalkTransition(idleState, walkState));
+    //    public override void Enter()
+    //    {
+    //        Console.WriteLine("Enter Look State");
+    //        base.Enter();
+    //    }
 
-            _stateMap[walkState].Add(new Walk2LookTransition(walkState, lookState));
-            _stateMap[walkState].Add(new Walk2RunTransition(walkState, runState));
-            _stateMap[walkState].Add(new Walk2IdleTransition(walkState, idleState));
+    //    public override void Execute(double elapsedSeconds)
+    //    {
+    //        Console.Write("I am in Look State");
+    //        base.Execute(elapsedSeconds);
+    //    }
 
-            _stateMap[runState].Add(new Run2LookTransition(runState, lookState));
-            _stateMap[runState].Add(new Run2WalkTransition(runState, walkState));
-            _stateMap[runState].Add(new Run2IdleTransition(runState, idleState));
+    //    public override void Exit()
+    //    {
+    //        Console.WriteLine("Exit Look State");
+    //        base.Exit();
+    //    }
+    //}
 
-            _stateMap[lookState].Add(new Look2RunTransition(lookState, runState));
-            _stateMap[lookState].Add(new Look2WalkTransition(lookState, walkState));
-            _stateMap[lookState].Add(new Look2IdleTransition(lookState, idleState));
+    //#endregion
 
-            _currentState = idleState;
-        }
-    }
+    //#region State Transitions
+    //public class Idle2WalkTransition : StateTransition<String>
+    //{
+    //    public Idle2WalkTransition(State<string> from, State<string> to) : base(from, to)
+    //    {
+    //    }
+    //    public override bool CheckTransition()
+    //    {
+    //        Random rand = new Random();
+    //        return rand.NextDouble() > 0.9;
+    //    }
+    //}
 
-    #endregion
+    //public class Idle2RunTransition : StateTransition<String>
+    //{
+    //    public Idle2RunTransition(State<string> from, State<string> to) : base(from, to)
+    //    {
+    //    }
+    //    public override bool CheckTransition()
+    //    {
+    //        Random rand = new Random();
+    //        return rand.NextDouble() > 0.95;
+    //    }
+    //}
 
-    #region States
-    public class MyIdleState : State<String>
-    {
-        public MyIdleState(String obj) : base(obj)
-        {
-        }
+    //public class Idle2LookTransition : StateTransition<String>
+    //{
+    //    public Idle2LookTransition(State<string> from, State<string> to) : base(from, to)
+    //    {
+    //    }
+    //    public override bool CheckTransition()
+    //    {
+    //        Random rand = new Random();
+    //        return rand.NextDouble() > 0.98;
+    //    }
+    //}
 
-        public override void Enter()
-        {
-            Console.WriteLine("Enter Idle State");
-            base.Enter();
-        }
+    //public class Walk2IdleTransition : StateTransition<String>
+    //{
+    //    public Walk2IdleTransition(State<string> from, State<string> to) : base(from, to)
+    //    {
+    //    }
+    //    public override bool CheckTransition()
+    //    {
+    //        Random rand = new Random();
+    //        return rand.NextDouble() > 0.9;
+    //    }
+    //}
 
-        public override void Execute()
-        {
-            Console.Write("I am in Idle State");
-            base.Execute();
-        }
+    //public class Walk2RunTransition : StateTransition<String>
+    //{
+    //    public Walk2RunTransition(State<string> from, State<string> to) : base(from, to)
+    //    {
+    //    }
+    //    public override bool CheckTransition()
+    //    {
+    //        Random rand = new Random();
+    //        return rand.NextDouble() > 0.95;
+    //    }
+    //}
 
-        public override void Exit()
-        {
-            Console.WriteLine("Exit Idle State");
-            base.Exit();
-        }
-    }
+    //public class Walk2LookTransition : StateTransition<String>
+    //{
+    //    public Walk2LookTransition(State<string> from, State<string> to) : base(from, to)
+    //    {
+    //    }
+    //    public override bool CheckTransition()
+    //    {
+    //        Random rand = new Random();
+    //        return rand.NextDouble() > 0.98;
+    //    }
+    //}
 
-    public class MyWalkState : State<String>
-    {
-        public MyWalkState(String obj) : base(obj)
-        {
-        }
+    //public class Run2IdleTransition : StateTransition<String>
+    //{
+    //    public Run2IdleTransition(State<string> from, State<string> to) : base(from, to)
+    //    {
+    //    }
+    //    public override bool CheckTransition()
+    //    {
+    //        Random rand = new Random();
+    //        return rand.NextDouble() > 0.9;
+    //    }
+    //}
 
-        public override void Enter()
-        {
-            Console.WriteLine("Enter Walk State");
-            base.Enter();
-        }
+    //public class Run2WalkTransition : StateTransition<String>
+    //{
+    //    public Run2WalkTransition(State<string> from, State<string> to) : base(from, to)
+    //    {
+    //    }
+    //    public override bool CheckTransition()
+    //    {
+    //        Random rand = new Random();
+    //        return rand.NextDouble() > 0.95;
+    //    }
+    //}
 
-        public override void Execute()
-        {
-            Console.Write("I am in Walk State");
-            base.Execute();
-        }
+    //public class Run2LookTransition : StateTransition<String>
+    //{
+    //    public Run2LookTransition(State<string> from, State<string> to) : base(from, to)
+    //    {
+    //    }
+    //    public override bool CheckTransition()
+    //    {
+    //        Random rand = new Random();
+    //        return rand.NextDouble() > 0.98;
+    //    }
+    //}
 
-        public override void Exit()
-        {
-            Console.WriteLine("Exit Walk State");
-            base.Exit();
-        }
-    }
+    //public class Look2IdleTransition : StateTransition<String>
+    //{
+    //    public Look2IdleTransition(State<string> from, State<string> to) : base(from, to)
+    //    {
+    //    }
+    //    public override bool CheckTransition()
+    //    {
+    //        Random rand = new Random();
+    //        return rand.NextDouble() > 0.9;
+    //    }
+    //}
 
-    public class MyRunState : State<String>
-    {
-        public MyRunState(String obj) : base(obj)
-        {
-        }
+    //public class Look2WalkTransition : StateTransition<String>
+    //{
+    //    public Look2WalkTransition(State<string> from, State<string> to) : base(from, to)
+    //    {
+    //    }
+    //    public override bool CheckTransition()
+    //    {
+    //        Random rand = new Random();
+    //        return rand.NextDouble() > 0.95;
+    //    }
+    //}
 
-        public override void Enter()
-        {
-            Console.WriteLine("Enter Run State");
-            base.Enter();
-        }
+    //public class Look2RunTransition : StateTransition<String>
+    //{
+    //    public Look2RunTransition(State<string> from, State<string> to) : base(from, to)
+    //    {
+    //    }
+    //    public override bool CheckTransition()
+    //    {
+    //        Random rand = new Random();
+    //        return rand.NextDouble() > 0.98;
+    //    }
+    //}
+    //#endregion
 
-        public override void Execute()
-        {
-            Console.Write("I am in Run State");
-            base.Execute();
-        }
-
-        public override void Exit()
-        {
-            Console.WriteLine("Exit Run State");
-            base.Exit();
-        }
-    }
-
-    public class MyLookState : State<String>
-    {
-        public MyLookState(String obj) : base(obj)
-        {
-        }
-
-        public override void Enter()
-        {
-            Console.WriteLine("Enter Look State");
-            base.Enter();
-        }
-
-        public override void Execute()
-        {
-            Console.Write("I am in Look State");
-            base.Execute();
-        }
-
-        public override void Exit()
-        {
-            Console.WriteLine("Exit Look State");
-            base.Exit();
-        }
-    }
-
-    #endregion
-
-    #region State Transitions
-    public class Idle2WalkTransition : StateTransition<String>
-    {
-        public Idle2WalkTransition(State<string> from, State<string> to) : base(from, to)
-        {
-        }
-        public override bool CheckTransition()
-        {
-            Random rand = new Random();
-            return rand.NextDouble() > 0.9;
-        }
-    }
-
-    public class Idle2RunTransition : StateTransition<String>
-    {
-        public Idle2RunTransition(State<string> from, State<string> to) : base(from, to)
-        {
-        }
-        public override bool CheckTransition()
-        {
-            Random rand = new Random();
-            return rand.NextDouble() > 0.95;
-        }
-    }
-
-    public class Idle2LookTransition : StateTransition<String>
-    {
-        public Idle2LookTransition(State<string> from, State<string> to) : base(from, to)
-        {
-        }
-        public override bool CheckTransition()
-        {
-            Random rand = new Random();
-            return rand.NextDouble() > 0.98;
-        }
-    }
-
-    public class Walk2IdleTransition : StateTransition<String>
-    {
-        public Walk2IdleTransition(State<string> from, State<string> to) : base(from, to)
-        {
-        }
-        public override bool CheckTransition()
-        {
-            Random rand = new Random();
-            return rand.NextDouble() > 0.9;
-        }
-    }
-
-    public class Walk2RunTransition : StateTransition<String>
-    {
-        public Walk2RunTransition(State<string> from, State<string> to) : base(from, to)
-        {
-        }
-        public override bool CheckTransition()
-        {
-            Random rand = new Random();
-            return rand.NextDouble() > 0.95;
-        }
-    }
-
-    public class Walk2LookTransition : StateTransition<String>
-    {
-        public Walk2LookTransition(State<string> from, State<string> to) : base(from, to)
-        {
-        }
-        public override bool CheckTransition()
-        {
-            Random rand = new Random();
-            return rand.NextDouble() > 0.98;
-        }
-    }
-
-    public class Run2IdleTransition : StateTransition<String>
-    {
-        public Run2IdleTransition(State<string> from, State<string> to) : base(from, to)
-        {
-        }
-        public override bool CheckTransition()
-        {
-            Random rand = new Random();
-            return rand.NextDouble() > 0.9;
-        }
-    }
-
-    public class Run2WalkTransition : StateTransition<String>
-    {
-        public Run2WalkTransition(State<string> from, State<string> to) : base(from, to)
-        {
-        }
-        public override bool CheckTransition()
-        {
-            Random rand = new Random();
-            return rand.NextDouble() > 0.95;
-        }
-    }
-
-    public class Run2LookTransition : StateTransition<String>
-    {
-        public Run2LookTransition(State<string> from, State<string> to) : base(from, to)
-        {
-        }
-        public override bool CheckTransition()
-        {
-            Random rand = new Random();
-            return rand.NextDouble() > 0.98;
-        }
-    }
-
-    public class Look2IdleTransition : StateTransition<String>
-    {
-        public Look2IdleTransition(State<string> from, State<string> to) : base(from, to)
-        {
-        }
-        public override bool CheckTransition()
-        {
-            Random rand = new Random();
-            return rand.NextDouble() > 0.9;
-        }
-    }
-
-    public class Look2WalkTransition : StateTransition<String>
-    {
-        public Look2WalkTransition(State<string> from, State<string> to) : base(from, to)
-        {
-        }
-        public override bool CheckTransition()
-        {
-            Random rand = new Random();
-            return rand.NextDouble() > 0.95;
-        }
-    }
-
-    public class Look2RunTransition : StateTransition<String>
-    {
-        public Look2RunTransition(State<string> from, State<string> to) : base(from, to)
-        {
-        }
-        public override bool CheckTransition()
-        {
-            Random rand = new Random();
-            return rand.NextDouble() > 0.98;
-        }
-    }
-    #endregion
-
-    #endregion
+    //#endregion
 
     //#region Test State Machine
     //class ControlledObject
@@ -629,13 +503,7 @@ namespace Simulation_Test
     {
         static void Main(string[] args)
         {
-            FileStreamStateMachine sm = new FileStreamStateMachine("Ahmed");
-            sm.Start();
-            while (true)
-            {
-                sm.Update();
-                Thread.Sleep(1000);
-            }
+            TestingStateMachine.Test();
         }
 
         static void RunGame()

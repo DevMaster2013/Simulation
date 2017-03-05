@@ -7,24 +7,32 @@ namespace SimulationCore.Core.States
 {
     public class StateMachine<T> where T : class
     {
-        #region Private Data Members
-        private State<T> _currentState;
-        private T _controlledObject;
+        #region Protected Data Members
+        protected State<T> _currentState;
+        protected T _controlledObject;
+        protected Dictionary<State<T>, List<StateTransition<T>>> _stateMap;
         #endregion
 
         #region Constructors
-        public StateMachine(T controlled, State<T> initialState)
+        public StateMachine(T controlled)
         {
             _controlledObject = controlled;
-            switchStates(initialState);
         }
         #endregion
 
         #region Public Methods
+        public void Start()
+        {
+            buildStateMachine();
+            if (_currentState != null)
+                _currentState.Enter();
+        }
         public void UpdateStateMachine(double elapsedSeconds)
         {
-            if (CurrentState != null)
-                CurrentState.Execute(elapsedSeconds);
+            if (_currentState != null)
+                _currentState.Execute(elapsedSeconds);
+
+            checkTransformations();
         }
         #endregion
 
@@ -54,30 +62,27 @@ namespace SimulationCore.Core.States
         }
         #endregion
 
-        #region Private Methods
-        private void switchStates(State<T> to)
+        #region Protected Methods
+        protected void checkTransformations()
         {
-            if (CurrentState != null)
+            if (_stateMap.ContainsKey(_currentState))
             {
-                CurrentState.OnStateTransition -= _currentState_OnStateTransition;
-                CurrentState.Exit();
+                foreach (var trans in _stateMap[_currentState])
+                {
+                    if (trans.CheckTransition())
+                    {
+                        var transition = trans as StateTransition<T>;
+                        _currentState.Exit();
+                        _currentState = transition.To;
+                        _currentState.Enter();
+                        return;
+                    }
+                }
             }
-
-            if (to != null)
-            {
-                to.Enter();
-                to.OnStateTransition += _currentState_OnStateTransition;
-            }
-
-            CurrentState = to;
         }
-        #endregion
-
-        #region Event Handlers
-        private void _currentState_OnStateTransition(State<T> from, State<T> to)
+        protected virtual void buildStateMachine()
         {
-            if (from == CurrentState)
-                switchStates(to);
+            _stateMap = new Dictionary<State<T>, List<StateTransition<T>>>();
         }
         #endregion
     }
