@@ -1,4 +1,5 @@
-﻿using SimulationCore.Core;
+﻿using SimulationCore.Civilization;
+using SimulationCore.Core;
 using SimulationCore.Systems.SocialSystem.Records;
 using System;
 using System.Collections.Generic;
@@ -13,19 +14,19 @@ namespace SimulationCore.Systems.SocialSystem
         private HumanRecord _humanRecord;
         private uint _maxDepth;
         private MultiTreeNode<HumanRecord> _tree;
-        private SocialSystem _socialSystem;
+        private CivilizationManager _civilManager;
         #endregion
 
         #region Constructors
-        public FamilyTree(SocialSystem socialSystem, HumanRecord record)
-            : this(socialSystem, record, 2)
+        public FamilyTree(CivilizationManager civilManager, HumanRecord record)
+            : this(civilManager, record, 2)
         {
         }
-        public FamilyTree(SocialSystem socialSystem, HumanRecord record, uint maxDepth)
+        public FamilyTree(CivilizationManager civilManager, HumanRecord record, uint maxDepth)
         {
             MaxDepth = maxDepth;
             HumanRecord = record;
-            SocialSystem = socialSystem;
+            CivilManager = civilManager;
             BuildFamilyTree();
         }
         #endregion
@@ -56,16 +57,15 @@ namespace SimulationCore.Systems.SocialSystem
                 _maxDepth = value;
             }
         }
-        public SocialSystem SocialSystem
-        {
+        public CivilizationManager CivilManager {
             get
             {
-                return _socialSystem;
+                return _civilManager;
             }
 
             set
             {
-                _socialSystem = value;
+                _civilManager = value;
             }
         }
         #endregion
@@ -73,17 +73,19 @@ namespace SimulationCore.Systems.SocialSystem
         #region Public Methods
         public void BuildFamilyTree()
         {
+            SocialSystem socialSystem = CivilManager.GetSystem<SocialSystem>();
+
             _tree = new MultiTreeNode<HumanRecord>(null);
 
             if (HumanRecord.MarriageRecord != null)
             {
-                var grandFathers = _socialSystem.HumanRecords.GetGrandFathers(HumanRecord, MaxDepth);
+                var grandFathers = socialSystem.HumanRecords.GetGrandFathers(HumanRecord, MaxDepth);
                 for (int i = grandFathers.Count - 1; i >= 0; i--)
                 {
                     var grandNode = new MultiTreeNode<HumanRecord>(grandFathers[i]);
                     _tree.Cildren.Add(grandNode);
 
-                    var siblings = _socialSystem.HumanRecords.GetSiblings(grandFathers[i]);
+                    var siblings = socialSystem.HumanRecords.GetSiblings(grandFathers[i]);
                     foreach (var sibling in siblings)
                     {
                         var siblingNode = new MultiTreeNode<HumanRecord>(sibling);
@@ -111,10 +113,12 @@ namespace SimulationCore.Systems.SocialSystem
         #region Private Methods
         private void addHumanChilds(MultiTreeNode<HumanRecord> node, uint depth)
         {
+            SocialSystem socialSystem = CivilManager.GetSystem<SocialSystem>();
+
             if (depth == 0)
                 return;
 
-            var children = _socialSystem.HumanRecords.GetChildren(node.Data);
+            var children = socialSystem.HumanRecords.GetChildren(node.Data);
             foreach (var child in children)
             {
                 var childNode = new MultiTreeNode<HumanRecord>(child);

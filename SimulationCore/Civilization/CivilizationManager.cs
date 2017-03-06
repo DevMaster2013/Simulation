@@ -40,7 +40,7 @@ namespace SimulationCore.Civilization
         #region Public Methods
         public bool StartManager()
         {
-            _civilizationSystems.Add(typeof(SocialSystem).Name, new SocialSystem());
+            _civilizationSystems.Add(typeof(SocialSystem).Name, new SocialSystem(this));
 
             foreach (var system in _civilizationSystems)
                 if (!system.Value.InitializeSystem())

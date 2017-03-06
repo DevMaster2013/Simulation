@@ -5,7 +5,9 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - Design", "01 - Design", "{B5CD830C-BA8F-4398-8CB0-B866D058D02C}"
 	ProjectSection(SolutionItems) = preProject
+		Design\Analysis.txt = Design\Analysis.txt
 		Design\design-document.txt = Design\design-document.txt
+		Design\Document.docx = Design\Document.docx
 		Design\Simulation.eap = Design\Simulation.eap
 	EndProjectSection
 EndProject

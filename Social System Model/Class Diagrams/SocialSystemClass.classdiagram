@@ -1,19 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="1622a78e-b6b4-43e4-9ee2-15fa1f16349e" name="SocialSystemClass" linkedPackageId="ea33eb8b-94e1-406b-9056-49efeb24af38" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="28c8f17c-a7f7-4ae9-a157-e8dd428c6dfe">
-      <profileInstance Id="37d31543-69f0-4d72-8bef-1187799cdd41" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="779bf8b6-bc55-459e-9e34-b04420338b76">
-      <profileInstance Id="fbef8413-4a42-4e0d-9095-5fe63f271bdb" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="b91e3cd9-10a0-487b-b06e-b2861547c9a3" name="Human" isAbstract="false" isLeaf="false" isActiveClass="false">
@@ -466,5 +452,19 @@
   </packagedElements>
   <package Id="ea33eb8b-94e1-406b-9056-49efeb24af38" name="Social System Model">
     <elementDefinition Id="b9e6d820-cef7-4ea9-adcf-7f741d02be4e" />
+    <profileInstances>
+      <packageHasProfileInstances Id="28c8f17c-a7f7-4ae9-a157-e8dd428c6dfe">
+        <profileInstance Id="37d31543-69f0-4d72-8bef-1187799cdd41" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="779bf8b6-bc55-459e-9e34-b04420338b76">
+        <profileInstance Id="fbef8413-4a42-4e0d-9095-5fe63f271bdb" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>

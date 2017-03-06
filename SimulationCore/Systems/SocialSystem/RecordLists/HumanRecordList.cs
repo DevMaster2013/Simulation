@@ -1,4 +1,5 @@
-﻿using SimulationCore.Core;
+﻿using SimulationCore.Civilization;
+using SimulationCore.Core;
 using SimulationCore.Systems.SocialSystem.Records;
 using System;
 using System.Collections.Generic;
@@ -14,10 +15,10 @@ namespace SimulationCore.Systems.SocialSystem.RecordLists
         #endregion
 
         #region Constructors
-        public HumanRecordList(SocialSystem socialSystem)
-            : base()
+        public HumanRecordList(CivilizationManager civilManager)
+            : base(civilManager)
         {
-            SocialSystem = socialSystem;
+            SocialSystem = CivilManager.GetSystem<SocialSystem>();
         }
         #endregion
 
@@ -38,9 +39,9 @@ namespace SimulationCore.Systems.SocialSystem.RecordLists
         {
             Human human;
             if (sex == HumanSex.Male)
-                human = new Man(SocialSystem, name);
+                human = new Man(CivilManager, name);
             else
-                human = new Woman(SocialSystem, name);
+                human = new Woman(CivilManager, name);
 
             HumanRecord record = new HumanRecord(human, marriageRecord);
             AddRecord(record);

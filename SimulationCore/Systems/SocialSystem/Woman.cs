@@ -1,4 +1,6 @@
-﻿using SimulationCore.Core;
+﻿using SimulationCore.Civilization;
+using SimulationCore.Core;
+using SimulationCore.Systems.SocialSystem.Records;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +11,8 @@ namespace SimulationCore.Systems.SocialSystem
     public class Woman : Human
     {
         #region Constructors
-        public Woman(SocialSystem socialSystem, string name)
-            : base(socialSystem, name, HumanSex.Female)
+        public Woman(CivilizationManager civilManager, string name)
+            : base(civilManager, name, HumanSex.Female)
         {
         }
         #endregion
@@ -22,8 +24,10 @@ namespace SimulationCore.Systems.SocialSystem
         }
         public void ProduceBaby()
         {
-            var marriageRecord = SocialSystem.MarriageRecords.GetRecord(this);
-            var dieRecord = SocialSystem.DieRecords.GetRecord(this);
+            SocialSystem socialSystem = CivilManager.GetSystem<SocialSystem>();
+
+            var marriageRecord = socialSystem.MarriageRecords.GetRecord(this);
+            var dieRecord = socialSystem.DieRecords.GetRecord(this);
             if (marriageRecord == null || marriageRecord.RecordState == RecordState.Obselete ||
                 dieRecord != null)
             {
@@ -32,7 +36,7 @@ namespace SimulationCore.Systems.SocialSystem
 
             HumanSex childSex = RandomSelector.GetRandomEnumValue<HumanSex>();
             string childName = RandomSelector.GetRandomName(childSex);
-            SocialSystem.HumanRecords.CreateRecord(marriageRecord, childName, childSex);
+            socialSystem.HumanRecords.CreateRecord(marriageRecord, childName, childSex);
         }
         #endregion
     }

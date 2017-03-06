@@ -5,48 +5,28 @@ using System.Text;
 
 namespace SimulationCore.Core.States
 {
-    public class StateTransition<T> where T : class
+    public abstract class StateTransition<T> where T : class
     {
         #region Protected Members
-        protected State<T> _from;
-        protected State<T> _to;
+        protected T _controlledObject;
+        protected string _name;
         #endregion
 
         #region Public Properties
-        public State<T> From {
-            get {
-                return _from;
-            }
-
-            set {
-                _from = value;
-            }
-        }
-
-        public State<T> To {
-            get {
-                return _to;
-            }
-
-            set {
-                _to = value;
-            }
-        }
+        public string Name { get { return _name; } set { _name = value; } }
+        public T Controlled { get { return _controlledObject; } set { _controlledObject = value; } }
         #endregion
 
         #region Constructors
-        public StateTransition(State<T> from, State<T> to)
+        public StateTransition(string name, T obj)
         {
-            From = from;
-            To = to;
+            Name = name;
+            Controlled = obj;
         }
         #endregion
 
         #region Public Methods
-        public virtual bool CheckTransition()
-        {
-            return true;
-        }
+        public abstract bool CheckTransition();
         #endregion
     }
 }

@@ -1,20 +1,24 @@
-﻿using System;
+﻿using SimulationCore.Civilization;
+using SimulationCore.Systems.SocialSystem.Records;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SimulationCore.Core
+namespace SimulationCore.Systems.SocialSystem.RecordLists
 {
     public class SystemRecordList <T> 
         where T : SystemRecord
     {
         #region Private Variables
         protected List<T> _records;
+        protected CivilizationManager _civilManager;        
         #endregion
 
         #region Constructors
-        public SystemRecordList()
+        public SystemRecordList(CivilizationManager civilManager)
         {
+            CivilManager = civilManager;
             _records = new List<T>();
         }
         #endregion
@@ -34,6 +38,18 @@ namespace SimulationCore.Core
         public List<T> GetValidRecords()
         {
             return _records.FindAll(x => x.RecordState == RecordState.Valid);
+        }
+        #endregion
+
+        #region Public Properties
+        public CivilizationManager CivilManager {
+            get {
+                return _civilManager;
+            }
+
+            set {
+                _civilManager = value;
+            }
         }
         #endregion
     }

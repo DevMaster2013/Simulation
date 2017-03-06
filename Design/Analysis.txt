@@ -1,0 +1,13 @@
+The player starts the game by creating a new profile specifing his name.
+Then he chooses to (load existing game, or start a new game)
+The Game settings window appear when creating new game where he will
+choose the civilization name, the others players, the game map
+another options includes (starting popul, starting technology, starting resources, difficulty)
+then the player starts the game, if it is an online game, he will wait for other players to join.
+------------------------
+when the game starts, the player has some families in his civilizatoins.
+the civilization is composed from humans and some systems that serve those humans.
+the management of the civilization contains
+	- social system : which manages the life of the humans and families
+	- communication system : which manages sending and recieving messages from any component in the civilization.
+	- 

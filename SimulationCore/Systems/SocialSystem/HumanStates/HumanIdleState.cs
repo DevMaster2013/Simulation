@@ -1,19 +1,17 @@
-﻿using System;
+﻿using SimulationCore.Core.States;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace SimulationCore.Systems.SocialSystem.HumanStates
 {
-    public class HumanIdleState : HumanBaseState
+    public class HumanIdleState : State<Human>
     {
-        public HumanIdleState(Human controlledObject) : base(controlledObject)
+        #region Constructors
+        public HumanIdleState(StateMachine<Human> ownerSM, Human controlledObject) : base(ownerSM, "Idle", controlledObject)
         {
         }
-
-        protected override void checkTranstions()
-        {
-            base.checkTranstions();
-        }
+        #endregion
     }
 }

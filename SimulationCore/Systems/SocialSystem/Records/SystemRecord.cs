@@ -1,9 +1,10 @@
-﻿using System;
+﻿using SimulationCore.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SimulationCore.Core
+namespace SimulationCore.Systems.SocialSystem.Records
 {
     public enum RecordState : short
     {

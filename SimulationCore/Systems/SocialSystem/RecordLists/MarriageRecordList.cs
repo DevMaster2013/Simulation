@@ -1,4 +1,5 @@
-﻿using SimulationCore.Core;
+﻿using SimulationCore.Civilization;
+using SimulationCore.Core;
 using SimulationCore.Systems.SocialSystem.Records;
 using System;
 using System.Collections.Generic;
@@ -14,10 +15,10 @@ namespace SimulationCore.Systems.SocialSystem.RecordLists
         #endregion
 
         #region Constructors
-        public MarriageRecordList(SocialSystem socialSystem)
-            : base()
+        public MarriageRecordList(CivilizationManager civilManager)
+            : base(civilManager)
         {
-            SocialSystem = socialSystem;
+            SocialSystem = CivilManager.GetSystem<SocialSystem>();
         }
         #endregion
 

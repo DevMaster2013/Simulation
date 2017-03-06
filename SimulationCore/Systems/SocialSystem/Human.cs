@@ -1,4 +1,5 @@
-﻿using SimulationCore.Core;
+﻿using SimulationCore.Civilization;
+using SimulationCore.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,17 +18,19 @@ namespace SimulationCore.Systems.SocialSystem
         #region Protected Member Variables
         protected string _name;
         protected HumanSex _sex;
-        protected SocialSystem _socialSystem;
-        private double dieAge;
+        protected double _dieAge;
+        protected HumanStateMachine _stateMachine;
+        protected CivilizationManager _civilManager;
         #endregion
 
         #region Constructors
-        public Human(SocialSystem socialSystem, string name, HumanSex sex)
+        public Human(CivilizationManager civilManager, string name, HumanSex sex)
         {
+            CivilManager = civilManager;
             Name = name;
             Sex = sex;
-            SocialSystem = socialSystem;
-            DieAge = RandomSelector.GetRandomDouble(SocialSystem.Config.MaximumAge);
+            DieAge = RandomSelector.GetRandomDouble(CivilManager.GetSystem<SocialSystem>().Config.MaximumAge);
+            _stateMachine = new HumanStateMachine(this);
         }
         #endregion
 
@@ -56,21 +59,9 @@ namespace SimulationCore.Systems.SocialSystem
                 _sex = value;
             }
         }
-        public SocialSystem SocialSystem
-        {
-            get
-            {
-                return _socialSystem;
-            }
-
-            set
-            {
-                _socialSystem = value;
-            }
-        }
         public TimeSpan Age {
             get {
-                var record = SocialSystem.HumanRecords.GetRecord(this);
+                var record = CivilManager.GetSystem<SocialSystem>().HumanRecords.GetRecord(this);
                 return GameTimeSettings.CurrentGameTime - record.RecordDate;
             }
         }
@@ -78,12 +69,21 @@ namespace SimulationCore.Systems.SocialSystem
         {
             get
             {
-                return dieAge;
+                return _dieAge;
             }
 
             set
             {
-                dieAge = value;
+                _dieAge = value;
+            }
+        }
+        public CivilizationManager CivilManager {
+            get {
+                return _civilManager;
+            }
+
+            set {
+                _civilManager = value;
             }
         }
         #endregion
@@ -91,6 +91,7 @@ namespace SimulationCore.Systems.SocialSystem
         #region Public Methods
         public virtual void Update(double elapsedSeconds)
         {
+            _stateMachine.UpdateStateMachine(elapsedSeconds);
         }
         #endregion
     }

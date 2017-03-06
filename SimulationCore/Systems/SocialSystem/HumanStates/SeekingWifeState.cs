@@ -1,4 +1,5 @@
 ﻿using SimulationCore.Core;
+using SimulationCore.Core.States;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,43 +7,31 @@ using System.Text;
 
 namespace SimulationCore.Systems.SocialSystem.HumanStates
 {
-    public class SeekingWifeState : HumanBaseState
+    public class SeekingWifeState : State<Human>
     {
-        private static double _lastTimeSeekingWife = 0;
-        private static double _restTimeAfterFailingSeeking = 172800;    // 2 Days
-
-        public SeekingWifeState(Human controlledObject) : base(controlledObject)
+        #region Constructors
+        public SeekingWifeState(StateMachine<Human> ownerSM, Human controlledObject) : base(ownerSM, "SeekWife", controlledObject)
         {
-            _lastTimeSeekingWife = 0;
         }
+        #endregion
 
-        public override void Execute(double elapsedSeconds)
+        #region Public Methods
+        public override void Enter()
         {
-            _lastTimeSeekingWife += elapsedSeconds * GameTimeSettings.TimeScale;
-            base.Execute(elapsedSeconds);
-        }
+            SocialSystem socialSystem = Controlled.CivilManager.GetSystem<SocialSystem>();
 
-        protected override void checkTranstions()
-        {
-            if (_lastTimeSeekingWife >= _restTimeAfterFailingSeeking)
+            var suitableWomen = socialSystem.GetSuitableWomenForMarriage((Man)Controlled);
+            bool accepted = false;
+            Woman selectedWife = null;
+            while (!accepted && suitableWomen.Count > 0)
             {
-                var suitableWomen = Controlled.SocialSystem.GetSuitableWomenForMarriage((Man)Controlled);
-                bool accepted = false;
-                Woman selectedWife = null;
-                while (!accepted && suitableWomen.Count > 0)
-                {
-                    selectedWife = RandomSelector.SelectRandomSample(suitableWomen);
-                    suitableWomen.Remove(selectedWife);
-                    accepted = selectedWife.ResponseForMarriageProposal((Man)Controlled);
-                }
-
-                if (accepted)
-                    transTo(new HumanMarriedState(Controlled, selectedWife));
-
-                _lastTimeSeekingWife = 0;
+                selectedWife = RandomSelector.SelectRandomSample(suitableWomen);
+                suitableWomen.Remove(selectedWife);
+                accepted = selectedWife.ResponseForMarriageProposal((Man)Controlled);
             }
 
-            base.checkTranstions();
+            base.Enter();
         }
+        #endregion
     }
 }

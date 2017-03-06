@@ -9,12 +9,16 @@ namespace SimulationCore.Core.States
     {
         #region Private Members
         private T _controlledObject;
+        protected string _name;
+        protected StateMachine<T> _ownerStateMachine;
         #endregion
 
         #region Constructors
-        public State(T controlledObject)
+        public State(StateMachine<T> owner, string name, T obj)
         {
-            Controlled = controlledObject;
+            Name = name;
+            Controlled = obj;
+            OwnerStateMachine = owner;
         }
         #endregion
 
@@ -39,6 +43,8 @@ namespace SimulationCore.Core.States
                 _controlledObject = value;
             }
         }
+        public string Name { get { return _name; } set { _name = value; } }
+        public StateMachine<T> OwnerStateMachine { get { return _ownerStateMachine; } set { _ownerStateMachine = value; } }
         #endregion
     }
 }

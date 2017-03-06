@@ -43,6 +43,13 @@
       <SubType>Content</SubType>
       <DependentUpon>Class Diagrams\StateMachineClass.classdiagram</DependentUpon>
     </Content>
+    <Content Include="Class Diagrams\UMLClassDiagram.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Class Diagrams\UMLClassDiagram.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Class Diagrams\UMLClassDiagram.classdiagram</DependentUpon>
+    </Content>
     <Content Include="Use Cases\SocialSystemUseCase.usecasediagram">
       <SubType>Content</SubType>
     </Content>

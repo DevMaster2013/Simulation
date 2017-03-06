@@ -1,0 +1,687 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="e99cf743-6bba-4517-9eaa-14f758239d56" name="UMLClassDiagram" linkedPackageId="fef1e05f-933f-4577-a3dd-14fe8f539a02" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="2877f7aa-c8f4-4829-ab69-2fdd80e4ade9">
+      <profileInstance Id="48fc7fe3-368d-4007-b9b0-d44619cf2cf1" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="51ba1439-03ee-41e6-877a-01b39c6cd4b4">
+      <profileInstance Id="42bdd7e6-1dbf-4405-a38c-e68370acb5a8" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="2de74db4-d1b3-4c47-8b43-86fcc8efd034" name="Player" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d4048d54-0dfc-44d2-b083-fc29cc88f7e7" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="435e033a-0ae2-4b34-bb05-d751df7d38cc" name="Game" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="2c1dbc12-98fa-4ff0-94c9-f8da76d990c8" />
+        <targetEnds>
+          <association Id="76c9780d-bd39-483d-bced-941199615842" isDerived="false" sourceEndRoleName="Game" targetEndRoleName="ResourceManager" isLeaf="false" isAbstract="false">
+            <classMoniker Id="1a4223b4-fd99-4b69-b516-2324caec16ce" LastKnownName="ResourceManager" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="17ce8a95-5aa5-498f-ab97-b621ceb9383b" name="Game" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="cf9ecf32-94e4-49ec-b944-64c9351ffc0d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2215e46d-b2f4-44c2-bd25-450a2f711339" name="ResourceManager" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="3350c61f-3e34-4eb2-9089-733e65ac76c5" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="bd118369-5662-4153-9d20-a9ac8395d220" />
+          </association>
+          <association Id="2e3240da-76b7-4edd-9c77-165403ac49b0" isDerived="false" sourceEndRoleName="Game" targetEndRoleName="Player" isLeaf="false" isAbstract="false">
+            <classMoniker Id="2de74db4-d1b3-4c47-8b43-86fcc8efd034" LastKnownName="Player" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b228cc32-fba1-4ac8-84b1-8765a96f9185" name="Game" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="366490d2-ed9f-4a05-a096-35124cc656f9" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e894e1ee-7ef7-4d5e-8eaf-f7ea18345359" name="Player" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="cac4dabe-4b96-4834-9278-53bdaf6cb1d9" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="09dc9c1f-9e84-48f5-9891-07203b73b4e3" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="88b846c6-e36b-4576-8c66-5a3dd35ea61f" name="GameClock" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="3e1e713c-cf50-4a7d-b204-42ad7208d3db" />
+        <targetEnds>
+          <association Id="ffff45bd-6afe-41c4-9e14-cca578a6d4b8" isDerived="false" sourceEndRoleName="GameClock" targetEndRoleName="Game" isLeaf="false" isAbstract="false">
+            <classMoniker Id="435e033a-0ae2-4b34-bb05-d751df7d38cc" LastKnownName="Game" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="718e11e0-ec49-4712-a2b5-88291c35cc8d" name="GameClock" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="f9564ba9-73b9-44ac-9043-741f16fc110a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="52aefc35-3e8d-46bc-9626-66f0d3d1b741" name="Game" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="823bdef7-70bd-457d-8005-e692ede20d82" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="de635258-65be-4651-bba2-0c339f35bfb4" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="1ca7a516-5934-4906-bb7a-39df5953a1de" name="Resource" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e77cc9d1-2862-4bb5-8d39-fe22a01a616a" />
+        <targetEnds>
+          <association Id="74daf915-49ee-44c9-a34f-1256d838fbb9" isDerived="false" sourceEndRoleName="Resource" targetEndRoleName="ResourceManager" isLeaf="false" isAbstract="false">
+            <classMoniker Id="1a4223b4-fd99-4b69-b516-2324caec16ce" LastKnownName="ResourceManager" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="46d276ba-5142-4b3d-bf82-ccfff663a519" name="Resource" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="49d98eab-2c80-4968-9291-e86e4a31c972" name="Lower" value="1">
+                      <elementDefinition Id="ae340d5b-cac0-4018-b424-621c2f6e3030" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="4d25d054-1927-4744-b9f3-478c702676bb" name="Upper" value="*">
+                      <elementDefinition Id="25e08790-0805-4ab3-87b6-e0ac1c3211bd" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="406e83f2-988f-4639-afcf-3fe7b1a48aa0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e5a21898-97d6-4dfa-9880-6d0bb0fa6c3b" name="ResourceManager" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="aedda950-315b-4bb4-88f8-99868fd1f666" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="fd89dd63-e124-4c3f-985f-c074066c967b" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="7654b9c7-7b78-4127-8a9e-5af823a445d1" name="FileResource" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b2c9add3-86c8-4d54-8f66-667dee44779c" />
+        <generalsInternal>
+          <generalization Id="c0234896-8d32-4c0e-addd-4f9864971f37" isSubstitutable="false">
+            <classMoniker Id="1ca7a516-5934-4906-bb7a-39df5953a1de" LastKnownName="Resource" />
+            <elementDefinition Id="30426fa0-9e54-41bd-8130-b612ebd097da" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="120b62d9-a5af-436c-a4f1-ef680901657e" name="NamesFileResource" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="db2b7503-f638-45ee-9cdf-cf540ba7adbc" />
+        <generalsInternal>
+          <generalization Id="bc6d6318-9104-4b68-aa72-00ae90ac2531" isSubstitutable="false">
+            <classMoniker Id="7654b9c7-7b78-4127-8a9e-5af823a445d1" LastKnownName="FileResource" />
+            <elementDefinition Id="14bcff29-20ae-4524-a8b2-b2423695a9cd" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="1a4223b4-fd99-4b69-b516-2324caec16ce" name="ResourceManager" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="067051d3-eafd-4712-a9a6-466c0a42d3b5" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="79621bca-bf54-4aa6-b656-f1176f2b8a79" name="Civilization" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="be151f04-ec57-4c16-b18b-3c7e7d9e1b03" />
+        <targetEnds>
+          <association Id="c6553ba2-10bc-46a4-96b9-78ec5f390752" isDerived="false" sourceEndRoleName="Civilization" targetEndRoleName="Game" isLeaf="false" isAbstract="false">
+            <classMoniker Id="435e033a-0ae2-4b34-bb05-d751df7d38cc" LastKnownName="Game" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d460e2c1-6962-4217-ad90-efac9436a4e6" name="Civilization" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="1e215173-0c7b-4e41-8c7d-65ffe308a015" name="Lower" value="1">
+                      <elementDefinition Id="51470979-1d5e-4fad-a253-9362bb45d77a" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="7c327bb7-0689-47b1-9b89-d7a924d760f7" name="Upper" value="*">
+                      <elementDefinition Id="928c363b-70b0-47a3-8f4c-54ebf3f24290" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="be18effe-55c2-44fd-a61f-330d96132a11" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a5cfd0a0-1505-4aec-b79d-9fb69cb4b654" name="Game" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="787ef22f-8c8e-43c7-89d6-e1b8bed8079a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="d7b7e274-644a-4370-b8f8-15cd3db0a236" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="eedc6115-d4bf-45d5-99b5-19bb22080671" name="CivilizationSystem" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="38646deb-6974-4cf9-a9c5-3fe8ff8a0390" />
+        <targetEnds>
+          <association Id="be6e1037-42c1-482f-9cf5-c9e0c7af06dc" isDerived="false" sourceEndRoleName="CivilizationSystem" targetEndRoleName="Civilization" isLeaf="false" isAbstract="false">
+            <classMoniker Id="79621bca-bf54-4aa6-b656-f1176f2b8a79" LastKnownName="Civilization" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a3310af5-75ee-4843-b29c-6f70e5a63c67" name="CivilizationSystem" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="a6c26abd-837e-4dc8-9b68-d95003c7393f" name="Lower" value="1">
+                      <elementDefinition Id="76837fc8-74cb-4616-90db-9e1a1190e9a6" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="f91791d4-ea4a-4735-bab1-b3ba4b6729b4" name="Upper" value="*">
+                      <elementDefinition Id="edcc4301-3d95-424f-a421-0e3803f5f05c" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="5b488b29-8d6a-4b0e-bd61-535882b1bfd1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="13f84128-e7d9-45b8-8625-0d7e9bbc799b" name="Civilization" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="defddce7-1a93-44f7-babc-2af56d009c32" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="2c00b534-b157-4541-b85c-9f64f8f2c658" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="f6009fa3-5aad-4086-b8ae-5896ab3de5ae" name="SocialSystem" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ef84e130-2c3c-41a6-b2bf-2fd19a9cf476" />
+        <generalsInternal>
+          <generalization Id="3c866d80-2d82-441d-8408-d09160bef2e6" isSubstitutable="false">
+            <classMoniker Id="eedc6115-d4bf-45d5-99b5-19bb22080671" LastKnownName="CivilizationSystem" />
+            <elementDefinition Id="32a9f803-dedd-4676-8beb-25d21b5d0293" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="10eb4813-7264-46c2-b6d3-198cdff81f73" name="CommunicationSystem" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c3063040-01bc-4176-b194-eba7f4571a09" />
+        <generalsInternal>
+          <generalization Id="49411135-3447-4a07-ae13-066f8ca81004" isSubstitutable="false">
+            <classMoniker Id="eedc6115-d4bf-45d5-99b5-19bb22080671" LastKnownName="CivilizationSystem" />
+            <elementDefinition Id="3fb70166-9026-48c6-b4f6-b85c384d1934" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="7207a003-8ac3-4844-ba2c-8b94d5d3d8b9" name="SystemRecord" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="dae21800-29a4-4207-9d18-6344aac9b8c7" />
+        <targetEnds>
+          <association Id="867b816a-1b6a-45a0-9e8e-39d2b0966575" isDerived="false" sourceEndRoleName="SystemRecord" targetEndRoleName="SystemRecordBook" isLeaf="false" isAbstract="false">
+            <classMoniker Id="4ddd1917-d96f-4149-b014-83126f5b24fa" LastKnownName="SystemRecordBook" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a2bedb73-e643-480b-8ea3-4e0cf6c4f2e4" name="SystemRecord" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="36026341-8c3b-4468-bb58-60937bd99945" name="Lower" value="1">
+                      <elementDefinition Id="bdad77e8-97cd-45c4-97b4-740a39f671a0" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="d1931777-0805-4e5b-9d04-4d89e20451ab" name="Upper" value="*">
+                      <elementDefinition Id="75609863-b05d-43b4-a063-d2d1480fb5b6" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="00795729-b9e0-42a4-937e-23582ad6ca4e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="31e72635-4717-407a-a98c-035ed7376548" name="SystemRecordBook" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="18b7ec97-0865-41eb-813b-025c575e1d6c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="d7c9a1de-93f0-4c4f-a206-e33cc9de383e" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="4ddd1917-d96f-4149-b014-83126f5b24fa" name="SystemRecordBook" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="3b2e0d26-8155-4848-8765-8dbb9e245aec" />
+        <targetEnds>
+          <association Id="d2d89663-ecc6-4eea-ba24-44a160a900ef" isDerived="false" sourceEndRoleName="SystemRecordBook" targetEndRoleName="CivilizationSystem" isLeaf="false" isAbstract="false">
+            <classMoniker Id="eedc6115-d4bf-45d5-99b5-19bb22080671" LastKnownName="CivilizationSystem" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b1979c9f-3164-4740-91fc-4d7f4add014e" name="SystemRecordBook" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="51fa5380-8e7b-40ab-8900-dc21969301fe" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c1c0e7f4-94af-4cf5-a3c8-cda160a1fbdd" name="CivilizationSystem" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="2ce53a83-ff3c-4b3a-917a-f5fbe35c9eb2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="1800cd32-abba-4eb1-a2b4-88ef304d0940" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="db58478f-6715-4f6e-8ceb-f0b42ee52df9" name="SocialSystemRecord" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="414e66a8-2400-4c5f-b504-4926eb5f43a6" />
+        <generalsInternal>
+          <generalization Id="0ef6f241-c8b7-4279-aa3b-fb4fbd4ab620" isSubstitutable="false">
+            <classMoniker Id="7207a003-8ac3-4844-ba2c-8b94d5d3d8b9" LastKnownName="SystemRecord" />
+            <elementDefinition Id="0c5e6e3c-a7a1-4d74-a99d-33cbee1bffd6" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="48661fa5-64db-40be-9571-cb4bc9e0e47f" isDerived="false" sourceEndRoleName="SocialSystemRecord" targetEndRoleName="SocialSystem" isLeaf="false" isAbstract="false">
+            <classMoniker Id="f6009fa3-5aad-4086-b8ae-5896ab3de5ae" LastKnownName="SocialSystem" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="53bbd1fa-30a2-416a-be27-0007bdfe3d8a" name="SocialSystemRecord" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="5f0a3889-bd41-4acf-be92-e00d3c636a71" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="59781f01-2f2e-46f0-8ca3-135369ac4eed" name="SocialSystem" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="a95fde1d-5632-433b-8cf4-07659cb96aa4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="fbadb2f0-2fb1-4447-9d26-a7421e448a93" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a7ebab7f-8108-44ca-bba0-7195c0192393" name="Human" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="20f11a3f-c553-4318-884c-e3d671bec0b4" />
+        <targetEnds>
+          <association Id="b40dc6aa-d116-4587-bce1-f4dc30868c1e" isDerived="false" sourceEndRoleName="Human" targetEndRoleName="SocialSystemRecord" isLeaf="false" isAbstract="false">
+            <classMoniker Id="db58478f-6715-4f6e-8ceb-f0b42ee52df9" LastKnownName="SocialSystemRecord" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="57181ef3-4753-4621-8118-67e62ad7146e" name="Human" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="66e93728-7019-459b-a174-7ad401078385" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="64415875-f64f-40d6-aa15-7fc106fdeaea" name="SocialSystemRecord" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="e539c55a-2a05-4114-bc39-81a30b3221a4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="b42d2f77-780c-4ed9-afbb-ce8cfdd41d26" />
+          </association>
+          <association Id="bd1d7353-a9b7-4c2f-9bf3-891473317ce5" isDerived="false" sourceEndRoleName="Human" targetEndRoleName="SocialSystem" isLeaf="false" isAbstract="false">
+            <classMoniker Id="f6009fa3-5aad-4086-b8ae-5896ab3de5ae" LastKnownName="SocialSystem" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="47292510-4ca9-4600-addf-223eb28f562c" name="Human" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="faecf895-2dd4-4707-bbf6-1a06350e9079" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b9b68fe6-7bd0-4fe3-a397-ff0a6a4a3b72" name="SocialSystem" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="ae362295-6a1e-436a-8fcb-eba31163251e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="0a69ba12-cf2a-43a7-9ecd-d93ede17986e" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="78b1e1c7-ebde-4f1f-ae57-03549071c59f" name="DivorceRecord" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ed33a68d-2f62-41d0-8007-1c004a7c0e2e" />
+        <generalsInternal>
+          <generalization Id="58800c96-c133-4eb9-871e-7c5377fbb9ad" isSubstitutable="false">
+            <classMoniker Id="db58478f-6715-4f6e-8ceb-f0b42ee52df9" LastKnownName="SocialSystemRecord" />
+            <elementDefinition Id="60abd835-33e2-4327-aa30-2699c4de9144" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="35027b09-934b-4215-abb9-375ed842313a" name="MarriageRecord" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="97f461c1-8305-4d27-9965-fbf8cfadd54f" />
+        <generalsInternal>
+          <generalization Id="97a00f8f-c5bb-4d08-867f-5219473c5b1c" isSubstitutable="false">
+            <classMoniker Id="db58478f-6715-4f6e-8ceb-f0b42ee52df9" LastKnownName="SocialSystemRecord" />
+            <elementDefinition Id="b94a75ab-838b-4a70-8b67-2bd827009b66" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="02925148-a31b-4a88-a786-c9c0b9c73153" name="DieRecord" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="9a5f48d0-75f3-40ac-a225-3335168a2e67" />
+        <generalsInternal>
+          <generalization Id="094d05c7-8ce2-4ad2-880a-79e11964b8a4" isSubstitutable="false">
+            <classMoniker Id="db58478f-6715-4f6e-8ceb-f0b42ee52df9" LastKnownName="SocialSystemRecord" />
+            <elementDefinition Id="c4b15c88-8f5a-462f-ac22-d05c3983040d" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="950cc83f-04e3-4af1-93f1-4c79edb70cce" name="MessageRecord" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b82a8c6a-8c8f-4f1b-83fb-5672c7ee327e" />
+        <generalsInternal>
+          <generalization Id="8e3407a3-500d-4b42-9e23-51b6c0240665" isSubstitutable="false">
+            <classMoniker Id="7207a003-8ac3-4844-ba2c-8b94d5d3d8b9" LastKnownName="SystemRecord" />
+            <elementDefinition Id="1e74f406-6b98-4a9c-8248-047ce1bef715" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="e33ee2b6-5b47-41a0-9c63-d07f785e2137" isDerived="false" sourceEndRoleName="MessageRecord" targetEndRoleName="CommunicationSystem" isLeaf="false" isAbstract="false">
+            <classMoniker Id="10eb4813-7264-46c2-b6d3-198cdff81f73" LastKnownName="CommunicationSystem" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2c20e0c0-c135-46d3-8dd5-68d8b58f79b6" name="MessageRecord" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e8476ce6-2783-439a-ad26-508414bb4312" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3d9aeff0-1969-42c3-b239-7a442bed522f" name="CommunicationSystem" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="19c9227c-c640-484f-925f-cdb989814bdc" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="60d8a16f-9322-45b7-9281-4528bbe9b945" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="96d8f30c-8050-44f8-b44f-aea7eb19f163" name="Message" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="a3a77417-cab6-4abd-8c87-2586aae768e7" />
+        <targetEnds>
+          <association Id="0c4b2bfc-8529-484e-a23f-4100a252351f" isDerived="false" sourceEndRoleName="Message" targetEndRoleName="MessageRecord" isLeaf="false" isAbstract="false">
+            <classMoniker Id="950cc83f-04e3-4af1-93f1-4c79edb70cce" LastKnownName="MessageRecord" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0bb34865-a0f7-4d0d-a8a2-d675046fad93" name="Message" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="bd94c7e9-1c37-4e98-a407-559a317ddc2f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="af7ada46-fcc2-4f46-8d1e-5946a5e619c2" name="MessageRecord" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="1130d811-4c6a-409a-89f4-7ebc6e63325f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="34a99ec9-8067-4e1f-9db6-95baa74ac6cf" />
+          </association>
+          <association Id="1fd6f98f-e441-4a8b-b2f5-41ce3b255d37" isDerived="false" sourceEndRoleName="Message" targetEndRoleName="CommunicationSystem" isLeaf="false" isAbstract="false">
+            <classMoniker Id="10eb4813-7264-46c2-b6d3-198cdff81f73" LastKnownName="CommunicationSystem" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="def5e9bf-e439-4024-92fc-5561c0ac885d" name="Message" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="3bf27205-6489-41dd-abaf-c1e586f1686c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6b363688-e30a-4477-bce8-9189e608232a" name="CommunicationSystem" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="db10533d-704c-4350-ae21-09efd3a5f134" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="7e00e01e-aecb-4871-a851-8f6d0fd25b77" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="31ea3f79-1860-4a4a-b391-6d35a0ca5aea" name="Man" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="7c1fbd62-6c79-4df0-a7ce-c801b44c3f7a" />
+        <generalsInternal>
+          <generalization Id="a0b1532a-dbb8-4c11-9649-91b6e5fb0330" isSubstitutable="false">
+            <classMoniker Id="a7ebab7f-8108-44ca-bba0-7195c0192393" LastKnownName="Human" />
+            <elementDefinition Id="0df5b16a-ba00-446f-9dd4-6dfa7be20b3d" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="b89d3429-5a57-4692-b763-2fa8754ce3da" name="Woman" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b0ec36bc-895b-48bc-9c4a-2151177f92fc" />
+        <generalsInternal>
+          <generalization Id="23021f6d-c367-4554-aab1-0db1f6c59c70" isSubstitutable="false">
+            <classMoniker Id="a7ebab7f-8108-44ca-bba0-7195c0192393" LastKnownName="Human" />
+            <elementDefinition Id="da9b4edd-23d3-4828-8d12-637361d54f67" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="8fb2d194-57d0-43fc-8482-6001e258753b" name="MarriageProposalMessage" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="cc8dca0a-35e2-481e-be17-3199b51e3e58" />
+        <generalsInternal>
+          <generalization Id="e0808046-fd91-473d-a3d7-c9a500b420aa" isSubstitutable="false">
+            <classMoniker Id="96d8f30c-8050-44f8-b44f-aea7eb19f163" LastKnownName="Message" />
+            <elementDefinition Id="30a5d0b2-fd42-4787-91ea-9d03cf33ae55" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="5ac07c0b-542c-4d46-9895-481f6356ed1f" name="MarriageApprovedMessage" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="8a57d1e7-88b5-4e78-93c1-5af1176e3d50" />
+        <generalsInternal>
+          <generalization Id="b7454eab-e6ad-4aed-a9f8-140918e99f90" isSubstitutable="false">
+            <classMoniker Id="96d8f30c-8050-44f8-b44f-aea7eb19f163" LastKnownName="Message" />
+            <elementDefinition Id="f842bfbc-4837-481c-845f-81ee00a5941d" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="0cf1d29a-e3fa-4f20-bc4f-e83e3d02d427" name="MarriageRefusedMessage" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="eaf1f26a-c93f-4440-902a-4d0151f9b92a" />
+        <generalsInternal>
+          <generalization Id="386afe8b-7a65-4ce2-b27e-2c6d70ceb2d3" isSubstitutable="false">
+            <classMoniker Id="96d8f30c-8050-44f8-b44f-aea7eb19f163" LastKnownName="Message" />
+            <elementDefinition Id="c38cf4b9-7dfd-4afb-86e2-1f27529deb3e" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="6969c3f0-143f-4b51-867c-eeabbd92a470" name="StateTransition" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="67e6418a-2bb9-4031-98dd-291ad42b58ba" />
+        <targetEnds>
+          <association Id="b7237f6b-18b7-4ba1-94cd-eb93fb6364d0" isDerived="false" sourceEndRoleName="StateTransition" targetEndRoleName="StateMachine" isLeaf="false" isAbstract="false">
+            <classMoniker Id="f7af2507-099d-47c1-9a52-e044c2cb9c2f" LastKnownName="StateMachine" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="102cc541-5ae8-45e9-8ed9-45cc9565360c" name="StateTransition" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="4c138c3f-61d2-432d-9a02-caa63e6460e1" name="Lower" value="1">
+                      <elementDefinition Id="ed753be8-064c-4d97-88e7-c8fef23300bb" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="7126a09f-1e43-4f1e-a0db-afb6ee90dcc2" name="Upper" value="*">
+                      <elementDefinition Id="7c405288-7893-416c-a7c4-3e12872e7b34" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="a699657f-c89f-4281-9154-72ebabf6a859" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4c0aa760-8b4a-44c9-a81a-31bf0e2b88e5" name="StateMachine" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="d9bc8d43-405f-4b2c-a314-bfe8773fd918" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="b1ca6a1b-e250-4aff-9610-9810e9bed75b" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="2c4710cb-af0b-49ec-b8d5-d87d01dacfd5" name="State" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="8b03dd06-bf39-4fe4-82c6-0c8e03fb2171" />
+        <targetEnds>
+          <association Id="bc7d290c-2308-4042-a273-3da9815bc4dc" isDerived="false" sourceEndRoleName="State" targetEndRoleName="StateMachine" isLeaf="false" isAbstract="false">
+            <classMoniker Id="f7af2507-099d-47c1-9a52-e044c2cb9c2f" LastKnownName="StateMachine" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ee1bfeea-100f-436d-ae68-db112c595d45" name="State" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="f8bcd473-0baf-41c7-afc7-8486ab9878a3" name="Lower" value="1">
+                      <elementDefinition Id="34879629-a25b-47b6-918a-0ce20ef9f0ea" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="6d93a788-727c-4a0c-9208-27ba73f04687" name="Upper" value="*">
+                      <elementDefinition Id="dec2a154-4914-4b57-8f0c-c6c0a4cb0b2c" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="0f72c6fd-f86d-472a-8438-e9eb1b6dd1e8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="aaa4ac6c-068f-4ab8-90fb-a31751a40747" name="StateMachine" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="77ccf36a-faa8-4547-81f8-49f53bc078d2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="55453153-7d97-41eb-946a-7a18c8f83331" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="f7af2507-099d-47c1-9a52-e044c2cb9c2f" name="StateMachine" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c09a1824-97ed-41f2-8a79-4385ffcc19c5" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="9d788334-3c6c-4593-b053-d743c874b43a" name="HumanStateMachine" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="eae26690-9081-49c1-947b-8ba3fb7aabca" />
+        <generalsInternal>
+          <generalization Id="e625cffe-a379-456b-9515-f4b3498c940b" isSubstitutable="false">
+            <classMoniker Id="f7af2507-099d-47c1-9a52-e044c2cb9c2f" LastKnownName="StateMachine" />
+            <elementDefinition Id="c7b9968c-8cb2-4e87-a6da-811b3da415a8" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="c6ff3672-547d-48be-bbb3-c8c0a8719ba2" name="HumanIdleState" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="5627e515-47e3-45c9-966d-91fdd93d21de" />
+        <generalsInternal>
+          <generalization Id="b67bc177-b0ef-490f-9ae6-072908f050c4" isSubstitutable="false">
+            <classMoniker Id="2c4710cb-af0b-49ec-b8d5-d87d01dacfd5" LastKnownName="State" />
+            <elementDefinition Id="79f0699f-0e3e-4b6b-8577-128de83ee17c" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="933e812c-8ae1-451b-a7e0-1d7ca52bba03" name="HumanDiedState" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e7a00b59-60a6-4c6b-8b87-a4e677a31899" />
+        <generalsInternal>
+          <generalization Id="4247fb1b-e040-449f-9a06-275c184a9c0f" isSubstitutable="false">
+            <classMoniker Id="2c4710cb-af0b-49ec-b8d5-d87d01dacfd5" LastKnownName="State" />
+            <elementDefinition Id="5ca4ba84-5e6b-4c67-9824-9b40b1378c61" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="c24da860-0c32-4f8b-aea9-d335034c8616" name="ManSeekWifeState" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e33c21c9-8483-49ba-8bd4-3f7ccebee4d0" />
+        <generalsInternal>
+          <generalization Id="1a864978-00cd-41dd-9064-80a0bb434646" isSubstitutable="false">
+            <classMoniker Id="2c4710cb-af0b-49ec-b8d5-d87d01dacfd5" LastKnownName="State" />
+            <elementDefinition Id="59a141b0-698b-42df-a771-a1da6ee0f385" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d452760e-8ecb-452c-afc5-db5bc2d17624" name="HumanIdleToHumanSeekWifeTransition" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="63e147f2-883e-4159-917e-dc5c70e29f69" />
+        <generalsInternal>
+          <generalization Id="181c48cf-8fa3-4c60-ab25-2fc0671c5042" isSubstitutable="false">
+            <classMoniker Id="6969c3f0-143f-4b51-867c-eeabbd92a470" LastKnownName="StateTransition" />
+            <elementDefinition Id="9177231f-0f7b-4918-8a6a-75592bce56da" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="3e2192b5-6bf7-4152-b503-712a01fa33c8" name="HumanGlobalToHumanDieState" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="0f2fd14f-7f72-4303-9a03-92bc7c849eff" />
+        <generalsInternal>
+          <generalization Id="16bd75c8-584e-4e83-a50c-7dacf27fbe48" isSubstitutable="false">
+            <classMoniker Id="6969c3f0-143f-4b51-867c-eeabbd92a470" LastKnownName="StateTransition" />
+            <elementDefinition Id="65f6aee7-e062-43c9-b448-63a5c1fdb22d" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="4af98cc5-df24-4a29-bc30-e87a1c185fe3" name="HumanMarriedState" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="0093f46a-3c24-4a5f-8822-33a11799782c" />
+        <generalsInternal>
+          <generalization Id="3326d819-2003-49cb-9dac-ceb701dd6508" isSubstitutable="false">
+            <classMoniker Id="2c4710cb-af0b-49ec-b8d5-d87d01dacfd5" LastKnownName="State" />
+            <elementDefinition Id="4ad47636-bba9-4c64-b531-c26e444e7daa" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="f8617759-a47d-49f9-974e-c34bbe817e0b" name="GlobalHumanToHumanMarriedTransition" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ad80bf56-c9e9-4a86-8c23-a69e1554ffd5" />
+        <generalsInternal>
+          <generalization Id="24fa1b2c-e433-4fd8-a31a-d5003e6278a5" isSubstitutable="false">
+            <classMoniker Id="6969c3f0-143f-4b51-867c-eeabbd92a470" LastKnownName="StateTransition" />
+            <elementDefinition Id="68874ccf-016a-4a6b-b9c6-eb5675f0ac4d" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="e1c4e63e-22cc-4115-b635-2a6dbe38fd08" name="HumanMarriedToHumanGlobalTransition" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="14d767fe-4059-42df-bfb9-935ded631c3a" />
+        <generalsInternal>
+          <generalization Id="b9b2b880-4c54-4fa5-a898-ab5d3a55c996" isSubstitutable="false">
+            <classMoniker Id="6969c3f0-143f-4b51-867c-eeabbd92a470" LastKnownName="StateTransition" />
+            <elementDefinition Id="dde79ccc-269b-4b53-9bf6-72c20b0c7bbe" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="fef1e05f-933f-4577-a3dd-14fe8f539a02" name="Social System Model">
+    <elementDefinition Id="b9e6d820-cef7-4ea9-adcf-7f741d02be4e" />
+  </package>
+</logicalClassDesignerModel>

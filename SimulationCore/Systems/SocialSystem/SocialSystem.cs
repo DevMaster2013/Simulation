@@ -1,4 +1,5 @@
-﻿using SimulationCore.Core;
+﻿using SimulationCore.Civilization;
+using SimulationCore.Core;
 using SimulationCore.Systems.SocialSystem.RecordLists;
 using SimulationCore.Systems.SocialSystem.Records;
 using System;
@@ -20,13 +21,13 @@ namespace SimulationCore.Systems.SocialSystem
         #endregion
 
         #region Constructors
-        public SocialSystem()
-            : base()
+        public SocialSystem(CivilizationManager civilManager)
+            : base(civilManager)
         {
-            MarriageRecords = new MarriageRecordList(this);
-            DivorceRecords = new DivorceRecordList(this);
-            HumanRecords = new HumanRecordList(this);
-            DieRecords = new DieRecordList(this);
+            MarriageRecords = new MarriageRecordList(civilManager);
+            DivorceRecords = new DivorceRecordList(civilManager);
+            HumanRecords = new HumanRecordList(civilManager);
+            DieRecords = new DieRecordList(civilManager);
             _config = new SocialSystemConfig();
         }
         #endregion
@@ -122,7 +123,7 @@ namespace SimulationCore.Systems.SocialSystem
 
             var unMarriedWomen = HumanRecords.GetUnmarriedWomenRecords();
             var manRecord = HumanRecords.GetRecord(man);
-            var manFamilyTree = new FamilyTree(this, manRecord);
+            var manFamilyTree = new FamilyTree(CivilManager, manRecord);
             foreach (var woman in unMarriedWomen)
             {
                 int level;
