@@ -163,6 +163,7 @@
     <ClInclude Include="ForeignersSystem.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameClock.h" />
+    <ClInclude Include="GameResource.h" />
     <ClInclude Include="HealthSystem.h" />
     <ClInclude Include="HelpfulMacros.h" />
     <ClInclude Include="GameEntity.h" />
@@ -201,6 +202,7 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameClock.cpp" />
     <ClCompile Include="GameEntity.cpp" />
+    <ClCompile Include="GameResource.cpp" />
     <ClCompile Include="HealthSystem.cpp" />
     <ClCompile Include="HousingSystem.cpp" />
     <ClCompile Include="ManufacturingSystem.cpp" />

@@ -184,6 +184,12 @@
     <Filter Include="Source Files\Systems\ForeignersSystem">
       <UniqueIdentifier>{95d5bf1e-fd0d-4dcb-bba8-78a3a308ef3c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Resources">
+      <UniqueIdentifier>{d6056b18-ff10-4c21-b344-089e3692e4b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Resources">
+      <UniqueIdentifier>{e9c3f669-ddec-48be-b341-66961e69e325}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Simulation Core.h">
@@ -294,6 +300,9 @@
     <ClInclude Include="SystemConfigTable.h">
       <Filter>Header Files\Civilization Core</Filter>
     </ClInclude>
+    <ClInclude Include="GameResource.h">
+      <Filter>Header Files\Resources</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
@@ -391,6 +400,9 @@
     </ClCompile>
     <ClCompile Include="SystemConfigTable.cpp">
       <Filter>Source Files\Civilization Core</Filter>
+    </ClCompile>
+    <ClCompile Include="GameResource.cpp">
+      <Filter>Source Files\Resources</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
