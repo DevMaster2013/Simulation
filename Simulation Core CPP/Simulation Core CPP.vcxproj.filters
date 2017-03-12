@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Utilities">
+      <UniqueIdentifier>{41aa4a70-4acb-441a-b473-4571b048345b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Core">
+      <UniqueIdentifier>{52221987-edac-4b14-9199-e465d9c2e968}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Civilization Core">
+      <UniqueIdentifier>{e3e90fa4-46aa-4a6f-b5e5-ea98ebbe23fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Core">
+      <UniqueIdentifier>{0560c8d9-815c-459c-96a0-a17979469f2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Civilization Core">
+      <UniqueIdentifier>{6be9e75d-9a0e-4464-a976-1a0ad22bb2da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Systems">
+      <UniqueIdentifier>{f0ff0b41-929d-491d-9ed2-c54283a0c505}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Systems">
+      <UniqueIdentifier>{c8cbaafe-2b94-43f3-a880-0bd79fe92b05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Systems\AgricultureSystem">
+      <UniqueIdentifier>{37465781-eb39-4119-8cfd-c51f4b41e733}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Systems\CommunicationSystem">
+      <UniqueIdentifier>{471d3af0-4f7a-403f-9ab0-197f0cf06fb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Systems\ConstructionSystem">
+      <UniqueIdentifier>{2033289b-1557-4731-90c0-d3d82829bb10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Systems\DefenseSystem">
+      <UniqueIdentifier>{e690471c-16a6-4f97-b780-8f0f27b59747}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Systems\DiplomacySystem">
+      <UniqueIdentifier>{b1dd747a-d0b3-4201-95b0-989ba239720a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Systems\EducationSystem">
+      <UniqueIdentifier>{cf253b1e-de4a-4750-b791-1faf7edb1d1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Systems\EmploymentSystem">
+      <UniqueIdentifier>{10148c38-505c-49f6-b913-2bd003e03e4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Systems\EntertainmentSystem">
+      <UniqueIdentifier>{b7ec40ce-3138-449e-97d0-7ebd1415a823}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Systems\EnvironmentSystem">
+      <UniqueIdentifier>{645bd308-fddd-407c-82d2-7af1043685c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Systems\FacilitiesSystem">
+      <UniqueIdentifier>{823737a2-ea72-4ed5-ac69-9c49dca0bf02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Systems\FinancialSystem">
+      <UniqueIdentifier>{a15e792a-814b-4f83-8aaf-4a52d3402311}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Systems\HealthSystem">
+      <UniqueIdentifier>{bedba4e7-79b1-42b8-ae57-5ad3cab27cbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Systems\HousingSystem">
+      <UniqueIdentifier>{59f2199d-e0ec-44bc-97d8-14fa76bfafd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Systems\ManufacturingSystem">
+      <UniqueIdentifier>{affd0505-b229-4e99-ad45-2e8cde982715}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Systems\PoliticsSystem">
+      <UniqueIdentifier>{77da75cb-a8a9-41c1-b9d2-19ac3dbfe58b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Systems\ReligionSystem">
+      <UniqueIdentifier>{69881c1f-b53e-4874-90b4-b82ebd1607c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Systems\ResearchSystem">
+      <UniqueIdentifier>{abf6c88a-6c42-46fe-9944-044e5bc2e725}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Systems\ResourcesSystem">
+      <UniqueIdentifier>{22785596-285d-4bfb-99af-98720cb6fc3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Systems\SecuritySystem">
+      <UniqueIdentifier>{51182fa9-2234-4fbd-bb2b-a71a4c56eb2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Systems\SocialSystem">
+      <UniqueIdentifier>{6fe12727-e072-4a92-81a3-c83248445ac5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Systems\SportsSystem">
+      <UniqueIdentifier>{73c26b70-fd43-4e3a-9a84-71ac30c005d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Systems\SupplySystem">
+      <UniqueIdentifier>{8fe8b323-92b2-4938-8f14-96568c6e0a3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Systems\TradeSystem">
+      <UniqueIdentifier>{6e84a70f-67cf-47c2-a5ea-3d1cbc18fa68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Systems\TransportSystem">
+      <UniqueIdentifier>{1b0c6c82-4553-44ae-ba64-16666e739807}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Systems\AgricultureSystem">
+      <UniqueIdentifier>{f8a6cca5-0842-46c9-91fb-de178cb9e21c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Systems\CommunicationSystem">
+      <UniqueIdentifier>{0f2d42d1-1199-482e-9bfa-e19ebc9c0a38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Systems\ConstructionSystem">
+      <UniqueIdentifier>{6a929aed-7029-4b4b-8e7b-b669e034eaa1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Systems\DefenseSystem">
+      <UniqueIdentifier>{4bc49799-48c7-4425-adc3-60d90119a875}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Systems\DiplomacySystem">
+      <UniqueIdentifier>{539264cc-f742-4efe-9282-aa98bce88333}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Systems\EducationSystem">
+      <UniqueIdentifier>{d03018c8-7976-4319-b514-6d925d958f20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Systems\EmploymentSystem">
+      <UniqueIdentifier>{a5183e81-ba4a-4448-abbd-5ef3a5dbb7d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Systems\EntertainmentSystem">
+      <UniqueIdentifier>{285f4d8d-4385-4351-bf91-d7cccb02c349}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Systems\EnvironmentSystem">
+      <UniqueIdentifier>{5928b1fd-7600-4603-a437-1321fb8e0f85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Systems\FacilitiesSystem">
+      <UniqueIdentifier>{23dae01a-9bd0-4af9-a9f3-617308ba3825}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Systems\FinancialSystem">
+      <UniqueIdentifier>{cba4580a-4c47-41d6-b843-478975308b34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Systems\HealthSystem">
+      <UniqueIdentifier>{994d12f7-b7a3-434b-a603-68c91fa9f693}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Systems\HousingSystem">
+      <UniqueIdentifier>{33f465f0-fba8-4338-922a-d4066cf32b6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Systems\ManufacturingSystem">
+      <UniqueIdentifier>{d5995e88-955e-43d4-b938-df87d9008e9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Systems\PoliticsSystem">
+      <UniqueIdentifier>{8d08bc10-7eea-445c-8a7f-7126b9de7cdb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Systems\ReligionSystem">
+      <UniqueIdentifier>{171b6775-89ef-4fa7-b8fe-505d0bd0160b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Systems\ResearchSystem">
+      <UniqueIdentifier>{d00cf10c-6e69-40b3-a9d0-53a41b855e17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Systems\ResourcesSystem">
+      <UniqueIdentifier>{fd641f3e-47c0-4a9f-93f4-7f575dc6d3d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Systems\SecuritySystem">
+      <UniqueIdentifier>{9df0cc48-c9ac-4c34-b45d-8443b890673d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Systems\SocialSystem">
+      <UniqueIdentifier>{3a0d74cb-e940-4a0d-97f5-4929ca23e04d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Systems\SportsSystem">
+      <UniqueIdentifier>{36d7b7f7-7824-48c7-8a3e-43b954991591}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Systems\SupplySystem">
+      <UniqueIdentifier>{22c45cc1-b02a-48c1-9db1-cbcd00e229d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Systems\TradeSystem">
+      <UniqueIdentifier>{d00cc23b-844c-4905-ab58-3217790c7fc7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Systems\TransportSystem">
+      <UniqueIdentifier>{67e1df4d-50d0-4e57-bd7d-7f2ba446ad99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Systems\ForeignersSystem">
+      <UniqueIdentifier>{5b46edfb-13a9-4367-bbd5-72b7483eae42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Systems\ForeignersSystem">
+      <UniqueIdentifier>{95d5bf1e-fd0d-4dcb-bba8-78a3a308ef3c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Simulation Core.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DLLExportDefinitions.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="HelpfulMacros.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="SimTypes.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="GameClock.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEntity.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="SimException.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Civilization.h">
+      <Filter>Header Files\Civilization Core</Filter>
+    </ClInclude>
+    <ClInclude Include="CivilizationSystem.h">
+      <Filter>Header Files\Civilization Core</Filter>
+    </ClInclude>
+    <ClInclude Include="AgricultureSystem.h">
+      <Filter>Header Files\Systems\AgricultureSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="CommunicationSystem.h">
+      <Filter>Header Files\Systems\CommunicationSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstructionSystem.h">
+      <Filter>Header Files\Systems\ConstructionSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="DefenseSystem.h">
+      <Filter>Header Files\Systems\DefenseSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="DiplomacySystem.h">
+      <Filter>Header Files\Systems\DiplomacySystem</Filter>
+    </ClInclude>
+    <ClInclude Include="EducationSystem.h">
+      <Filter>Header Files\Systems\EducationSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="EmploymentSystem.h">
+      <Filter>Header Files\Systems\EmploymentSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="EntertainmentSystem.h">
+      <Filter>Header Files\Systems\EntertainmentSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="EnvironmentSystem.h">
+      <Filter>Header Files\Systems\EnvironmentSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="FacilitiesSystem.h">
+      <Filter>Header Files\Systems\FacilitiesSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="FinancialSystem.h">
+      <Filter>Header Files\Systems\FinancialSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="HealthSystem.h">
+      <Filter>Header Files\Systems\HealthSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="HousingSystem.h">
+      <Filter>Header Files\Systems\HousingSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="ManufacturingSystem.h">
+      <Filter>Header Files\Systems\ManufacturingSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="PoliticsSystem.h">
+      <Filter>Header Files\Systems\PoliticsSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="ReligionSystem.h">
+      <Filter>Header Files\Systems\ReligionSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="ResearchSystem.h">
+      <Filter>Header Files\Systems\ResearchSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourcesSystem.h">
+      <Filter>Header Files\Systems\ResourcesSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="SecuritySystem.h">
+      <Filter>Header Files\Systems\SecuritySystem</Filter>
+    </ClInclude>
+    <ClInclude Include="SocialSystem.h">
+      <Filter>Header Files\Systems\SocialSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="SportsSystem.h">
+      <Filter>Header Files\Systems\SportsSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="SupplySystem.h">
+      <Filter>Header Files\Systems\SupplySystem</Filter>
+    </ClInclude>
+    <ClInclude Include="TradeSystem.h">
+      <Filter>Header Files\Systems\TradeSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="TransportSystem.h">
+      <Filter>Header Files\Systems\TransportSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="ForeignersSystem.h">
+      <Filter>Header Files\Systems\ForeignersSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemConfigTable.h">
+      <Filter>Header Files\Civilization Core</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Game.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="GameClock.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEntity.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="SimException.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Civilization.cpp">
+      <Filter>Source Files\Civilization Core</Filter>
+    </ClCompile>
+    <ClCompile Include="CivilizationSystem.cpp">
+      <Filter>Source Files\Civilization Core</Filter>
+    </ClCompile>
+    <ClCompile Include="AgricultureSystem.cpp">
+      <Filter>Source Files\Systems\AgricultureSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="CommunicationSystem.cpp">
+      <Filter>Source Files\Systems\CommunicationSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructionSystem.cpp">
+      <Filter>Source Files\Systems\ConstructionSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="DefenseSystem.cpp">
+      <Filter>Source Files\Systems\DefenseSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="DiplomacySystem.cpp">
+      <Filter>Source Files\Systems\DiplomacySystem</Filter>
+    </ClCompile>
+    <ClCompile Include="EducationSystem.cpp">
+      <Filter>Source Files\Systems\EducationSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="EmploymentSystem.cpp">
+      <Filter>Source Files\Systems\EmploymentSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="EntertainmentSystem.cpp">
+      <Filter>Source Files\Systems\EntertainmentSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="EnvironmentSystem.cpp">
+      <Filter>Source Files\Systems\EnvironmentSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="FacilitiesSystem.cpp">
+      <Filter>Source Files\Systems\FacilitiesSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="FinancialSystem.cpp">
+      <Filter>Source Files\Systems\FinancialSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="HealthSystem.cpp">
+      <Filter>Source Files\Systems\HealthSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="HousingSystem.cpp">
+      <Filter>Source Files\Systems\HousingSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="ManufacturingSystem.cpp">
+      <Filter>Source Files\Systems\ManufacturingSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="PoliticsSystem.cpp">
+      <Filter>Source Files\Systems\PoliticsSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="ReligionSystem.cpp">
+      <Filter>Source Files\Systems\ReligionSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="ResearchSystem.cpp">
+      <Filter>Source Files\Systems\ResearchSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourcesSystem.cpp">
+      <Filter>Source Files\Systems\ResourcesSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="SecuritySystem.cpp">
+      <Filter>Source Files\Systems\SecuritySystem</Filter>
+    </ClCompile>
+    <ClCompile Include="SocialSystem.cpp">
+      <Filter>Source Files\Systems\SocialSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="SportsSystem.cpp">
+      <Filter>Source Files\Systems\SportsSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="SupplySystem.cpp">
+      <Filter>Source Files\Systems\SupplySystem</Filter>
+    </ClCompile>
+    <ClCompile Include="TradeSystem.cpp">
+      <Filter>Source Files\Systems\TradeSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="TransportSystem.cpp">
+      <Filter>Source Files\Systems\TransportSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="ForeignersSystem.cpp">
+      <Filter>Source Files\Systems\ForeignersSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemConfigTable.cpp">
+      <Filter>Source Files\Civilization Core</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
