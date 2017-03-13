@@ -1,7 +1,7 @@
 #include "ReligionSystem.h"
 
 sim::ReligionSystem::ReligionSystem(Civilization* ownerCiv)
-	: CivilizationSystem(ownerCiv, "ReligionSystem")
+	: CivilizationSystem(ownerCiv, nullptr, "ReligionSystem")
 {
 }
 

@@ -1,7 +1,7 @@
 #include "FinancialSystem.h"
 
 sim::FinancialSystem::FinancialSystem(Civilization* ownerCiv)
-	: CivilizationSystem(ownerCiv, "FinancialSystem")
+	: CivilizationSystem(ownerCiv, nullptr, "FinancialSystem")
 {
 }
 

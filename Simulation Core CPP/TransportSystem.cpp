@@ -1,7 +1,7 @@
 #include "TransportSystem.h"
 
 sim::TransportSystem::TransportSystem(Civilization* ownerCiv)
-	: CivilizationSystem(ownerCiv, "TransportSystem")
+	: CivilizationSystem(ownerCiv, nullptr, "TransportSystem")
 {
 }
 

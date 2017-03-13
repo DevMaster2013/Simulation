@@ -1,7 +1,7 @@
 #include "CommunicationSystem.h"
 
 sim::CommunicationSystem::CommunicationSystem(Civilization* ownerCiv)
-	: CivilizationSystem(ownerCiv, "CommunicationSystem")
+	: CivilizationSystem(ownerCiv, nullptr, "CommunicationSystem")
 {
 }
 

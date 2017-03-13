@@ -1,7 +1,7 @@
 #include "TradeSystem.h"
 
 sim::TradeSystem::TradeSystem(Civilization* ownerCiv)
-	: CivilizationSystem(ownerCiv, "TradeSystem")
+	: CivilizationSystem(ownerCiv, nullptr, "TradeSystem")
 {
 }
 

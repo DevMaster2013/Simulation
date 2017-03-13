@@ -1,7 +1,7 @@
 #include "EducationSystem.h"
 
 sim::EducationSystem::EducationSystem(Civilization* ownerCiv)
-	: CivilizationSystem(ownerCiv, "EducationSystem")
+	: CivilizationSystem(ownerCiv, nullptr, "EducationSystem")
 {
 }
 

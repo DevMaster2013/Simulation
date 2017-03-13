@@ -1,7 +1,7 @@
 #include "HealthSystem.h"
 
 sim::HealthSystem::HealthSystem(Civilization* ownerCiv)
-	: CivilizationSystem(ownerCiv, "HealthSystem")
+	: CivilizationSystem(ownerCiv, nullptr, "HealthSystem")
 {
 }
 

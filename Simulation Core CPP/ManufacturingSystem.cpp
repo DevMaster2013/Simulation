@@ -1,7 +1,7 @@
 #include "ManufacturingSystem.h"
 
 sim::ManufacturingSystem::ManufacturingSystem(Civilization* ownerCiv)
-	: CivilizationSystem(ownerCiv, "ManufacturingSystem")
+	: CivilizationSystem(ownerCiv, nullptr, "ManufacturingSystem")
 {
 }
 

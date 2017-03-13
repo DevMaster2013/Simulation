@@ -1,7 +1,7 @@
 #include "ForeignersSystem.h"
 
 sim::ForeignersSystem::ForeignersSystem(Civilization * ownerCiv)
-	: CivilizationSystem(ownerCiv, "ForeignersSystem")
+	: CivilizationSystem(ownerCiv, nullptr, "ForeignersSystem")
 {
 }
 

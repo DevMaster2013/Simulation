@@ -1,7 +1,7 @@
 #include "EmploymentSystem.h"
 
 sim::EmploymentSystem::EmploymentSystem(Civilization* ownerCiv)
-	: CivilizationSystem(ownerCiv, "EmploymentSystem")
+	: CivilizationSystem(ownerCiv, nullptr, "EmploymentSystem")
 {
 }
 

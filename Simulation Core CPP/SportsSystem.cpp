@@ -1,7 +1,7 @@
 #include "SportsSystem.h"
 
 sim::SportsSystem::SportsSystem(Civilization* ownerCiv)
-	: CivilizationSystem(ownerCiv, "SportsSystem")
+	: CivilizationSystem(ownerCiv, nullptr, "SportsSystem")
 {
 }
 

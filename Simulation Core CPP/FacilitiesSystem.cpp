@@ -1,7 +1,7 @@
 #include "FacilitiesSystem.h"
 
 sim::FacilitiesSystem::FacilitiesSystem(Civilization* ownerCiv)
-	: CivilizationSystem(ownerCiv, "FacilitiesSystem")
+	: CivilizationSystem(ownerCiv, nullptr, "FacilitiesSystem")
 {
 }
 

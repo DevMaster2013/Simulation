@@ -1,7 +1,7 @@
 #include "DiplomacySystem.h"
 
 sim::DiplomacySystem::DiplomacySystem(Civilization* ownerCiv)
-	: CivilizationSystem(ownerCiv, "DiplomacySystem")
+	: CivilizationSystem(ownerCiv, nullptr, "DiplomacySystem")
 {
 }
 

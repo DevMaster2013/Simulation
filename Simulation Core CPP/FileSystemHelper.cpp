@@ -10,7 +10,7 @@ std::vector<std::string> sim::FileSystemHelper::GetFilesInDirectory(const std::s
 
 	WIN32_FIND_DATAA findFileData;
 	HANDLE fHandle = FindFirstFileA((path + "\\" + pattern).c_str(), &findFileData);
-	bool found = fHandle != INVALID_HANDLE_VALUE;
+	BOOL found = fHandle != INVALID_HANDLE_VALUE;
 	while (found)
 	{
 		files.push_back(path + "\\" + findFileData.cFileName);

@@ -1,7 +1,7 @@
 #include "DefenseSystem.h"
 
 sim::DefenseSystem::DefenseSystem(Civilization* ownerCiv)
-	: CivilizationSystem(ownerCiv, "DefenseSystem")
+	: CivilizationSystem(ownerCiv, nullptr, "DefenseSystem")
 {
 }
 

@@ -1,7 +1,7 @@
 #include "SupplySystem.h"
 
 sim::SupplySystem::SupplySystem(Civilization* ownerCiv)
-	: CivilizationSystem(ownerCiv, "SupplySystem")
+	: CivilizationSystem(ownerCiv, nullptr, "SupplySystem")
 {
 }
 

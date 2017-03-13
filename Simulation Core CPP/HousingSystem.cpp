@@ -1,7 +1,7 @@
 #include "HousingSystem.h"
 
 sim::HousingSystem::HousingSystem(Civilization* ownerCiv)
-	: CivilizationSystem(ownerCiv, "HousingSystem")
+	: CivilizationSystem(ownerCiv, nullptr, "HousingSystem")
 {
 }
 

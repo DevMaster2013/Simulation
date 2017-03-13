@@ -97,7 +97,7 @@ void sim::Civilization::Finalize()
 	{
 		sys.second->Finalize();
 		delete sys.second;
-	}
+	}	
 }
 
 sim::CivilizationSystem* sim::Civilization::getSystem(const std::string & systemName)

@@ -1,7 +1,7 @@
 #include "EnvironmentSystem.h"
 
 sim::EnvironmentSystem::EnvironmentSystem(Civilization* ownerCiv)
-	: CivilizationSystem(ownerCiv, "EnvironmentSystem")
+	: CivilizationSystem(ownerCiv, nullptr, "EnvironmentSystem")
 {
 }
 

@@ -5,3 +5,5 @@
 #else
 #define SIMAPI __declspec(dllimport)
 #endif
+
+#pragma warning( disable : 4251)

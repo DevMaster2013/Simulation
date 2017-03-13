@@ -1,7 +1,7 @@
 #include "PoliticsSystem.h"
 
 sim::PoliticsSystem::PoliticsSystem(Civilization* ownerCiv)
-	: CivilizationSystem(ownerCiv, "PoliticsSystem")
+	: CivilizationSystem(ownerCiv, nullptr, "PoliticsSystem")
 {
 }
 

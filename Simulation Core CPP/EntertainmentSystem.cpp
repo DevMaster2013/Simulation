@@ -1,7 +1,7 @@
 #include "EntertainmentSystem.h"
 
 sim::EntertainmentSystem::EntertainmentSystem(Civilization* ownerCiv)
-	: CivilizationSystem(ownerCiv, "EntertainmentSystem")
+	: CivilizationSystem(ownerCiv, nullptr, "EntertainmentSystem")
 {
 }
 

@@ -1,7 +1,7 @@
 #include "SocialSystem.h"
 
 sim::SocialSystem::SocialSystem(Civilization* ownerCiv)
-	: CivilizationSystem(ownerCiv, "SocialSystem")
+	: CivilizationSystem(ownerCiv, nullptr, "SocialSystem")
 {
 }
 

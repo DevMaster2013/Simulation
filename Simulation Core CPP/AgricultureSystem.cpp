@@ -1,7 +1,7 @@
 #include "AgricultureSystem.h"
 
 sim::AgricultureSystem::AgricultureSystem(Civilization* ownerCiv)
-	: CivilizationSystem(ownerCiv, "AgricultureSystem")
+	: CivilizationSystem(ownerCiv, nullptr, "AgricultureSystem")
 {
 }
 

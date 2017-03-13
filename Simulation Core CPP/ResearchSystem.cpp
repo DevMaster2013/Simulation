@@ -1,7 +1,7 @@
 #include "ResearchSystem.h"
 
 sim::ResearchSystem::ResearchSystem(Civilization* ownerCiv)
-	: CivilizationSystem(ownerCiv, "ResearchSystem")
+	: CivilizationSystem(ownerCiv, nullptr, "ResearchSystem")
 {
 }
 

@@ -1,7 +1,7 @@
 #include "ResourcesSystem.h"
 
 sim::ResourcesSystem::ResourcesSystem(Civilization* ownerCiv)
-	: CivilizationSystem(ownerCiv, "ResourcesSystem")
+	: CivilizationSystem(ownerCiv, nullptr, "ResourcesSystem")
 {
 }
 
