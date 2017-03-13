@@ -11,13 +11,18 @@ sim::TransportSystem::~TransportSystem()
 
 bool sim::TransportSystem::Initialize()
 {
+	if (!sim::CivilizationSystem::Initialize())
+		return false;
+
 	return true;
 }
 
 void sim::TransportSystem::Update(double elapsedDays)
 {
+	sim::CivilizationSystem::Update(elapsedDays);
 }
 
 void sim::TransportSystem::Finalize()
 {
+	sim::CivilizationSystem::Finalize();
 }

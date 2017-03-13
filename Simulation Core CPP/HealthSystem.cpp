@@ -11,13 +11,18 @@ sim::HealthSystem::~HealthSystem()
 
 bool sim::HealthSystem::Initialize()
 {
+	if (!sim::CivilizationSystem::Initialize())
+		return false;
+
 	return true;
 }
 
 void sim::HealthSystem::Update(double elapsedDays)
 {
+	sim::CivilizationSystem::Update(elapsedDays);
 }
 
 void sim::HealthSystem::Finalize()
 {
+	sim::CivilizationSystem::Finalize();
 }

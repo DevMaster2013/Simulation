@@ -11,9 +11,10 @@ namespace sim
 		struct Config
 		{
 		public:
-			double MinimumManMarriageAge = 16.0;
-			double MinimumWomanMarriageAge = 16.0;
-			double MaximumAge = 100.0;
+			int		MaximumNumberOfChildren = 2;
+			double	MinimumManMarriageAge = 16.0;
+			double	MinimumWomanMarriageAge = 16.0;
+			double	MaximumAge = 100.0;
 		};
 
 	public:

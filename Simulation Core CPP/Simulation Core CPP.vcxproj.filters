@@ -193,6 +193,12 @@
     <Filter Include="Source Files\Utilities">
       <UniqueIdentifier>{71a721a1-f1ed-4c79-9484-733c1692458e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Systems\SocialSystem\SubSystems">
+      <UniqueIdentifier>{d8429eb4-1748-4702-abae-c2040d5f20af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Systems\SocialSystem\SubSystems">
+      <UniqueIdentifier>{36d66972-454e-4214-8ddb-7efca8ddba02}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Simulation Core.h">
@@ -321,6 +327,15 @@
     <ClInclude Include="StringHelper.h">
       <Filter>Header Files\Utilities</Filter>
     </ClInclude>
+    <ClInclude Include="Civilian.h">
+      <Filter>Header Files\Systems\SocialSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="SocialSubSystem.h">
+      <Filter>Header Files\Systems\SocialSystem\SubSystems</Filter>
+    </ClInclude>
+    <ClInclude Include="CiviliansSubSystem.h">
+      <Filter>Header Files\Systems\SocialSystem\SubSystems</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
@@ -436,6 +451,15 @@
     </ClCompile>
     <ClCompile Include="StringHelper.cpp">
       <Filter>Source Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Civilian.cpp">
+      <Filter>Source Files\Systems\SocialSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="SocialSubSystem.cpp">
+      <Filter>Source Files\Systems\SocialSystem\SubSystems</Filter>
+    </ClCompile>
+    <ClCompile Include="CiviliansSubSystem.cpp">
+      <Filter>Source Files\Systems\SocialSystem\SubSystems</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

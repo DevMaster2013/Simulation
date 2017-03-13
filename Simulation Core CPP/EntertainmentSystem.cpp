@@ -11,13 +11,18 @@ sim::EntertainmentSystem::~EntertainmentSystem()
 
 bool sim::EntertainmentSystem::Initialize()
 {
+	if (!sim::CivilizationSystem::Initialize())
+		return false;
+
 	return true;
 }
 
 void sim::EntertainmentSystem::Update(double elapsedDays)
 {
+	sim::CivilizationSystem::Update(elapsedDays);
 }
 
 void sim::EntertainmentSystem::Finalize()
 {
+	sim::CivilizationSystem::Finalize();
 }

@@ -147,6 +147,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="AgricultureSystem.h" />
+    <ClInclude Include="Civilian.h" />
+    <ClInclude Include="CiviliansSubSystem.h" />
     <ClInclude Include="Civilization.h" />
     <ClInclude Include="CivilizationSystem.h" />
     <ClInclude Include="CommunicationSystem.h" />
@@ -180,6 +182,7 @@
     <ClInclude Include="SimException.h" />
     <ClInclude Include="SimTypes.h" />
     <ClInclude Include="Simulation Core.h" />
+    <ClInclude Include="SocialSubSystem.h" />
     <ClInclude Include="SocialSystem.h" />
     <ClInclude Include="SportsSystem.h" />
     <ClInclude Include="StringHelper.h" />
@@ -191,6 +194,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AgricultureSystem.cpp" />
+    <ClCompile Include="Civilian.cpp" />
+    <ClCompile Include="CiviliansSubSystem.cpp" />
     <ClCompile Include="Civilization.cpp" />
     <ClCompile Include="CivilizationSystem.cpp" />
     <ClCompile Include="CommunicationSystem.cpp" />
@@ -220,6 +225,7 @@
     <ClCompile Include="ResourcesSystem.cpp" />
     <ClCompile Include="SecuritySystem.cpp" />
     <ClCompile Include="SimException.cpp" />
+    <ClCompile Include="SocialSubSystem.cpp" />
     <ClCompile Include="SocialSystem.cpp" />
     <ClCompile Include="SportsSystem.cpp" />
     <ClCompile Include="StringHelper.cpp" />
