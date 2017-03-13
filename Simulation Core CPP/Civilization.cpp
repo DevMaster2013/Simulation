@@ -1,5 +1,6 @@
 #include "Civilization.h"
 #include "SimException.h"
+#include "ResourceManager.h"
 
 #include "AgricultureSystem.h"
 #include "CommunicationSystem.h"
@@ -51,6 +52,9 @@ void sim::Civilization::Update(double elapsedDays)
 
 bool sim::Civilization::Initialize()
 {
+	// Load the systems config file resource
+	_systemsConfigRes = ResourceManager::GetInstance()->GetResource<ConfigFileResource>("SystemsConfig");
+
 	// Add the List of Civilization Systems
 	addSystem<AgricultureSystem>();
 	addSystem<CommunicationSystem>();

@@ -5,6 +5,7 @@
 #include "SimTypes.h"
 #include "Civilization.h"
 #include "GameClock.h"
+#include "ResourceManager.h"
 #include <map>
 
 namespace sim
@@ -19,8 +20,12 @@ namespace sim
 		void FinalizeGame();
 
 	private:
+		bool loadCivilizations();
+
+	private:
 		bool _isGameStarted;
 		StringMap<Civilization*> _civilizations;
 		GameClock _gameClock;
+		ResourceManager* _resManager;
 	};
 }

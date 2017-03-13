@@ -1,19 +1,16 @@
 #include "Game.h"
 #include "SimException.h"
+#include "NamesFileResource.h"
 #include <iostream>
 
 bool sim::Game::InitializeGame()
 {
-	// Add all civilizations to the game 
-	_civilizations["Egypt"] = new Civilization("Egypt");
-	_civilizations["Iraq"] = new Civilization("Iraq");
+	// Load Game Resources
+	_resManager = ResourceManager::GetInstance();
+	_resManager->LoadAllResources();
 
-	// Initialize all Civilizations of the game
-	for each (auto& civ in _civilizations)
-	{
-		if (!civ.second->Initialize())
-			throw SimException("Cannot initialize civilization " + civ.first);
-	}
+	if (!loadCivilizations())
+		throw SimException("Cannot initialize civilizations");
 
 	return true;
 }
@@ -44,4 +41,18 @@ void sim::Game::FinalizeGame()
 		civ.second->Finalize();
 		delete civ.second;
 	}
+}
+
+bool sim::Game::loadCivilizations()
+{
+	// Add all civilizations to the game 
+	auto civNameList = _resManager->GetResource<NamesFileResource>("CivilizationNames")->GetNamesList();
+	for each (auto& name in civNameList)
+	{
+		_civilizations[name] = new Civilization(name);
+		if (!_civilizations[name]->Initialize())
+			return false;
+	}
+
+	return true;
 }

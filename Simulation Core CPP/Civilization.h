@@ -5,6 +5,7 @@
 #include "SimTypes.h"
 #include "GameEntity.h"
 #include "CivilizationSystem.h"
+#include "ConfigFileResource.h"
 #include <string>
 
 namespace sim
@@ -33,6 +34,7 @@ namespace sim
 
 	private:
 		StringMap<CivilizationSystem*> _civSystems;
+		ConfigFileResource* _systemsConfigRes;
 	};
 
 	template<typename T>
@@ -47,6 +49,10 @@ namespace sim
 	template<typename T>
 	inline void Civilization::addSystem()
 	{
-		_civSystems[typeid(T).name()] = new T(this);
+		auto system = new T(this);	
+		auto configTable = _systemsConfigRes->GetConfigTable(system->GetName());
+		system->SetSystemConfigTable(configTable);
+
+		_civSystems[typeid(T).name()] = system;
 	}
 }

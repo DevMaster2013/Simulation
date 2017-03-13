@@ -8,6 +8,15 @@ namespace sim
 	class SIMAPI SocialSystem : public CivilizationSystem
 	{
 	public:
+		struct Config
+		{
+		public:
+			double MinimumManMarriageAge = 16.0;
+			double MinimumWomanMarriageAge = 16.0;
+			double MaximumAge = 100.0;
+		};
+
+	public:
 		SocialSystem(Civilization* ownerCiv);
 		virtual ~SocialSystem();
 
@@ -15,5 +24,14 @@ namespace sim
 		virtual bool Initialize() override;
 		virtual void Update(double elapsedDays) override;
 		virtual void Finalize() override;
+
+	public:
+		const Config& GetSystemConfig() const;
+
+	protected:
+		virtual void populateSystemConfig(SystemConfigTable* systemConfigTable) override;
+
+	private:
+		Config _socialConfig;
 	};
 }

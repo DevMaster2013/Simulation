@@ -35,4 +35,14 @@ sim::Civilization* sim::CivilizationSystem::GetOwnerCivilization() const
 
 void sim::CivilizationSystem::SetOwnerCivilizatoin(sim::Civilization* ownerCiv)
 {
+	_ownerCivilization = ownerCiv;
+}
+
+void sim::CivilizationSystem::SetSystemConfigTable(SystemConfigTable* systemConfigTable)
+{
+	populateSystemConfig(systemConfigTable);
+}
+
+void sim::CivilizationSystem::populateSystemConfig(SystemConfigTable* systemConfigTable)
+{
 }

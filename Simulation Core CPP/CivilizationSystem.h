@@ -23,9 +23,12 @@ namespace sim
 	public:
 		Civilization* GetOwnerCivilization() const;
 		void SetOwnerCivilizatoin(Civilization* ownerCiv);
+		void SetSystemConfigTable(SystemConfigTable* systemConfigTable);
+
+	protected:
+		virtual void populateSystemConfig(SystemConfigTable* systemConfigTable);
 
 	protected:
 		Civilization* _ownerCivilization;
-		SystemConfigTable* _systemConfigTable;
 	};
 }

@@ -159,6 +159,7 @@
     <ClInclude Include="EntertainmentSystem.h" />
     <ClInclude Include="EnvironmentSystem.h" />
     <ClInclude Include="FacilitiesSystem.h" />
+    <ClInclude Include="FileSystemHelper.h" />
     <ClInclude Include="FinancialSystem.h" />
     <ClInclude Include="ForeignersSystem.h" />
     <ClInclude Include="Game.h" />
@@ -169,9 +170,11 @@
     <ClInclude Include="GameEntity.h" />
     <ClInclude Include="HousingSystem.h" />
     <ClInclude Include="ManufacturingSystem.h" />
+    <ClInclude Include="NamesFileResource.h" />
     <ClInclude Include="PoliticsSystem.h" />
     <ClInclude Include="ReligionSystem.h" />
     <ClInclude Include="ResearchSystem.h" />
+    <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="ResourcesSystem.h" />
     <ClInclude Include="SecuritySystem.h" />
     <ClInclude Include="SimException.h" />
@@ -179,8 +182,10 @@
     <ClInclude Include="Simulation Core.h" />
     <ClInclude Include="SocialSystem.h" />
     <ClInclude Include="SportsSystem.h" />
+    <ClInclude Include="StringHelper.h" />
     <ClInclude Include="SupplySystem.h" />
     <ClInclude Include="SystemConfigTable.h" />
+    <ClInclude Include="ConfigFileResource.h" />
     <ClInclude Include="TradeSystem.h" />
     <ClInclude Include="TransportSystem.h" />
   </ItemGroup>
@@ -197,6 +202,7 @@
     <ClCompile Include="EntertainmentSystem.cpp" />
     <ClCompile Include="EnvironmentSystem.cpp" />
     <ClCompile Include="FacilitiesSystem.cpp" />
+    <ClCompile Include="FileSystemHelper.cpp" />
     <ClCompile Include="FinancialSystem.cpp" />
     <ClCompile Include="ForeignersSystem.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -206,16 +212,20 @@
     <ClCompile Include="HealthSystem.cpp" />
     <ClCompile Include="HousingSystem.cpp" />
     <ClCompile Include="ManufacturingSystem.cpp" />
+    <ClCompile Include="NamesFileResource.cpp" />
     <ClCompile Include="PoliticsSystem.cpp" />
     <ClCompile Include="ReligionSystem.cpp" />
     <ClCompile Include="ResearchSystem.cpp" />
+    <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="ResourcesSystem.cpp" />
     <ClCompile Include="SecuritySystem.cpp" />
     <ClCompile Include="SimException.cpp" />
     <ClCompile Include="SocialSystem.cpp" />
     <ClCompile Include="SportsSystem.cpp" />
+    <ClCompile Include="StringHelper.cpp" />
     <ClCompile Include="SupplySystem.cpp" />
     <ClCompile Include="SystemConfigTable.cpp" />
+    <ClCompile Include="ConfigFileResource.cpp" />
     <ClCompile Include="TradeSystem.cpp" />
     <ClCompile Include="TransportSystem.cpp" />
   </ItemGroup>

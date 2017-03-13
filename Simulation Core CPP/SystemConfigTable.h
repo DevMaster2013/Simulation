@@ -22,6 +22,7 @@ namespace sim
 	public:
 		std::string GetStringValue(const std::string& valueName);
 		void SetStringValue(const std::string& valueName, const std::string& value);
+		const StringMap<std::string>& GetValueMap() const;
 
 	private:
 		StringMap<std::string> _configEntries;		
