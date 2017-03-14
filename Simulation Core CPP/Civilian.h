@@ -8,7 +8,7 @@
 
 namespace sim
 {
-	enum class CivilianSex : int { Male, Female };
+	enum class CivilianSex : int { Male, Female, SexesCount };
 
 	class Civilization;
 	class SIMAPI Civilian : public GameEntity, public IPostParticipant
@@ -27,10 +27,12 @@ namespace sim
 		Civilization* getHomeCivilization() const;
 		const GameID& getCivilianID() const;
 		double getAge() const;
+		double getEstimatedAge() const;
 		void setSex(CivilianSex sex);
 		void setHomeCivilization(Civilization* homeCiv);
 		void setCivilianID(const GameID& newID);
 		void setAge(double newAge);
+		void setEstimatedAge(double estimatedAge);
 
 	protected:
 		virtual void handleMessage(IPostParticipant * sender, Message * message) override;
@@ -41,5 +43,6 @@ namespace sim
 		Civilization* _homeCivilization;
 		double _age;
 		double _estimatedDieAge;
+		bool _isActiveCivilian;
 	};
 }

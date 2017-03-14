@@ -5,6 +5,7 @@ namespace sim
 	enum class MessageTypeID : int
 	{
 		UnknownType,
-		CivilianDeadMessage
+		CivilianDeadMessage,
+		MessagesTypesCount,
 	};
 }

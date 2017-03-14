@@ -4,12 +4,11 @@
 
 namespace sim
 {
+	const double DEFAULT_TIME_SCALE = 24.0;
+	const double DEFAULT_START_GAME_TIME = 0;
+
 	class SIMAPI GameClock
 	{
-	private:
-		const double DEFAULT_TIME_SCALE = 24.0;
-		const double DEFAULT_START_GAME_TIME = 0;
-
 	public:
 		GameClock();
 		GameClock(double timeScale);

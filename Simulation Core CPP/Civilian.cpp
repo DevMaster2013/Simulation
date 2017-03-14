@@ -19,20 +19,25 @@ sim::Civilian::~Civilian()
 
 bool sim::Civilian::initialize()
 {
+	_isActiveCivilian = true;
 	return true;
 }
 
 void sim::Civilian::update(double elapsedDays)
 {
+	// static variable to test if the civilian should be updated
+	if (!_isActiveCivilian) return;
+
 	// Update the civilian age
 	_age += elapsedDays;
 
 	// check if the civilian dead
 	if (_age > _estimatedDieAge)
 	{
-		// TODO : inform the social system that a civilian is dead through the communication system
+		// inform the social system that a civilian is dead through the communication system
 		// by sending a message
 		_homeCivilization->sendMessage(true, this, _homeCivilization->getSystem<SocialSystem>(), new CivilianDeadMessage(this), Priority::Critical);
+		_isActiveCivilian = false;
 	}
 }
 
@@ -60,6 +65,11 @@ double sim::Civilian::getAge() const
 	return _age;
 }
 
+double sim::Civilian::getEstimatedAge() const
+{
+	return _estimatedDieAge;
+}
+
 void sim::Civilian::setSex(CivilianSex sex)
 {
 	_civilianSex = sex;
@@ -78,6 +88,11 @@ void sim::Civilian::setCivilianID(const GameID & newID)
 void sim::Civilian::setAge(double newAge)
 {
 	_age = newAge;
+}
+
+void sim::Civilian::setEstimatedAge(double estimatedAge)
+{
+	_estimatedDieAge = estimatedAge;
 }
 
 void sim::Civilian::handleMessage(IPostParticipant* /*sender*/, Message* /*message*/)

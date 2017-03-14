@@ -32,17 +32,11 @@ namespace sim
 		const IDMap<CivilianDieRecord>& getCivilianDieRecords() const;
 		const CivilianDieRecord* getCivilianDieRecord(const GameID& civID) const;
 
-	public:
-		double getMaximumAge() const;
-
 	protected:
 		virtual void populateSystemConfig(SystemConfigTable* systemConfigTable) override;
 		virtual void handleMessage(IPostParticipant * sender, Message * message) override;
 
 	private:
 		IDMap<CivilianDieRecord> _deads;
-
-	private:
-		double _maximumAge = 100.0;
 	};
 }

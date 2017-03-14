@@ -35,6 +35,7 @@ namespace sim
 
 	public:
 		int getInitialPopulationFamilies() const;
+		double getMaximumAge() const;
 
 	protected:
 		virtual void populateSystemConfig(SystemConfigTable* systemConfigTable) override;
@@ -48,6 +49,7 @@ namespace sim
 
 	private:
 		int	_initialPopulationFamilies = 2;
+		double _maximumAge = 100.0;
 
 	private:
 		static GameID _globalCivilianIDCounter;

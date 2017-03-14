@@ -357,6 +357,9 @@
     <ClInclude Include="MessageTypes.h">
       <Filter>Header Files\Systems\CommunicationSystem</Filter>
     </ClInclude>
+    <ClInclude Include="RandomGenerator.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
@@ -490,6 +493,9 @@
     </ClCompile>
     <ClCompile Include="CivilianDeadMessage.cpp">
       <Filter>Source Files\Systems\CommunicationSystem\Messages</Filter>
+    </ClCompile>
+    <ClCompile Include="RandomGenerator.cpp">
+      <Filter>Source Files\Utilities</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

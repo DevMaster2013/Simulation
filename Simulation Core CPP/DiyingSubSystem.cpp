@@ -58,14 +58,8 @@ const sim::CivilianDieRecord* sim::DiyingSubSystem::getCivilianDieRecord(const G
 	return nullptr;
 }
 
-double sim::DiyingSubSystem::getMaximumAge() const
+void sim::DiyingSubSystem::populateSystemConfig(SystemConfigTable * /*systemConfigTable*/)
 {
-	return _maximumAge;
-}
-
-void sim::DiyingSubSystem::populateSystemConfig(SystemConfigTable * systemConfigTable)
-{
-	_maximumAge = systemConfigTable->getValue<double>("MaximumAge");
 }
 
 void sim::DiyingSubSystem::handleMessage(IPostParticipant* /*sender*/, Message* message)

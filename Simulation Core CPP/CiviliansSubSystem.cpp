@@ -1,5 +1,6 @@
 #include "CiviliansSubSystem.h"
 #include "Game.h"
+#include "RandomGenerator.h"
 
 sim::GameID sim::CiviliansSubSystem::_globalCivilianIDCounter = 1;
 
@@ -54,6 +55,7 @@ void sim::CiviliansSubSystem::registerNewCivilian(Civilian * newCivilian)
 
 	// Set the home civilian civilization
 	newCivilian->setHomeCivilization(this->_ownerCivilization);
+	newCivilian->setEstimatedAge(RandomGenerator::getRandomCivilianAge(_maximumAge));
 
 	// Initialize the civilian
 	newCivilian->initialize();
@@ -102,9 +104,15 @@ int sim::CiviliansSubSystem::getInitialPopulationFamilies() const
 	return _initialPopulationFamilies;
 }
 
+double sim::CiviliansSubSystem::getMaximumAge() const
+{
+	return _maximumAge;
+}
+
 void sim::CiviliansSubSystem::populateSystemConfig(SystemConfigTable * systemConfigTable)
 {
 	_initialPopulationFamilies = systemConfigTable->getValue<int>("InitialPopulationFamilies");	
+	_maximumAge = systemConfigTable->getValue<double>("MaximumAge");
 }
 
 sim::GameID sim::CiviliansSubSystem::generateNewID()
@@ -115,4 +123,16 @@ sim::GameID sim::CiviliansSubSystem::generateNewID()
 void sim::CiviliansSubSystem::registerInitialPopulations()
 {
 	// TODO : add the initial population to the system
+	for (int i = 0; i < _initialPopulationFamilies; i++)
+	{
+		// Add the male civilian
+		Civilian* maleCivilian = RandomGenerator::generateRandomCivilian(_ownerCivilization, CivilianSex::Male);
+		maleCivilian->setAge(20.0);
+		registerNewCivilian(maleCivilian);
+
+		// add the female civilian
+		Civilian* femaleCivilian = RandomGenerator::generateRandomCivilian(_ownerCivilization, CivilianSex::Female);
+		femaleCivilian->setAge(20.0);
+		registerNewCivilian(femaleCivilian);
+	}
 }
