@@ -4,11 +4,12 @@
 #include "HelpfulMacros.h"
 #include "GameEntity.h"
 #include "SystemConfigTable.h"
+#include "IPostParticipant.h"
 
 namespace sim
 {
 	class SIMAPI Civilization;
-	class SIMAPI CivilizationSystem : public GameEntity
+	class SIMAPI CivilizationSystem : public GameEntity, public IPostParticipant
 	{
 	public:
 		CivilizationSystem(Civilization* ownerCiv, CivilizationSystem* parentSystem);
@@ -37,6 +38,9 @@ namespace sim
 
 	protected:
 		virtual void populateSystemConfig(SystemConfigTable* systemConfigTable);
+
+	protected:
+		virtual void handleMessage(IPostParticipant * sender, Message * message) override;
 
 	protected:
 		Civilization* _ownerCivilization;

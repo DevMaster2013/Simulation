@@ -30,6 +30,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{16298057-F3CD-4069-A6A4-D0B55AACF96F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05 - C++ Projects", "05 - C++ Projects", "{FBC8BF5B-BD35-40B0-896A-9BD197B27A3A}"
+	ProjectSection(SolutionItems) = preProject
+		To Do List.txt = To Do List.txt
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Simulation Test CPP", "Simulation Test CPP\Simulation Test CPP.vcxproj", "{47B9D6CC-482E-45BD-B0C4-612376F4ACCE}"
 EndProject

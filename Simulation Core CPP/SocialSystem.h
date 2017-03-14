@@ -27,5 +27,6 @@ namespace sim
 
 	protected:
 		virtual void populateSystemConfig(SystemConfigTable* systemConfigTable) override;
+		virtual void handleMessage(IPostParticipant * sender, Message * message) override;
 	};
 }

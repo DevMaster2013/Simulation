@@ -1,5 +1,6 @@
 #include "CivilizationSystem.h"
 #include "Civilization.h"
+#include "CommunicationSystem.h"
 
 sim::CivilizationSystem::CivilizationSystem(sim::Civilization* ownerCiv, CivilizationSystem* parentSystem)
 	: CivilizationSystem(ownerCiv, parentSystem, "No Name")
@@ -76,5 +77,13 @@ void sim::CivilizationSystem::populateSystemConfig(SystemConfigTable* systemConf
 	for each (auto& subSystem in _subSystems)
 	{
 		subSystem.second->populateSystemConfig(systemConfigTable);
+	}
+}
+
+void sim::CivilizationSystem::handleMessage(IPostParticipant * sender, Message * message)
+{	
+	for each (auto& subSystem in _subSystems)
+	{
+		subSystem.second->handleMessage(sender, message);
 	}
 }

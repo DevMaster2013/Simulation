@@ -43,6 +43,11 @@ void sim::Game::finalizeGame()
 	}
 }
 
+const sim::GameClock & sim::Game::getGameClock() const
+{
+	return _gameClock;
+}
+
 bool sim::Game::loadCivilizations()
 {
 	// Add all civilizations to the game 

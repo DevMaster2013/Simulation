@@ -23,7 +23,7 @@ sim::GameClock::GameClock(double timeScale, double startGameTime)
 	QueryPerformanceCounter(&current);
 
 	_clockFrequency = double(frequency.QuadPart);
-	_currentTime = double(current.QuadPart);
+	_startingRealTime = _currentTime = double(current.QuadPart);
 	_startingGameTime = startGameTime;
 }
 
@@ -38,16 +38,24 @@ void sim::GameClock::start()
 	_currentTime = double(current.QuadPart);
 }
 
-double sim::GameClock::getElapsedSeconds()
+double sim::GameClock::getElapsedSeconds() const
 {
 	LARGE_INTEGER current;
 	QueryPerformanceCounter(&current);
 	return (double(current.QuadPart) - _currentTime) / _clockFrequency;
 }
 
-double sim::GameClock::getElapsedGameTime()
+double sim::GameClock::getElapsedGameTime() const
 {
-	return getElapsedSeconds() * _timeScale + _startingGameTime;
+	return getElapsedSeconds() * _timeScale;
+}
+
+double sim::GameClock::getCurrentGameTime() const
+{
+	LARGE_INTEGER current;
+	QueryPerformanceCounter(&current);
+	double elapsedRealTime = (double(current.QuadPart) - _startingRealTime) / _clockFrequency;
+	return elapsedRealTime * _timeScale + _startingGameTime;
 }
 
 void sim::GameClock::setTimeScale(double timeScale)

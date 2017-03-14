@@ -23,6 +23,9 @@ namespace sim
 		virtual void finalize() override;
 
 	public:
+		void sendMessage(bool isInternal, IPostParticipant* sender, IPostParticipant* reciever, Message* content, Priority priority = Priority::Normal);
+
+	public:
 		template<typename T>
 		inline T* getSystem();
 

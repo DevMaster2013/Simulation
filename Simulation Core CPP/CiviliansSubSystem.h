@@ -7,6 +7,13 @@
 
 namespace sim
 {
+	struct SIMAPI CivilianRecord
+	{
+	public:
+		Civilian* civilian;
+		double registerDate;		
+	};
+
 	class SIMAPI CiviliansSubSystem : public SocialSubSystem
 	{
 	public:
@@ -20,26 +27,29 @@ namespace sim
 
 	public:
 		void registerNewCivilian(Civilian* newCivilian);
+		const CivilianRecord* unregisterCivilian(Civilian* civilian);
+
+	public:
+		const IDMap<CivilianRecord>& getCivilianRecords() const;
+		const CivilianRecord* getCivilianRecord(const GameID& civID) const;
 
 	public:
 		int getInitialPopulationFamilies() const;
-		double getMaximumAge() const;
 
 	protected:
 		virtual void populateSystemConfig(SystemConfigTable* systemConfigTable) override;
 
 	private:
-		CivilianID generateNewID();
+		GameID generateNewID();
 		void registerInitialPopulations();
 
 	private:
-		IDMap<Civilian*> _civilians;			
+		IDMap<CivilianRecord> _civilians;
 
 	private:
-		int		_initialPopulationFamilies = 2;
-		double	_maximumAge = 100.0;
+		int	_initialPopulationFamilies = 2;
 
 	private:
-		static CivilianID _globalCivilianIDCounter;
+		static GameID _globalCivilianIDCounter;
 	};
 }

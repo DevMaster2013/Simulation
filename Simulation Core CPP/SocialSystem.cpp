@@ -1,5 +1,6 @@
 #include "SocialSystem.h"
 #include "CiviliansSubSystem.h"
+#include "DiyingSubSystem.h"
 
 sim::SocialSystem::SocialSystem(Civilization* ownerCiv)
 	: CivilizationSystem(ownerCiv, nullptr, "SocialSystem")
@@ -14,10 +15,10 @@ bool sim::SocialSystem::initialize()
 {
 	// Initialize the subsystems
 	// - Marriage Subsystem	--> Manage the marriage in the system
-	// - Dieying Subsystem	--> manage the dieyign humans in the system
 	// - Relations SubSystem --> manage the relations of each human in the system
 
 	addSubSystem<CiviliansSubSystem>();
+	addSubSystem<DiyingSubSystem>();
 
 	if (!sim::CivilizationSystem::initialize())
 		return false;
@@ -43,4 +44,9 @@ void sim::SocialSystem::populateSystemConfig(SystemConfigTable* systemConfigTabl
 	//_socialConfig.MaximumNumberOfChildren = systemConfigTable->getValue<int>("MaximumNumberOfChildren");
 
 	sim::CivilizationSystem::populateSystemConfig(systemConfigTable);
+}
+
+void sim::SocialSystem::handleMessage(IPostParticipant * sender, Message * message)
+{
+	CivilizationSystem::handleMessage(sender, message);
 }

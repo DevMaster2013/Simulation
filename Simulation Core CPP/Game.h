@@ -19,6 +19,9 @@ namespace sim
 		void runGame();
 		void finalizeGame();
 
+	public:
+		const GameClock& getGameClock() const;
+
 	private:
 		bool loadCivilizations();
 

@@ -100,6 +100,13 @@ void sim::Civilization::finalize()
 	}	
 }
 
+void sim::Civilization::sendMessage(bool isInternal, IPostParticipant * sender, IPostParticipant * reciever, Message * content, Priority priority)
+{
+	// get the communication system
+	auto commSystem = getSystem<CommunicationSystem>();
+	commSystem->sendMessage(isInternal, sender, reciever, content, priority);
+}
+
 sim::CivilizationSystem* sim::Civilization::getSystem(const std::string & systemName)
 {
 	auto found = _civSystems.find(systemName);
@@ -107,3 +114,4 @@ sim::CivilizationSystem* sim::Civilization::getSystem(const std::string & system
 		return found->second;
 	return nullptr;
 }
+

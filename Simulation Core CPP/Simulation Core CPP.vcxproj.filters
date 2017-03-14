@@ -199,6 +199,12 @@
     <Filter Include="Source Files\Systems\SocialSystem\SubSystems">
       <UniqueIdentifier>{36d66972-454e-4214-8ddb-7efca8ddba02}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Systems\CommunicationSystem\Messages">
+      <UniqueIdentifier>{ae02f03f-10ec-4c19-a162-5ad0d44fce73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Systems\CommunicationSystem\Messages">
+      <UniqueIdentifier>{9baf6d59-5b15-40ed-9662-b35bebfc3c56}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Simulation Core.h">
@@ -336,6 +342,21 @@
     <ClInclude Include="CiviliansSubSystem.h">
       <Filter>Header Files\Systems\SocialSystem\SubSystems</Filter>
     </ClInclude>
+    <ClInclude Include="DiyingSubSystem.h">
+      <Filter>Header Files\Systems\SocialSystem\SubSystems</Filter>
+    </ClInclude>
+    <ClInclude Include="Message.h">
+      <Filter>Header Files\Systems\CommunicationSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="IPostParticipant.h">
+      <Filter>Header Files\Systems\CommunicationSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="CivilianDeadMessage.h">
+      <Filter>Header Files\Systems\CommunicationSystem\Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageTypes.h">
+      <Filter>Header Files\Systems\CommunicationSystem</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
@@ -460,6 +481,15 @@
     </ClCompile>
     <ClCompile Include="CiviliansSubSystem.cpp">
       <Filter>Source Files\Systems\SocialSystem\SubSystems</Filter>
+    </ClCompile>
+    <ClCompile Include="DiyingSubSystem.cpp">
+      <Filter>Source Files\Systems\SocialSystem\SubSystems</Filter>
+    </ClCompile>
+    <ClCompile Include="Message.cpp">
+      <Filter>Source Files\Systems\CommunicationSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="CivilianDeadMessage.cpp">
+      <Filter>Source Files\Systems\CommunicationSystem\Messages</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

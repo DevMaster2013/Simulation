@@ -1,0 +1,15 @@
+- Implement the basic Communicatoin System
+	- Implement the base Message class
+	- Implement the InternalCommSubsystem and ExternalCommSubSystem
+	- Implement the Sending and Recieving Messages
+	- Implement the MessageRecord Struct
+		- Sender
+		- Reciever
+		- SendDate
+		- RecieveDate
+		- Content
+	- Implement The IPostParticipant Interface
+		- Implement the HandleMessage function
+- Let the civilian to send message to social system that he is dead
+- Add initial population in civilians sub system
+- Implement the marriage sub system

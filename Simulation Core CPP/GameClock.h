@@ -18,8 +18,9 @@ namespace sim
 
 	public:
 		void start();
-		double getElapsedSeconds();
-		double getElapsedGameTime();
+		double getElapsedSeconds() const;
+		double getElapsedGameTime() const;
+		double getCurrentGameTime() const;
 
 	public:
 		void setTimeScale(double timeScale);
@@ -30,6 +31,7 @@ namespace sim
 	private:
 		double _clockFrequency;
 		double _currentTime;
+		double _startingRealTime;
 		double _startingGameTime;
 		double _timeScale;
 	};

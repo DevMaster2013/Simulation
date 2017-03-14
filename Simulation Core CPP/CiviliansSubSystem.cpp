@@ -1,6 +1,7 @@
 #include "CiviliansSubSystem.h"
+#include "Game.h"
 
-sim::CivilianID sim::CiviliansSubSystem::_globalCivilianIDCounter = 1;
+sim::GameID sim::CiviliansSubSystem::_globalCivilianIDCounter = 1;
 
 sim::CiviliansSubSystem::CiviliansSubSystem(Civilization * ownerCiv, CivilizationSystem * socialSystem)
 	: SocialSubSystem(ownerCiv, socialSystem, "CivilianSubSystem")
@@ -19,7 +20,7 @@ bool sim::CiviliansSubSystem::initialize()
 	// Initialize all inital civlians
 	for each (auto& civ in _civilians)
 	{
-		if (!civ.second->initialize())
+		if (!civ.second.civilian->initialize())
 			return false;
 	}
 
@@ -31,7 +32,7 @@ void sim::CiviliansSubSystem::update(double elapsedDays)
 	// Update all civlians
 	for each (auto& civ in _civilians)
 	{
-		civ.second->update(elapsedDays);
+		civ.second.civilian->update(elapsedDays);
 	}
 }
 
@@ -40,15 +41,15 @@ void sim::CiviliansSubSystem::finalize()
 	// Delete the civilian list
 	for each (auto& civ in _civilians)
 	{
-		civ.second->finalize();
-		delete civ.second;
+		civ.second.civilian->finalize();
+		delete civ.second.civilian;
 	}
 }
 
 void sim::CiviliansSubSystem::registerNewCivilian(Civilian * newCivilian)
 {
 	// Ask the Civilian Sub System to generate new ID for the civilian
-	CivilianID newID = generateNewID();
+	GameID newID = generateNewID();
 	newCivilian->setCivilianID(newID);
 
 	// Set the home civilian civilization
@@ -57,8 +58,43 @@ void sim::CiviliansSubSystem::registerNewCivilian(Civilian * newCivilian)
 	// Initialize the civilian
 	newCivilian->initialize();
 
-	// Add the civilian to the sub system
-	_civilians[newID] = newCivilian;
+	// Create the record
+	CivilianRecord record;
+	record.registerDate = Game::getInstance()->getGameClock().getCurrentGameTime();
+	record.civilian = newCivilian;
+
+	// Add the civilian record to the sub system
+	_civilians[newID] = record;
+}
+
+const sim::CivilianRecord* sim::CiviliansSubSystem::unregisterCivilian(Civilian * civilian)
+{
+	// Get the civilian Record
+	auto& ID = civilian->getCivilianID();
+	auto civilianRecord = getCivilianRecord(ID);
+
+	// check if the civilian is registered
+	if (civilianRecord == nullptr)
+		return nullptr;
+
+	// Remove the civilian record from the system
+	_civilians.erase(ID);
+
+	// return the erased civilization record
+	return civilianRecord;
+}
+
+const sim::IDMap<sim::CivilianRecord>& sim::CiviliansSubSystem::getCivilianRecords() const
+{
+	return _civilians;
+}
+
+const sim::CivilianRecord* sim::CiviliansSubSystem::getCivilianRecord(const GameID & civID) const
+{
+	auto found = _civilians.find(civID);
+	if (found != _civilians.end())
+		return &(found->second);
+	return nullptr;
 }
 
 int sim::CiviliansSubSystem::getInitialPopulationFamilies() const
@@ -66,18 +102,12 @@ int sim::CiviliansSubSystem::getInitialPopulationFamilies() const
 	return _initialPopulationFamilies;
 }
 
-double sim::CiviliansSubSystem::getMaximumAge() const
-{
-	return _maximumAge;
-}
-
 void sim::CiviliansSubSystem::populateSystemConfig(SystemConfigTable * systemConfigTable)
 {
-	_initialPopulationFamilies = systemConfigTable->getValue<int>("InitialPopulationFamilies");
-	_maximumAge = systemConfigTable->getValue<double>("MaximumAge");
+	_initialPopulationFamilies = systemConfigTable->getValue<int>("InitialPopulationFamilies");	
 }
 
-sim::CivilianID sim::CiviliansSubSystem::generateNewID()
+sim::GameID sim::CiviliansSubSystem::generateNewID()
 {
 	return _globalCivilianIDCounter++;
 }
