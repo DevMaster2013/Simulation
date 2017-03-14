@@ -9,20 +9,20 @@ sim::ResearchSystem::~ResearchSystem()
 {
 }
 
-bool sim::ResearchSystem::Initialize()
+bool sim::ResearchSystem::initialize()
 {
-	if (!sim::CivilizationSystem::Initialize())
+	if (!sim::CivilizationSystem::initialize())
 		return false;
 
 	return true;
 }
 
-void sim::ResearchSystem::Update(double elapsedDays)
+void sim::ResearchSystem::update(double elapsedDays)
 {
-	sim::CivilizationSystem::Update(elapsedDays);
+	sim::CivilizationSystem::update(elapsedDays);
 }
 
-void sim::ResearchSystem::Finalize()
+void sim::ResearchSystem::finalize()
 {
-	sim::CivilizationSystem::Finalize();
+	sim::CivilizationSystem::finalize();
 }

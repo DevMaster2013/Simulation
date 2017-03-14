@@ -1,7 +1,7 @@
 #include "StringHelper.h"
 #include <algorithm>
 
-std::string sim::StringHelper::Trim(const std::string & value)
+std::string sim::StringHelper::trim(const std::string & value)
 {
 	std::string trimmed(value);
 	auto toBeTrimmed = std::find_if(trimmed.begin(), trimmed.end(), [](char ch) {return ch == ' '; });
@@ -9,7 +9,7 @@ std::string sim::StringHelper::Trim(const std::string & value)
 	return trimmed;
 }
 
-std::string sim::StringHelper::Mid(const std::string & value, size_t start, size_t end)
+std::string sim::StringHelper::mid(const std::string & value, size_t start, size_t end)
 {
 	return value.substr(start, (end - start) + 1);
 }

@@ -16,20 +16,20 @@ namespace sim
 		virtual ~CivilizationSystem();
 
 	public:
-		virtual bool Initialize() override;
-		virtual void Update(double elapsedDays) override;
-		virtual void Finalize() override;
+		virtual bool initialize() override;
+		virtual void update(double elapsedDays) override;
+		virtual void finalize() override;
 
 	public:
-		Civilization* GetOwnerCivilization() const;
-		CivilizationSystem* GetParentSystem() const;
-		void SetOwnerCivilizatoin(Civilization* ownerCiv);
-		void SetParentSystem(CivilizationSystem* parentSystem);
-		void SetSystemConfigTable(SystemConfigTable* systemConfigTable);
+		Civilization* getOwnerCivilization() const;
+		CivilizationSystem* getParentSystem() const;
+		void setOwnerCivilizatoin(Civilization* ownerCiv);
+		void setParentSystem(CivilizationSystem* parentSystem);
+		void setSystemConfigTable(SystemConfigTable* systemConfigTable);
 
 	public:
 		template<typename T>
-		inline T* GetSubSystem();
+		inline T* getSubSystem();
 
 	protected:
 		template<typename T>
@@ -45,7 +45,7 @@ namespace sim
 	};
 
 	template<typename T>
-	inline T * CivilizationSystem::GetSubSystem()
+	inline T * CivilizationSystem::getSubSystem()
 	{
 		auto found = _subSystems.find(typeid(T).name());
 		if (found == _subSystems.end())
@@ -56,7 +56,7 @@ namespace sim
 	template<typename T>
 	inline void CivilizationSystem::addSubSystem()
 	{
-		auto system = new T(this);
+		auto system = new T(_ownerCivilization, this);
 		_subSystems[typeid(T).name()] = system;
 	}
 }

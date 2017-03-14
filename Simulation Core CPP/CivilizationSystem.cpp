@@ -17,54 +17,64 @@ sim::CivilizationSystem::~CivilizationSystem()
 {
 }
 
-bool sim::CivilizationSystem::Initialize()
+bool sim::CivilizationSystem::initialize()
 {
+	for each (auto& subSystem in _subSystems)
+	{
+		if (!subSystem.second->initialize())
+			return false;
+	}
+
 	return true;
 }
 
-void sim::CivilizationSystem::Update(double elapsedDays)
+void sim::CivilizationSystem::update(double elapsedDays)
 {
 	for each (auto& subSystem in _subSystems)
 	{
-		subSystem.second->Update(elapsedDays);
+		subSystem.second->update(elapsedDays);
 	}
 }
 
-void sim::CivilizationSystem::Finalize()
+void sim::CivilizationSystem::finalize()
 {
 	for each (auto& subSystem in _subSystems)
 	{
-		subSystem.second->Finalize();
+		subSystem.second->finalize();
 		delete subSystem.second;
 	}
 	_subSystems.clear();
 }
 
-sim::Civilization* sim::CivilizationSystem::GetOwnerCivilization() const
+sim::Civilization* sim::CivilizationSystem::getOwnerCivilization() const
 {
 	return _ownerCivilization;
 }
 
-sim::CivilizationSystem * sim::CivilizationSystem::GetParentSystem() const
+sim::CivilizationSystem * sim::CivilizationSystem::getParentSystem() const
 {
 	return _parentSystem;
 }
 
-void sim::CivilizationSystem::SetOwnerCivilizatoin(sim::Civilization* ownerCiv)
+void sim::CivilizationSystem::setOwnerCivilizatoin(sim::Civilization* ownerCiv)
 {
 	_ownerCivilization = ownerCiv;
 }
 
-void sim::CivilizationSystem::SetParentSystem(CivilizationSystem * parentSystem)
+void sim::CivilizationSystem::setParentSystem(CivilizationSystem * parentSystem)
 {
 	_parentSystem = parentSystem;
 }
 
-void sim::CivilizationSystem::SetSystemConfigTable(SystemConfigTable* systemConfigTable)
+void sim::CivilizationSystem::setSystemConfigTable(SystemConfigTable* systemConfigTable)
 {
 	populateSystemConfig(systemConfigTable);
 }
 
 void sim::CivilizationSystem::populateSystemConfig(SystemConfigTable* systemConfigTable)
 {
+	for each (auto& subSystem in _subSystems)
+	{
+		subSystem.second->populateSystemConfig(systemConfigTable);
+	}
 }

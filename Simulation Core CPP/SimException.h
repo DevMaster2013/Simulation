@@ -13,7 +13,7 @@ namespace sim
 		virtual ~SimException();
 
 	public:
-		const std::string& GetMessage() const;
+		const std::string& getMessage() const;
 
 	protected:
 		std::string _errMessage;

@@ -1,4 +1,5 @@
 #include "SocialSystem.h"
+#include "CiviliansSubSystem.h"
 
 sim::SocialSystem::SocialSystem(Civilization* ownerCiv)
 	: CivilizationSystem(ownerCiv, nullptr, "SocialSystem")
@@ -9,40 +10,37 @@ sim::SocialSystem::~SocialSystem()
 {
 }
 
-bool sim::SocialSystem::Initialize()
+bool sim::SocialSystem::initialize()
 {
-	if (!sim::CivilizationSystem::Initialize())
+	// Initialize the subsystems
+	// - Marriage Subsystem	--> Manage the marriage in the system
+	// - Dieying Subsystem	--> manage the dieyign humans in the system
+	// - Relations SubSystem --> manage the relations of each human in the system
+
+	addSubSystem<CiviliansSubSystem>();
+
+	if (!sim::CivilizationSystem::initialize())
 		return false;
 
-	// Initialize the subsystems
-	// The Social System has these sub systems
-		// - Marriage Subsystem	--> Manage the marriage in the system
-		// - Dieying Subsystem	--> manage the dieyign humans in the system
-		// - Humans Subsystem	--> manage the actual humans in the system
-		// - Relations SubSystem --> manage the relations of each human in the system
-
-	return sim::CivilizationSystem::Initialize();
+	return true;
 }
 
-void sim::SocialSystem::Update(double elapsedDays)
+void sim::SocialSystem::update(double elapsedDays)
 {
-	sim::CivilizationSystem::Update(elapsedDays);
+	sim::CivilizationSystem::update(elapsedDays);
 }
 
-void sim::SocialSystem::Finalize()
+void sim::SocialSystem::finalize()
 {
-	sim::CivilizationSystem::Finalize();
+	sim::CivilizationSystem::finalize();
 }
 
-const sim::SocialSystem::Config & sim::SocialSystem::GetSystemConfig() const
-{
-	return _socialConfig;
-}
 
 void sim::SocialSystem::populateSystemConfig(SystemConfigTable* systemConfigTable)
-{
-	_socialConfig.MaximumAge = systemConfigTable->GetValue<double>("MaximumAge");
-	_socialConfig.MinimumManMarriageAge = systemConfigTable->GetValue<double>("MinimumManMarriageAge");
-	_socialConfig.MinimumWomanMarriageAge = systemConfigTable->GetValue<double>("MinimumWomanMarriageAge");
-	_socialConfig.MaximumNumberOfChildren = systemConfigTable->GetValue<int>("MaximumNumberOfChildren");
+{	
+	//_socialConfig.MinimumManMarriageAge = systemConfigTable->getValue<double>("MinimumManMarriageAge");
+	//_socialConfig.MinimumWomanMarriageAge = systemConfigTable->getValue<double>("MinimumWomanMarriageAge");
+	//_socialConfig.MaximumNumberOfChildren = systemConfigTable->getValue<int>("MaximumNumberOfChildren");
+
+	sim::CivilizationSystem::populateSystemConfig(systemConfigTable);
 }

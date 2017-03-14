@@ -9,20 +9,20 @@ sim::ForeignersSystem::~ForeignersSystem()
 {
 }
 
-bool sim::ForeignersSystem::Initialize()
+bool sim::ForeignersSystem::initialize()
 {
-	if (!sim::CivilizationSystem::Initialize())
+	if (!sim::CivilizationSystem::initialize())
 		return false;
 
 	return true;
 }
 
-void sim::ForeignersSystem::Update(double elapsedDays)
+void sim::ForeignersSystem::update(double elapsedDays)
 {
-	sim::CivilizationSystem::Update(elapsedDays);
+	sim::CivilizationSystem::update(elapsedDays);
 }
 
-void sim::ForeignersSystem::Finalize()
+void sim::ForeignersSystem::finalize()
 {
-	sim::CivilizationSystem::Finalize();
+	sim::CivilizationSystem::finalize();
 }

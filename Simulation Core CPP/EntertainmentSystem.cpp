@@ -9,20 +9,20 @@ sim::EntertainmentSystem::~EntertainmentSystem()
 {
 }
 
-bool sim::EntertainmentSystem::Initialize()
+bool sim::EntertainmentSystem::initialize()
 {
-	if (!sim::CivilizationSystem::Initialize())
+	if (!sim::CivilizationSystem::initialize())
 		return false;
 
 	return true;
 }
 
-void sim::EntertainmentSystem::Update(double elapsedDays)
+void sim::EntertainmentSystem::update(double elapsedDays)
 {
-	sim::CivilizationSystem::Update(elapsedDays);
+	sim::CivilizationSystem::update(elapsedDays);
 }
 
-void sim::EntertainmentSystem::Finalize()
+void sim::EntertainmentSystem::finalize()
 {
-	sim::CivilizationSystem::Finalize();
+	sim::CivilizationSystem::finalize();
 }

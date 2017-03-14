@@ -9,20 +9,20 @@ sim::ReligionSystem::~ReligionSystem()
 {
 }
 
-bool sim::ReligionSystem::Initialize()
+bool sim::ReligionSystem::initialize()
 {
-	if (!sim::CivilizationSystem::Initialize())
+	if (!sim::CivilizationSystem::initialize())
 		return false;
 
 	return true;
 }
 
-void sim::ReligionSystem::Update(double elapsedDays)
+void sim::ReligionSystem::update(double elapsedDays)
 {
-	sim::CivilizationSystem::Update(elapsedDays);
+	sim::CivilizationSystem::update(elapsedDays);
 }
 
-void sim::ReligionSystem::Finalize()
+void sim::ReligionSystem::finalize()
 {
-	sim::CivilizationSystem::Finalize();
+	sim::CivilizationSystem::finalize();
 }

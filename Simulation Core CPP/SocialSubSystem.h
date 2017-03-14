@@ -9,15 +9,15 @@ namespace sim
 	class SIMAPI SocialSubSystem : public CivilizationSystem
 	{
 	public:
-		SocialSubSystem(Civilization* ownerCiv, SocialSystem* socialSystem, const std::string& name);
+		SocialSubSystem(Civilization* ownerCiv, CivilizationSystem* socialSystem, const std::string& name);
 		virtual ~SocialSubSystem();
 
 	public:
-		virtual bool Initialize() override;
-		virtual void Update(double elapsedDays) override;
-		virtual void Finalize() override;
+		virtual bool initialize() override;
+		virtual void update(double elapsedDays) override;
+		virtual void finalize() override;
 
 	public:
-		SocialSystem* GetSocialSystem() const;
+		SocialSystem* getSocialSystem() const;
 	};
 }

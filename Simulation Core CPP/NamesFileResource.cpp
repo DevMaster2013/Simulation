@@ -36,7 +36,7 @@ void sim::NamesFileResource::onRelease()
 	_namesList.clear();
 }
 
-void sim::NamesFileResource::AddName(const std::string & name)
+void sim::NamesFileResource::addName(const std::string & name)
 {
 	auto found = std::find(_namesList.begin(), _namesList.end(), name);
 	if (found != _namesList.end())
@@ -44,14 +44,14 @@ void sim::NamesFileResource::AddName(const std::string & name)
 	_namesList.push_back(name);
 }
 
-void sim::NamesFileResource::RemoveName(const std::string & name)
+void sim::NamesFileResource::removeName(const std::string & name)
 {
 	auto found = std::find(_namesList.begin(), _namesList.end(), name);
 	if (found != _namesList.end())
 		_namesList.erase(found);
 }
 
-const std::vector<std::string>& sim::NamesFileResource::GetNamesList() const
+const std::vector<std::string>& sim::NamesFileResource::getNamesList() const
 {
 	return _namesList;
 }

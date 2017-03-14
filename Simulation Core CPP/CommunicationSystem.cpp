@@ -9,20 +9,20 @@ sim::CommunicationSystem::~CommunicationSystem()
 {
 }
 
-bool sim::CommunicationSystem::Initialize()
+bool sim::CommunicationSystem::initialize()
 {
-	if (!sim::CivilizationSystem::Initialize())
+	if (!sim::CivilizationSystem::initialize())
 		return false;
 
 	return true;
 }
 
-void sim::CommunicationSystem::Update(double elapsedDays)
+void sim::CommunicationSystem::update(double elapsedDays)
 {
-	sim::CivilizationSystem::Update(elapsedDays);
+	sim::CivilizationSystem::update(elapsedDays);
 }
 
-void sim::CommunicationSystem::Finalize()
+void sim::CommunicationSystem::finalize()
 {
-	sim::CivilizationSystem::Finalize();
+	sim::CivilizationSystem::finalize();
 }

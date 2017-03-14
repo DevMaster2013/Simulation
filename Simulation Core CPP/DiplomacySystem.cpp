@@ -9,20 +9,20 @@ sim::DiplomacySystem::~DiplomacySystem()
 {
 }
 
-bool sim::DiplomacySystem::Initialize()
+bool sim::DiplomacySystem::initialize()
 {
-	if (!sim::CivilizationSystem::Initialize())
+	if (!sim::CivilizationSystem::initialize())
 		return false;
 
 	return true;
 }
 
-void sim::DiplomacySystem::Update(double elapsedDays)
+void sim::DiplomacySystem::update(double elapsedDays)
 {
-	sim::CivilizationSystem::Update(elapsedDays);
+	sim::CivilizationSystem::update(elapsedDays);
 }
 
-void sim::DiplomacySystem::Finalize()
+void sim::DiplomacySystem::finalize()
 {
-	sim::CivilizationSystem::Finalize();
+	sim::CivilizationSystem::finalize();
 }

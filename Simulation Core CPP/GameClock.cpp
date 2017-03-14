@@ -31,41 +31,41 @@ sim::GameClock::~GameClock()
 {
 }
 
-void sim::GameClock::Start()
+void sim::GameClock::start()
 {
 	LARGE_INTEGER current;
 	QueryPerformanceCounter(&current);
 	_currentTime = double(current.QuadPart);
 }
 
-double sim::GameClock::GetElapsedSeconds()
+double sim::GameClock::getElapsedSeconds()
 {
 	LARGE_INTEGER current;
 	QueryPerformanceCounter(&current);
 	return (double(current.QuadPart) - _currentTime) / _clockFrequency;
 }
 
-double sim::GameClock::GetElapsedGameTime()
+double sim::GameClock::getElapsedGameTime()
 {
-	return GetElapsedSeconds() * _timeScale + _startingGameTime;
+	return getElapsedSeconds() * _timeScale + _startingGameTime;
 }
 
-void sim::GameClock::SetTimeScale(double timeScale)
+void sim::GameClock::setTimeScale(double timeScale)
 {
 	_timeScale = timeScale;
 }
 
-void sim::GameClock::SetStartGameTime(double startGameTime)
+void sim::GameClock::setStartGameTime(double startGameTime)
 {
 	_startingGameTime = startGameTime;
 }
 
-double sim::GameClock::GetTimeScale() const
+double sim::GameClock::getTimeScale() const
 {
 	return _timeScale;
 }
 
-double sim::GameClock::GetStartGameTime() const
+double sim::GameClock::getStartGameTime() const
 {
 	return _startingGameTime;
 }

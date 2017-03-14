@@ -9,20 +9,20 @@ sim::TradeSystem::~TradeSystem()
 {
 }
 
-bool sim::TradeSystem::Initialize()
+bool sim::TradeSystem::initialize()
 {
-	if (!sim::CivilizationSystem::Initialize())
+	if (!sim::CivilizationSystem::initialize())
 		return false;
 
 	return true;
 }
 
-void sim::TradeSystem::Update(double elapsedDays)
+void sim::TradeSystem::update(double elapsedDays)
 {
-	sim::CivilizationSystem::Update(elapsedDays);
+	sim::CivilizationSystem::update(elapsedDays);
 }
 
-void sim::TradeSystem::Finalize()
+void sim::TradeSystem::finalize()
 {
-	sim::CivilizationSystem::Finalize();
+	sim::CivilizationSystem::finalize();
 }

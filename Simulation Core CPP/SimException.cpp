@@ -14,7 +14,7 @@ sim::SimException::~SimException()
 {
 }
 
-const std::string& sim::SimException::GetMessage() const
+const std::string& sim::SimException::getMessage() const
 {
 	return _errMessage;
 }

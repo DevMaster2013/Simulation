@@ -14,34 +14,34 @@ namespace sim
 
 	public:
 		template<typename T>
-		T GetValue(const std::string& valueName);
+		T getValue(const std::string& valueName);
 
 		template<typename T>
-		void SetValue(const std::string& valueName, const T& value);
+		void setValue(const std::string& valueName, const T& value);
 
 	public:
-		std::string GetStringValue(const std::string& valueName);
-		void SetStringValue(const std::string& valueName, const std::string& value);
-		const StringMap<std::string>& GetValueMap() const;
+		std::string getStringValue(const std::string& valueName);
+		void setStringValue(const std::string& valueName, const std::string& value);
+		const StringMap<std::string>& getValueMap() const;
 
 	private:
 		StringMap<std::string> _configEntries;		
 	};
 
 	template<typename T>
-	inline T SystemConfigTable::GetValue(const std::string & valueName)
+	inline T SystemConfigTable::getValue(const std::string & valueName)
 	{
 		T value;
-		std::stringstream str(GetStringValue(valueName));
+		std::stringstream str(getStringValue(valueName));
 		str >> value;
 		return value;
 	}
 
 	template<typename T>
-	inline void SystemConfigTable::SetValue(const std::string & valueName, const T & value)
+	inline void SystemConfigTable::setValue(const std::string & valueName, const T & value)
 	{
 		std::stringstream str;
 		str << value;
-		SetStringValue(valueName, str.str());
+		setStringValue(valueName, str.str());
 	}
 }

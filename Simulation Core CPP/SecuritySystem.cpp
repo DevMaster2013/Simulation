@@ -9,20 +9,20 @@ sim::SecuritySystem::~SecuritySystem()
 {
 }
 
-bool sim::SecuritySystem::Initialize()
+bool sim::SecuritySystem::initialize()
 {
-	if (!sim::CivilizationSystem::Initialize())
+	if (!sim::CivilizationSystem::initialize())
 		return false;
 
 	return true;
 }
 
-void sim::SecuritySystem::Update(double elapsedDays)
+void sim::SecuritySystem::update(double elapsedDays)
 {
-	sim::CivilizationSystem::Update(elapsedDays);
+	sim::CivilizationSystem::update(elapsedDays);
 }
 
-void sim::SecuritySystem::Finalize()
+void sim::SecuritySystem::finalize()
 {
-	sim::CivilizationSystem::Finalize();
+	sim::CivilizationSystem::finalize();
 }

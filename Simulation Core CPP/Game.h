@@ -15,9 +15,9 @@ namespace sim
 		DECLARE_SINGLETON(Game)
 
 	public:
-		bool InitializeGame();
-		void RunGame();
-		void FinalizeGame();
+		bool initializeGame();
+		void runGame();
+		void finalizeGame();
 
 	private:
 		bool loadCivilizations();

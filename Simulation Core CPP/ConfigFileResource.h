@@ -18,7 +18,7 @@ namespace sim
 		virtual void onRelease() override;
 
 	public:
-		SystemConfigTable* GetConfigTable(const std::string& systemName);
+		SystemConfigTable* getConfigTable(const std::string& systemName);
 
 	private:
 		bool parseConfigLine(const std::string& configLine, std::string& valueName, std::string& value);

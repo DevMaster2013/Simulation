@@ -9,20 +9,20 @@ sim::EducationSystem::~EducationSystem()
 {
 }
 
-bool sim::EducationSystem::Initialize()
+bool sim::EducationSystem::initialize()
 {
-	if (!sim::CivilizationSystem::Initialize())
+	if (!sim::CivilizationSystem::initialize())
 		return false;
 
 	return true;
 }
 
-void sim::EducationSystem::Update(double elapsedDays)
+void sim::EducationSystem::update(double elapsedDays)
 {
-	sim::CivilizationSystem::Update(elapsedDays);
+	sim::CivilizationSystem::update(elapsedDays);
 }
 
-void sim::EducationSystem::Finalize()
+void sim::EducationSystem::finalize()
 {
-	sim::CivilizationSystem::Finalize();
+	sim::CivilizationSystem::finalize();
 }

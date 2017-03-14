@@ -9,20 +9,20 @@ sim::AgricultureSystem::~AgricultureSystem()
 {
 }
 
-bool sim::AgricultureSystem::Initialize()
+bool sim::AgricultureSystem::initialize()
 {
-	if (!sim::CivilizationSystem::Initialize())
+	if (!sim::CivilizationSystem::initialize())
 		return false;
 
 	return true;
 }
 
-void sim::AgricultureSystem::Update(double elapsedDays)
+void sim::AgricultureSystem::update(double elapsedDays)
 {
-	sim::CivilizationSystem::Update(elapsedDays);
+	sim::CivilizationSystem::update(elapsedDays);
 }
 
-void sim::AgricultureSystem::Finalize()
+void sim::AgricultureSystem::finalize()
 {
-	sim::CivilizationSystem::Finalize();
+	sim::CivilizationSystem::finalize();
 }

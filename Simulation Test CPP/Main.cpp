@@ -5,23 +5,23 @@
 int main()
 {
 	// Declare our Game Object
-	auto gameInstance = sim::Game::GetInstance();
+	auto gameInstance = sim::Game::getInstance();
 
 	try 
 	{
 		// Initialize the Game
-		if (!gameInstance->InitializeGame())
+		if (!gameInstance->initializeGame())
 			throw sim::SimException("Cannot initialize the game");
 
 		// Run the Game loop
-		gameInstance->RunGame();
+		gameInstance->runGame();
 
 		// Finalize the Game
-		gameInstance->FinalizeGame();
+		gameInstance->finalizeGame();
 	}
 	catch (sim::SimException& exp)
 	{
-		std::cerr << exp.GetMessage() << std::endl;
+		std::cerr << exp.getMessage() << std::endl;
 	}
 	
 	delete gameInstance;

@@ -9,20 +9,20 @@ sim::HealthSystem::~HealthSystem()
 {
 }
 
-bool sim::HealthSystem::Initialize()
+bool sim::HealthSystem::initialize()
 {
-	if (!sim::CivilizationSystem::Initialize())
+	if (!sim::CivilizationSystem::initialize())
 		return false;
 
 	return true;
 }
 
-void sim::HealthSystem::Update(double elapsedDays)
+void sim::HealthSystem::update(double elapsedDays)
 {
-	sim::CivilizationSystem::Update(elapsedDays);
+	sim::CivilizationSystem::update(elapsedDays);
 }
 
-void sim::HealthSystem::Finalize()
+void sim::HealthSystem::finalize()
 {
-	sim::CivilizationSystem::Finalize();
+	sim::CivilizationSystem::finalize();
 }

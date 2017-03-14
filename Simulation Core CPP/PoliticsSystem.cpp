@@ -9,20 +9,20 @@ sim::PoliticsSystem::~PoliticsSystem()
 {
 }
 
-bool sim::PoliticsSystem::Initialize()
+bool sim::PoliticsSystem::initialize()
 {
-	if (!sim::CivilizationSystem::Initialize())
+	if (!sim::CivilizationSystem::initialize())
 		return false;
 
 	return true;
 }
 
-void sim::PoliticsSystem::Update(double elapsedDays)
+void sim::PoliticsSystem::update(double elapsedDays)
 {
-	sim::CivilizationSystem::Update(elapsedDays);
+	sim::CivilizationSystem::update(elapsedDays);
 }
 
-void sim::PoliticsSystem::Finalize()
+void sim::PoliticsSystem::finalize()
 {
-	sim::CivilizationSystem::Finalize();
+	sim::CivilizationSystem::finalize();
 }

@@ -13,13 +13,13 @@ namespace sim
 		virtual ~GameEntity();
 
 	public:
-		const std::string& GetName() const;
-		void SetName(const std::string& name);
+		const std::string& getName() const;
+		void setName(const std::string& name);
 
 	public:
-		virtual bool Initialize() = 0;
-		virtual void Update(double elapsedDays) = 0;
-		virtual void Finalize() = 0;
+		virtual bool initialize() = 0;
+		virtual void update(double elapsedDays) = 0;
+		virtual void finalize() = 0;
 
 	protected:
 		std::string _name;

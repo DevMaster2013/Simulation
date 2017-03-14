@@ -4,7 +4,7 @@
 #define WIN32_LEAN_AND_MEAN
 #include <Windows.h>
 
-std::vector<std::string> sim::FileSystemHelper::GetFilesInDirectory(const std::string & path, const std::string& pattern)
+std::vector<std::string> sim::FileSystemHelper::getFilesInDirectory(const std::string & path, const std::string& pattern)
 {
 	std::vector<std::string> files;
 
@@ -21,18 +21,18 @@ std::vector<std::string> sim::FileSystemHelper::GetFilesInDirectory(const std::s
 	return files;
 }
 
-std::string sim::FileSystemHelper::GetFileNameWithoutPath(const std::string & filePath)
+std::string sim::FileSystemHelper::getFileNameWithoutPath(const std::string & filePath)
 {	
-	return StringHelper::Mid(filePath, filePath.find_last_of('\\') + 1);
+	return StringHelper::mid(filePath, filePath.find_last_of('\\') + 1);
 }
 
-std::string sim::FileSystemHelper::GetFileNameWithoutExtension(const std::string & filePath)
+std::string sim::FileSystemHelper::getFileNameWithoutExtension(const std::string & filePath)
 {
-	auto fileName = GetFileNameWithoutPath(filePath);
-	return StringHelper::Mid(fileName, 0, fileName.find('.') - 1);
+	auto fileName = getFileNameWithoutPath(filePath);
+	return StringHelper::mid(fileName, 0, fileName.find('.') - 1);
 }
 
-std::string sim::FileSystemHelper::GetExtension(const std::string & filePath)
+std::string sim::FileSystemHelper::getExtension(const std::string & filePath)
 {	
-	return StringHelper::Mid(filePath, filePath.find('.') + 1);
+	return StringHelper::mid(filePath, filePath.find('.') + 1);
 }

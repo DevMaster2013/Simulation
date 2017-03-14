@@ -9,20 +9,20 @@ sim::EnvironmentSystem::~EnvironmentSystem()
 {
 }
 
-bool sim::EnvironmentSystem::Initialize()
+bool sim::EnvironmentSystem::initialize()
 {
-	if (!sim::CivilizationSystem::Initialize())
+	if (!sim::CivilizationSystem::initialize())
 		return false;
 
 	return true;
 }
 
-void sim::EnvironmentSystem::Update(double elapsedDays)
+void sim::EnvironmentSystem::update(double elapsedDays)
 {
-	sim::CivilizationSystem::Update(elapsedDays);
+	sim::CivilizationSystem::update(elapsedDays);
 }
 
-void sim::EnvironmentSystem::Finalize()
+void sim::EnvironmentSystem::finalize()
 {
-	sim::CivilizationSystem::Finalize();
+	sim::CivilizationSystem::finalize();
 }

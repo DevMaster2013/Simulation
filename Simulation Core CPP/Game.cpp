@@ -3,11 +3,11 @@
 #include "NamesFileResource.h"
 #include <iostream>
 
-bool sim::Game::InitializeGame()
+bool sim::Game::initializeGame()
 {
 	// Load Game Resources
-	_resManager = ResourceManager::GetInstance();
-	_resManager->LoadAllResources();
+	_resManager = ResourceManager::getInstance();
+	_resManager->loadAllResources();
 
 	if (!loadCivilizations())
 		throw SimException("Cannot initialize civilizations");
@@ -15,30 +15,30 @@ bool sim::Game::InitializeGame()
 	return true;
 }
 
-void sim::Game::RunGame()
+void sim::Game::runGame()
 {
 	// Do the game loop
 	while (_isGameStarted)
 	{		
 		// Compute the elapsed seconds
-		_gameClock.Start();
+		_gameClock.start();
 
 		// Update all civilizatoins of the game
 		for each (auto& civ in _civilizations)
 		{
-			civ.second->Update(_gameClock.GetElapsedGameTime());
+			civ.second->update(_gameClock.getElapsedGameTime());
 		}
 	}
 }
 
-void sim::Game::FinalizeGame()
+void sim::Game::finalizeGame()
 {
 	_isGameStarted = false;
 
 	// Finalize the civilizations of the game
 	for each (auto& civ in _civilizations)
 	{
-		civ.second->Finalize();
+		civ.second->finalize();
 		delete civ.second;
 	}
 }
@@ -46,11 +46,11 @@ void sim::Game::FinalizeGame()
 bool sim::Game::loadCivilizations()
 {
 	// Add all civilizations to the game 
-	auto civNameList = _resManager->GetResource<NamesFileResource>("CivilizationNames")->GetNamesList();
+	auto civNameList = _resManager->getResource<NamesFileResource>("CivilizationNames")->getNamesList();
 	for each (auto& name in civNameList)
 	{
 		_civilizations[name] = new Civilization(name);
-		if (!_civilizations[name]->Initialize())
+		if (!_civilizations[name]->initialize())
 			return false;
 	}
 

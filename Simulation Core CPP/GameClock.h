@@ -17,15 +17,15 @@ namespace sim
 		~GameClock();
 
 	public:
-		void Start();
-		double GetElapsedSeconds();
-		double GetElapsedGameTime();
+		void start();
+		double getElapsedSeconds();
+		double getElapsedGameTime();
 
 	public:
-		void SetTimeScale(double timeScale);
-		void SetStartGameTime(double startGameTime);
-		double GetTimeScale() const;
-		double GetStartGameTime() const;
+		void setTimeScale(double timeScale);
+		void setStartGameTime(double startGameTime);
+		double getTimeScale() const;
+		double getStartGameTime() const;
 
 	private:
 		double _clockFrequency;

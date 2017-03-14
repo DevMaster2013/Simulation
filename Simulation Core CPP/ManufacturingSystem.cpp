@@ -9,20 +9,20 @@ sim::ManufacturingSystem::~ManufacturingSystem()
 {
 }
 
-bool sim::ManufacturingSystem::Initialize()
+bool sim::ManufacturingSystem::initialize()
 {
-	if (!sim::CivilizationSystem::Initialize())
+	if (!sim::CivilizationSystem::initialize())
 		return false;
 
 	return true;
 }
 
-void sim::ManufacturingSystem::Update(double elapsedDays)
+void sim::ManufacturingSystem::update(double elapsedDays)
 {
-	sim::CivilizationSystem::Update(elapsedDays);
+	sim::CivilizationSystem::update(elapsedDays);
 }
 
-void sim::ManufacturingSystem::Finalize()
+void sim::ManufacturingSystem::finalize()
 {
-	sim::CivilizationSystem::Finalize();
+	sim::CivilizationSystem::finalize();
 }

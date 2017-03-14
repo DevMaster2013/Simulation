@@ -15,7 +15,7 @@
 #define DECLARE_SINGLETON(T)									\
 		DECLARE_NONCOPYABLE(T)									\
 		public:													\
-			static T* GetInstance() {						\
+			static T* getInstance() {						\
 				static T* instance(new T());				\
 				return instance;								\
 			}

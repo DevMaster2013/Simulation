@@ -13,9 +13,9 @@ namespace sim
 		virtual ~GameResource();
 
 	public:
-		bool Load();
-		bool Save();
-		void Release();
+		bool load();
+		bool save();
+		void release();
 
 	protected:
 		virtual bool onLoad(std::ifstream& fileStream) = 0;
@@ -23,11 +23,11 @@ namespace sim
 		virtual void onRelease() = 0;
 
 	public:
-		const std::string& GetName() const;
-		const std::string& GetResourceFileName() const;
-		bool IsLoaded() const;
-		void SetName(const std::string& name);
-		void SetResourceFileName(const std::string& name);
+		const std::string& getName() const;
+		const std::string& getResourceFileName() const;
+		bool isLoaded() const;
+		void setName(const std::string& name);
+		void setResourceFileName(const std::string& name);
 
 	protected:
 		std::string _name;

@@ -42,18 +42,18 @@ sim::Civilization::~Civilization()
 {
 }
 
-void sim::Civilization::Update(double elapsedDays)
+void sim::Civilization::update(double elapsedDays)
 {
 	for each (auto& sys in _civSystems)
 	{
-		sys.second->Update(elapsedDays);
+		sys.second->update(elapsedDays);
 	}
 }
 
-bool sim::Civilization::Initialize()
+bool sim::Civilization::initialize()
 {
 	// Load the systems config file resource
-	_systemsConfigRes = ResourceManager::GetInstance()->GetResource<ConfigFileResource>("SystemsConfig");
+	_systemsConfigRes = ResourceManager::getInstance()->getResource<ConfigFileResource>("SystemsConfig");
 
 	// Add the List of Civilization Systems
 	addSystem<AgricultureSystem>();
@@ -84,18 +84,18 @@ bool sim::Civilization::Initialize()
 
 	for each (auto& sys in _civSystems)
 	{
-		if (!sys.second->Initialize())
-			throw SimException("Cannot initialize the system (" + sys.second->GetName() + ") in civilization (" + _name + ")");
+		if (!sys.second->initialize())
+			throw SimException("Cannot initialize the system (" + sys.second->getName() + ") in civilization (" + _name + ")");
 	}
 
 	return true;
 }
 
-void sim::Civilization::Finalize()
+void sim::Civilization::finalize()
 {
 	for each (auto& sys in _civSystems)
 	{
-		sys.second->Finalize();
+		sys.second->finalize();
 		delete sys.second;
 	}	
 }

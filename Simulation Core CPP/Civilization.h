@@ -18,13 +18,13 @@ namespace sim
 		~Civilization();
 
 	public:
-		virtual bool Initialize() override;
-		virtual void Update(double elapsedDays) override; 
-		virtual void Finalize() override;
+		virtual bool initialize() override;
+		virtual void update(double elapsedDays) override; 
+		virtual void finalize() override;
 
 	public:
 		template<typename T>
-		inline T* GetSystem();
+		inline T* getSystem();
 
 	private:
 		CivilizationSystem* getSystem(const std::string& systemName);
@@ -38,7 +38,7 @@ namespace sim
 	};
 
 	template<typename T>
-	inline T* Civilization::GetSystem()
+	inline T* Civilization::getSystem()
 	{
 		auto found = getSystem(typeid(T).name());
 		if (found == nullptr)
@@ -50,8 +50,8 @@ namespace sim
 	inline void Civilization::addSystem()
 	{
 		auto system = new T(this);	
-		auto configTable = _systemsConfigRes->GetConfigTable(system->GetName());
-		system->SetSystemConfigTable(configTable);
+		auto configTable = _systemsConfigRes->getConfigTable(system->getName());
+		system->setSystemConfigTable(configTable);
 
 		_civSystems[typeid(T).name()] = system;
 	}

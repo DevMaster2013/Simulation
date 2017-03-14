@@ -1,8 +1,8 @@
 #include "SocialSubSystem.h"
 #include "SocialSubSystem.h"
 
-sim::SocialSubSystem::SocialSubSystem(Civilization * ownerCiv, SocialSystem* socialSystem, const std::string & name)
-	: CivilizationSystem(ownerCiv, (CivilizationSystem*)socialSystem, name)
+sim::SocialSubSystem::SocialSubSystem(Civilization * ownerCiv, CivilizationSystem* socialSystem, const std::string & name)
+	: CivilizationSystem(ownerCiv, socialSystem, name)
 {
 }
 
@@ -10,29 +10,25 @@ sim::SocialSubSystem::~SocialSubSystem()
 {
 }
 
-bool sim::SocialSubSystem::Initialize()
+bool sim::SocialSubSystem::initialize()
 {
-	if (!CivilizationSystem::Initialize())
+	if (!CivilizationSystem::initialize())
 		return false;
 
 	return true;
 }
 
-void sim::SocialSubSystem::Update(double elapsedDays)
+void sim::SocialSubSystem::update(double elapsedDays)
 {
-	CivilizationSystem::Update(elapsedDays);
+	CivilizationSystem::update(elapsedDays);
 }
 
-void sim::SocialSubSystem::Finalize()
+void sim::SocialSubSystem::finalize()
 {
-	CivilizationSystem::Finalize();
+	CivilizationSystem::finalize();
 }
 
-sim::SocialSystem * sim::SocialSubSystem::GetSocialSystem() const
+sim::SocialSystem * sim::SocialSubSystem::getSocialSystem() const
 {
 	return (SocialSystem*)_parentSystem;
-}
-
-void sim::SocialSubSystem::populateSystemConfig(SystemConfigTable * systemConfigTable)
-{
 }

@@ -14,7 +14,6 @@ namespace sim
 			int		MaximumNumberOfChildren = 2;
 			double	MinimumManMarriageAge = 16.0;
 			double	MinimumWomanMarriageAge = 16.0;
-			double	MaximumAge = 100.0;
 		};
 
 	public:
@@ -22,17 +21,11 @@ namespace sim
 		virtual ~SocialSystem();
 
 	public:
-		virtual bool Initialize() override;
-		virtual void Update(double elapsedDays) override;
-		virtual void Finalize() override;
-
-	public:
-		const Config& GetSystemConfig() const;
+		virtual bool initialize() override;
+		virtual void update(double elapsedDays) override;
+		virtual void finalize() override;
 
 	protected:
 		virtual void populateSystemConfig(SystemConfigTable* systemConfigTable) override;
-
-	private:
-		Config _socialConfig;
 	};
 }

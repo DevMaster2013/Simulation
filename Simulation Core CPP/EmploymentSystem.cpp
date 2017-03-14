@@ -9,20 +9,20 @@ sim::EmploymentSystem::~EmploymentSystem()
 {
 }
 
-bool sim::EmploymentSystem::Initialize()
+bool sim::EmploymentSystem::initialize()
 {
-	if (!sim::CivilizationSystem::Initialize())
+	if (!sim::CivilizationSystem::initialize())
 		return false;
 
 	return true;
 }
 
-void sim::EmploymentSystem::Update(double elapsedDays)
+void sim::EmploymentSystem::update(double elapsedDays)
 {
-	sim::CivilizationSystem::Update(elapsedDays);
+	sim::CivilizationSystem::update(elapsedDays);
 }
 
-void sim::EmploymentSystem::Finalize()
+void sim::EmploymentSystem::finalize()
 {
-	sim::CivilizationSystem::Finalize();
+	sim::CivilizationSystem::finalize();
 }

@@ -28,7 +28,7 @@ bool sim::ConfigFileResource::onLoad(std::ifstream & fileStream)
 				std::string valueName, value;
 				if (parseConfigLine(line, valueName, value))
 				{
-					newConfigTable->SetValue(valueName, value);
+					newConfigTable->setValue(valueName, value);
 				}
 
 			} while (!isCategory(line, catName) && !fileStream.eof());
@@ -43,7 +43,7 @@ bool sim::ConfigFileResource::onSave(std::ofstream & fileStream)
 	for each (auto& sysConf in _systemConfigs)
 	{
 		fileStream << "[" << sysConf.first << "]\n";
-		const auto& values = sysConf.second->GetValueMap();
+		const auto& values = sysConf.second->getValueMap();
 		for each (const auto& val in values)
 		{
 			fileStream << val.first << " = " << val.second << "\n";
@@ -62,7 +62,7 @@ void sim::ConfigFileResource::onRelease()
 	_systemConfigs.clear();
 }
 
-sim::SystemConfigTable * sim::ConfigFileResource::GetConfigTable(const std::string & systemName)
+sim::SystemConfigTable * sim::ConfigFileResource::getConfigTable(const std::string & systemName)
 {
 	auto found = _systemConfigs.find(systemName);
 	if (found != _systemConfigs.end())
@@ -77,8 +77,8 @@ bool sim::ConfigFileResource::parseConfigLine(const std::string & configLine, st
 	if (equalPos == configLine.npos)
 		return false;
 
-	valueName = StringHelper::Trim(StringHelper::Mid(configLine, 0, equalPos - 1));
-	value = StringHelper::Trim(StringHelper::Mid(configLine, equalPos + 1, configLine.npos));
+	valueName = StringHelper::trim(StringHelper::mid(configLine, 0, equalPos - 1));
+	value = StringHelper::trim(StringHelper::mid(configLine, equalPos + 1, configLine.npos));
 
 	return true;
 }
@@ -89,7 +89,7 @@ bool sim::ConfigFileResource::isCategory(const std::string & configLine, std::st
 	auto endBracket = configLine.find(']');
 	if (startBracket != configLine.npos && endBracket != configLine.npos)
 	{
-		catName = StringHelper::Mid(configLine, startBracket + 1, endBracket - 1);
+		catName = StringHelper::mid(configLine, startBracket + 1, endBracket - 1);
 		return true;
 	}
 

@@ -9,20 +9,20 @@ sim::FinancialSystem::~FinancialSystem()
 {
 }
 
-bool sim::FinancialSystem::Initialize()
+bool sim::FinancialSystem::initialize()
 {
-	if (!sim::CivilizationSystem::Initialize())
+	if (!sim::CivilizationSystem::initialize())
 		return false;
 
 	return true;
 }
 
-void sim::FinancialSystem::Update(double elapsedDays)
+void sim::FinancialSystem::update(double elapsedDays)
 {
-	sim::CivilizationSystem::Update(elapsedDays);
+	sim::CivilizationSystem::update(elapsedDays);
 }
 
-void sim::FinancialSystem::Finalize()
+void sim::FinancialSystem::finalize()
 {
-	sim::CivilizationSystem::Finalize();
+	sim::CivilizationSystem::finalize();
 }

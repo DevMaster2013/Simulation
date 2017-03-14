@@ -18,11 +18,11 @@ namespace sim
 		virtual void onRelease() override;
 
 	public:
-		void AddName(const std::string& name);
-		void RemoveName(const std::string& name);
+		void addName(const std::string& name);
+		void removeName(const std::string& name);
 
 	public:
-		const std::vector<std::string>& GetNamesList() const;
+		const std::vector<std::string>& getNamesList() const;
 
 	private:
 		std::vector<std::string> _namesList;

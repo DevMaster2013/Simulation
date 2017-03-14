@@ -9,20 +9,20 @@ sim::TransportSystem::~TransportSystem()
 {
 }
 
-bool sim::TransportSystem::Initialize()
+bool sim::TransportSystem::initialize()
 {
-	if (!sim::CivilizationSystem::Initialize())
+	if (!sim::CivilizationSystem::initialize())
 		return false;
 
 	return true;
 }
 
-void sim::TransportSystem::Update(double elapsedDays)
+void sim::TransportSystem::update(double elapsedDays)
 {
-	sim::CivilizationSystem::Update(elapsedDays);
+	sim::CivilizationSystem::update(elapsedDays);
 }
 
-void sim::TransportSystem::Finalize()
+void sim::TransportSystem::finalize()
 {
-	sim::CivilizationSystem::Finalize();
+	sim::CivilizationSystem::finalize();
 }

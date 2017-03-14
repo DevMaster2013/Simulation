@@ -9,20 +9,20 @@ sim::SportsSystem::~SportsSystem()
 {
 }
 
-bool sim::SportsSystem::Initialize()
+bool sim::SportsSystem::initialize()
 {
-	if (!sim::CivilizationSystem::Initialize())
+	if (!sim::CivilizationSystem::initialize())
 		return false;
 
 	return true;
 }
 
-void sim::SportsSystem::Update(double elapsedDays)
+void sim::SportsSystem::update(double elapsedDays)
 {
-	sim::CivilizationSystem::Update(elapsedDays);
+	sim::CivilizationSystem::update(elapsedDays);
 }
 
-void sim::SportsSystem::Finalize()
+void sim::SportsSystem::finalize()
 {
-	sim::CivilizationSystem::Finalize();
+	sim::CivilizationSystem::finalize();
 }

@@ -11,7 +11,7 @@ sim::GameResource::~GameResource()
 {
 }
 
-bool sim::GameResource::Load()
+bool sim::GameResource::load()
 {
 	std::ifstream fileStream(_resourceFileName);
 	if (fileStream.good())
@@ -27,7 +27,7 @@ bool sim::GameResource::Load()
 	return true;
 }
 
-bool sim::GameResource::Save()
+bool sim::GameResource::save()
 {
 	std::ofstream fileStream(_resourceFileName);
 	if (fileStream.good())
@@ -43,7 +43,7 @@ bool sim::GameResource::Save()
 	return true;
 }
 
-void sim::GameResource::Release()
+void sim::GameResource::release()
 {
 	if (_isLoaded) 
 	{
@@ -52,27 +52,27 @@ void sim::GameResource::Release()
 	}
 }
 
-const std::string & sim::GameResource::GetName() const
+const std::string & sim::GameResource::getName() const
 {
 	return _name;
 }
 
-const std::string & sim::GameResource::GetResourceFileName() const
+const std::string & sim::GameResource::getResourceFileName() const
 {
 	return _resourceFileName;
 }
 
-bool sim::GameResource::IsLoaded() const
+bool sim::GameResource::isLoaded() const
 {
 	return _isLoaded;
 }
 
-void sim::GameResource::SetName(const std::string & name)
+void sim::GameResource::setName(const std::string & name)
 {
 	_name = name;
 }
 
-void sim::GameResource::SetResourceFileName(const std::string & name)
+void sim::GameResource::setResourceFileName(const std::string & name)
 {
 	_resourceFileName = name;
 }

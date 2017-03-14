@@ -1,33 +1,56 @@
 #include "Civilian.h"
+#include "Civilization.h"
 
-sim::Civilian::Civilian(const std::string & name)
+sim::Civilian::Civilian(Civilization* civilization, const std::string & name)
 	: GameEntity(name)
 {
+	_homeCivilization = civilization;
+	_civID = UNKNOWN_ID;
 }
 
 sim::Civilian::~Civilian()
 {
 }
 
-bool sim::Civilian::Initialize()
+bool sim::Civilian::initialize()
 {
 	return true;
 }
 
-void sim::Civilian::Update(double elapsedDays)
+void sim::Civilian::update(double elapsedDays)
 {
 }
 
-void sim::Civilian::Finalize()
+void sim::Civilian::finalize()
 {
 }
 
-sim::CivilianSex sim::Civilian::GetSex() const
+sim::CivilianSex sim::Civilian::getSex() const
 {
 	return _civilianSex;
 }
 
-void sim::Civilian::SetSex(CivilianSex sex)
+sim::Civilization * sim::Civilian::getHomeCivilization() const
+{
+	return _homeCivilization;
+}
+
+const sim::CivilianID & sim::Civilian::getCivilianID() const
+{
+	return _civID;
+}
+
+void sim::Civilian::setSex(CivilianSex sex)
 {
 	_civilianSex = sex;
+}
+
+void sim::Civilian::setHomeCivilization(Civilization * homeCiv)
+{
+	_homeCivilization = homeCiv;
+}
+
+void sim::Civilian::setCivilianID(const CivilianID & newID)
+{
+	_civID = newID;
 }

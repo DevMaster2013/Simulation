@@ -3,14 +3,14 @@
 #include "NamesFileResource.h"
 #include "ConfigFileResource.h"
 
-void sim::ResourceManager::AddResource(const std::string& resName, sim::GameResource* resource)
+void sim::ResourceManager::addResource(const std::string& resName, sim::GameResource* resource)
 {
 	auto found = _gameResources.find(resName);
 	if (found == _gameResources.end())
 		_gameResources[resName] = resource;
 }
 
-bool sim::ResourceManager::LoadAllResources()
+bool sim::ResourceManager::loadAllResources()
 {
 	const std::string resourcesPath = R"(..\Data\)";
 
@@ -25,11 +25,11 @@ bool sim::ResourceManager::LoadAllResources()
 	return true;
 }
 
-void sim::ResourceManager::ReleaseAllResources()
+void sim::ResourceManager::releaseAllResources()
 {
 	for each (auto& res in _gameResources)
 	{
-		res.second->Release();
+		res.second->release();
 		delete res.second;
 	}
 }
@@ -51,8 +51,8 @@ sim::GameResource * sim::ResourceManager::getResource(const std::string & resNam
 		return nullptr;
 
 	GameResource* res = found->second;
-	if (!res->IsLoaded())
-		res->Load();
+	if (!res->isLoaded())
+		res->load();
 
 	return res;
 }
