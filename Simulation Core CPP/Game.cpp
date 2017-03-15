@@ -9,7 +9,10 @@ bool sim::Game::initializeGame()
 	_resManager = ResourceManager::getInstance();
 	_resManager->loadAllResources();
 
-	if (!loadCivilizations())
+	if (!initializePlayers())
+		throw SimException("Cannot initialize players");
+
+	if (!initializeCivilizations())
 		throw SimException("Cannot initialize civilizations");
 
 	return true;
@@ -23,10 +26,19 @@ void sim::Game::runGame()
 		// Compute the elapsed seconds
 		_gameClock.start();
 
+		// get the elapsed game time
+		auto elapsedTime = _gameClock.getElapsedGameTime();
+
 		// Update all civilizatoins of the game
 		for each (auto& civ in _civilizations)
 		{
-			civ.second->update(_gameClock.getElapsedGameTime());
+			civ.second->update(elapsedTime);
+		}
+
+		// Update the players
+		for each (auto& player in _gamePlayers)
+		{
+			player.second->update(elapsedTime);
 		}
 	}
 }
@@ -41,6 +53,13 @@ void sim::Game::finalizeGame()
 		civ.second->finalize();
 		delete civ.second;
 	}
+
+	// Finalize the players
+	for each (auto& player in _gamePlayers)
+	{
+		player.second->finalize();
+		delete player.second;
+	}
 }
 
 const sim::GameClock & sim::Game::getGameClock() const
@@ -48,16 +67,61 @@ const sim::GameClock & sim::Game::getGameClock() const
 	return _gameClock;
 }
 
-bool sim::Game::loadCivilizations()
+void sim::Game::addCivilization(Civilization * civilization)
 {
-	// Add all civilizations to the game 
-	auto civNameList = _resManager->getResource<NamesFileResource>("CivilizationNames")->getNamesList();
-	for each (auto& name in civNameList)
+	if (civilization == nullptr)
+		return;
+
+	auto found = _civilizations.find(civilization->getName());
+	if (found == _civilizations.end())
+		_civilizations[civilization->getName()] = civilization;
+}
+
+sim::Civilization * sim::Game::getCivilization(const std::string & civName)
+{
+	auto civ = _civilizations.find(civName);
+	if (civ != _civilizations.end())
+		return civ->second;
+	return nullptr;
+}
+
+void sim::Game::addPlayer(Player * player)
+{
+	if (player == nullptr)
+		return;
+
+	auto found = _gamePlayers.find(player->getName());
+	if (found == _gamePlayers.end())
+		_gamePlayers[player->getName()] = player;	
+}
+
+sim::Player * sim::Game::getPlayer(const std::string & playerName)
+{
+	auto found = _gamePlayers.find(playerName);
+	if (found != _gamePlayers.end())
+		return found->second;
+
+	return nullptr;
+}
+
+bool sim::Game::initializeCivilizations()
+{
+	// initialize all civilizations in the game 
+	for each (auto& civ in _civilizations) 
 	{
-		_civilizations[name] = new Civilization(name);
-		if (!_civilizations[name]->initialize())
+		if (!civ.second->initialize())
 			return false;
 	}
 
+	return true;
+}
+
+bool sim::Game::initializePlayers()
+{
+	for each (auto& player in _gamePlayers)
+	{
+		if (!player.second->initialize())
+			return false;
+	}
 	return true;
 }

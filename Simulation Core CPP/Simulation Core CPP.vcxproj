@@ -178,6 +178,7 @@
     <ClInclude Include="Message.h" />
     <ClInclude Include="MessageTypes.h" />
     <ClInclude Include="NamesFileResource.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="PoliticsSystem.h" />
     <ClInclude Include="RandomGenerator.h" />
     <ClInclude Include="ReligionSystem.h" />
@@ -227,6 +228,7 @@
     <ClCompile Include="ManufacturingSystem.cpp" />
     <ClCompile Include="Message.cpp" />
     <ClCompile Include="NamesFileResource.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="PoliticsSystem.cpp" />
     <ClCompile Include="RandomGenerator.cpp" />
     <ClCompile Include="ReligionSystem.cpp" />
