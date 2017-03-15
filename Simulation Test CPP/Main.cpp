@@ -1,11 +1,11 @@
-#include <Simulation Core.h>
-#include <memory>
+#include "SimulationGame.h"
+#include "SimException.h"
 #include <iostream>
 
 int main()
 {
 	// Declare our Game Object
-	auto gameInstance = sim::Game::getInstance();
+	auto gameInstance = new SimulationGame();
 
 	try 
 	{

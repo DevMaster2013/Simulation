@@ -207,9 +207,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Simulation Core.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="DLLExportDefinitions.h">
       <Filter>Header Files\Utilities</Filter>
     </ClInclude>
@@ -362,6 +359,9 @@
     </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulationCore.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

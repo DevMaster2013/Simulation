@@ -146,12 +146,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GameScreen.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MainMenuScreen.cpp" />
+    <ClCompile Include="SimulationGame.cpp" />
+    <ClCompile Include="WelcomeScreen.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Simulation Core CPP\Simulation Core CPP.vcxproj">
       <Project>{beddea9a-72a3-4d34-bf5e-82b0548431f8}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ConsoleKeys.h" />
+    <ClInclude Include="GameScreen.h" />
+    <ClInclude Include="MainMenuScreen.h" />
+    <ClInclude Include="ScreenResponse.h" />
+    <ClInclude Include="SimulationGame.h" />
+    <ClInclude Include="WelcomeScreen.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

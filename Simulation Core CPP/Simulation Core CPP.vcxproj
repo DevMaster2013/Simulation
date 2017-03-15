@@ -188,7 +188,7 @@
     <ClInclude Include="SecuritySystem.h" />
     <ClInclude Include="SimException.h" />
     <ClInclude Include="SimTypes.h" />
-    <ClInclude Include="Simulation Core.h" />
+    <ClInclude Include="SimulationCore.h" />
     <ClInclude Include="SocialSubSystem.h" />
     <ClInclude Include="SocialSystem.h" />
     <ClInclude Include="SportsSystem.h" />
